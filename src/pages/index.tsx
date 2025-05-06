@@ -7,7 +7,7 @@ const HomePage = () => {
       <Head>
         <title>Kemal Crisannaufal</title>
       </Head>
-      <HomeView></HomeView>
+      <HomeView />
     </>
   );
 };

@@ -1,5 +1,187 @@
+import Image from "next/image";
+import SectionBlock from "./SectionBlock";
+import SubsectionBlock from "./SubsectionBlock";
+import { techStacks } from "@/components/common/constant/techStack";
+import Modal from "@/components/ui/Modal";
+import { useState } from "react";
+
 const AboutView = () => {
-  return <div></div>;
+  const titleStyle = "mr-2 font-semibold text-lg";
+  const subtitleStyle = "text-neutral-600 text-sm";
+  const descriptionStyle = "text-neutral-600 text-xs";
+
+  const [openDetail, setOpenDetail] = useState("");
+
+  return (
+    <>
+      <div className="lg:flex gap-10 px-10 md:px-20 lg:px-48 pb-10">
+        <div className="sticky w-full lg:w-1/3">
+          <Image
+            src="/assets/images/foto.jpg"
+            width={500}
+            height={500}
+            alt="kemalcrisannaufal"
+            className="rounded-xl w-full object-contain"
+          />
+        </div>
+
+        <div className="mt-5 lg:mt-0 w-full lg:w-1/3">
+          <SectionBlock title="About Me">
+            <p className="text-neutral-600 text-sm">
+              Informatics graduate from Telkom University with a passion for
+              Software Engineering and Data Science. Currently focusing on React
+              and Machine Learning.
+            </p>
+          </SectionBlock>
+
+          <SectionBlock title="Education">
+            <SubsectionBlock image="/assets/images/about/telyu_logo.png">
+              <div>
+                <div className="flex items-center">
+                  <p className={titleStyle}>Telkom University</p>
+                  <i className="text-2xl bx bxs-graduation" />
+                </div>
+                <p className={subtitleStyle}>Bachelor of Informatics</p>
+                <p className={subtitleStyle}>2021 - 2025</p>
+                <p className={subtitleStyle}>
+                  CGPA : 3.98{" "}
+                  <span className="font-semibold text-black text-sm">
+                    (Cumlaude)
+                  </span>
+                </p>
+              </div>
+            </SubsectionBlock>
+          </SectionBlock>
+
+          <SectionBlock title="Achievment">
+            <SubsectionBlock image="/assets/images/about/telyu_logo.png">
+              <div>
+                <p className={titleStyle}>Competitive Programming Finalist</p>
+                <p className={subtitleStyle}>
+                  Solved problems related to algorithms and university-level
+                  programming, became a finalist, and successfully finished in
+                  5th place out of 100+ participants.
+                </p>
+              </div>
+            </SubsectionBlock>
+          </SectionBlock>
+
+          <SectionBlock title="Publications">
+            <SubsectionBlock image="/assets/images/about/scopus.png">
+              <div>
+                <p className="mr-2 font-semibold text-sm">
+                  Optimizing Support Vector Machine for Avocado Ripeness
+                  Classification Using Moth Flame Optimization
+                </p>
+
+                <p className={subtitleStyle}>Scopus and Sinta 2</p>
+                <a
+                  href="https://doi.org/10.35882/jeeemi.v7i2.652"
+                  className="font-semibold text-black text-xs underline"
+                >
+                  View Journal
+                </a>
+              </div>
+            </SubsectionBlock>
+          </SectionBlock>
+        </div>
+
+        <div className="w-full lg:w-1/3">
+          <SectionBlock title="Experience">
+            <SubsectionBlock image="/assets/images/about/if_lab.jpeg">
+              <div>
+                <a href="https://doi.org/10.35882/jeeemi.v7i2.652">
+                  <p className={titleStyle}>Practicum Assistant</p>
+                </a>
+                <p className={subtitleStyle}>
+                  Informatics Laboratory Telkom University
+                </p>
+                <div className="flex items-center mt-1">
+                  <i className="bx-chevron-right mr-2 text-sm bx" />
+                  <p className={descriptionStyle}>
+                    Assisted in teaching and guiding students in the Data
+                    Structure course
+                  </p>
+                </div>
+                <div className="flex items-center mt-1">
+                  <i className="bx-chevron-right mr-2 text-sm bx" />
+                  <p className={descriptionStyle}>
+                    Conducted evaluations of students&apos; laboratory work.
+                  </p>
+                </div>
+                <button
+                  className="mt-2 cursor-pointer"
+                  onClick={() => setOpenDetail("asprak")}
+                >
+                  <p className="font-semibold text-black text-xs underline">
+                    View Certificate
+                  </p>
+                </button>
+              </div>
+            </SubsectionBlock>
+
+            <SubsectionBlock image="/assets/images/about/telyu_logo.png">
+              <div>
+                <a href="https://doi.org/10.35882/jeeemi.v7i2.652">
+                  <p className={titleStyle}>Research Assistant</p>
+                </a>
+                <p className={subtitleStyle}>Telkom University</p>
+                <div className="flex items-center mt-1">
+                  <i className="bx-chevron-right mr-2 text-sm bx" />
+                  <p className={descriptionStyle}>
+                    Collected and processed data for research purposes
+                  </p>
+                </div>
+                <div className="flex items-center mt-1">
+                  <i className="bx-chevron-right mr-2 text-sm bx" />
+                  <p className={descriptionStyle}>
+                    Prepared and cleaned data related to Aksara Sunda for model
+                    training
+                  </p>
+                </div>
+              </div>
+            </SubsectionBlock>
+          </SectionBlock>
+
+          <SectionBlock title="Tech Stack">
+            <div className="flex flex-wrap gap-x-5">
+              {techStacks.map((stack, index) => {
+                return (
+                  <div
+                    key={index}
+                    className="group relative mt-2 p-2 border border-neutral-200 rounded-full cursor-pointer"
+                  >
+                    <div className="hidden group-hover:block -top-5 absolute bg-neutral-200 p-2 rounded duration-300">
+                      <p className="font-mono text-xs">{stack.name}</p>
+                    </div>
+                    <stack.icon className={stack.className} />
+                  </div>
+                );
+              })}
+            </div>
+          </SectionBlock>
+        </div>
+      </div>
+
+      {openDetail === "asprak" && (
+        <Modal onClose={() => setOpenDetail("")}>
+          <div>
+            <h1 className="font-mono font-semibold text-2xl">Certificate</h1>
+            <div className="flex justify-center mt-5 w-full">
+              <Image
+                src={"/assets/images/about/sertifikat_asprak.png"}
+                width={500}
+                height={500}
+                alt="asprak"
+                priority
+                className="w-full h-full object-contain"
+              />
+            </div>
+          </div>
+        </Modal>
+      )}
+    </>
+  );
 };
 
 export default AboutView;

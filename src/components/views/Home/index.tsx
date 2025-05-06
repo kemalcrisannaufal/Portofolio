@@ -7,8 +7,8 @@ const HomeView = () => {
     <div className="md:flex md:flex-row-reverse items-center gap-10 px-10 md:px-20 lg:px-48 min-h-[75vh]">
       <div className="hidden md:block relative rounded md:w-1/3 overflow-hidden hover:scale-110 duration-300">
         <Image
-          src="/assets/images/foto_fix.jpg"
-          alt="hero"
+          src="/assets/images/home/foto_fix.jpg"
+          alt="kemalcrisannaufal"
           width={500}
           height={500}
           priority
@@ -32,12 +32,12 @@ const HomeView = () => {
 
           <div className="md:hidden flex justify-center items-center mt-5 overflow-hidden">
             <Image
-              src="/assets/images/foto_fix.jpg"
-              alt="hero"
+              src="/assets/images/home/foto_fix.jpg"
+              alt="kemalcrisannaufal"
               width={300}
               height={300}
               priority
-              className="w-72 h-72 object-cover"
+              className="w-full object-cover"
             />
           </div>
           <p className="my-5 font-inter text-neutral-600 md:text-md text-sm lg:text-lg text-justify">
