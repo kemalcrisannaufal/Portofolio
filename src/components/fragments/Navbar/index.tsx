@@ -45,7 +45,9 @@ const Navbar = () => {
         </div>
       </div>
 
-      {isDrawerOpen && <Drawer isDrawerOpen={isDrawerOpen} />}
+      {isDrawerOpen && (
+        <Drawer isDrawerOpen={isDrawerOpen} setIsDrawerOpen={setIsDrawerOpen} />
+      )}
     </>
   );
 };

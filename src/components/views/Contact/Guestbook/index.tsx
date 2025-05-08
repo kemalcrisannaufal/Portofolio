@@ -29,8 +29,9 @@ const Guestbook = (props: Proptypes) => {
                   .map((item, index) => {
                     return (
                       <div key={index} className="flex items-start mb-3">
-                        <div className="bg-black mr-3 rounded-full w-10 md:w-12 h-10 md:h-12 animate-pulse" />
-
+                        <div>
+                          <div className="bg-black mr-3 rounded-full w-10 md:w-12 h-10 md:h-12 animate-pulse" />
+                        </div>
                         <div className="px-4 py-2 rounded-xl w-full">
                           <div className="bg-neutral-200 w-1/2 h-6 animate-pulse" />
                           <div className="bg-neutral-200 mt-2 w-full h-10 animate-pulse" />

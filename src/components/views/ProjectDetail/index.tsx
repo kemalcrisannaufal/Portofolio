@@ -14,7 +14,7 @@ const ProjectDetailView = (props: Proptypes) => {
   const [showedImage, setShowedImage] = useState(0);
   return (
     <div className="px-10 md:px-20 lg:px-48 pb-10 lg:pb-20">
-      <h1 className="font-libre font-thin text-4xl text-center">
+      <h1 className="font-libre font-thin text-2xl lg:text-4xl text-center">
         {project.name && project.name.toUpperCase()}
       </h1>
       <h2 className="mt-3 font-libre font-thin text-neutral-500 text-center">

@@ -4,9 +4,10 @@ import Link from "next/link";
 
 type Proptypes = {
   isDrawerOpen: boolean;
+  setIsDrawerOpen: React.Dispatch<React.SetStateAction<boolean>>;
 };
 const Drawer = (props: Proptypes) => {
-  const { isDrawerOpen } = props;
+  const { isDrawerOpen, setIsDrawerOpen } = props;
   return (
     <div
       className={`lg:hidden left-0 top-0 fixed flex flex-col gap-4 p-5 w-4/5 min-h-screen transform bg-white z-50 ${
@@ -14,7 +15,7 @@ const Drawer = (props: Proptypes) => {
       } transition-transform duration-500 ease-in-out`}
     >
       <div className="flex justify-center items-center mb-5">
-        <Link href="/">
+        <Link href="/" onClick={() => setIsDrawerOpen(false)}>
           <Image
             src={"/assets/images/logo-v2.png"}
             alt="logo"
@@ -31,6 +32,7 @@ const Drawer = (props: Proptypes) => {
             href={item.url}
             key={index}
             className="flex justify-between mb-3 px-5"
+            onClick={() => setIsDrawerOpen(false)}
           >
             <p className="font-libre font-light text-2xl">{item.name}</p>
             <i className="bx-chevron-right text-3xl bx" />
