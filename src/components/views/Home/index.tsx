@@ -4,7 +4,7 @@ import Image from "next/image";
 
 const HomeView = () => {
   return (
-    <div className="md:flex md:flex-row-reverse items-center gap-10 px-10 md:px-20 lg:px-48 min-h-[75vh]">
+    <div className="md:flex md:flex-row-reverse items-center gap-10 px-10 md:px-20 lg:px-48 pb-10 lg:pb-20 min-h-[75vh]">
       <div className="hidden md:block relative rounded md:w-1/3 overflow-hidden hover:scale-110 duration-300">
         <Image
           src="/assets/images/home/foto_fix.jpg"

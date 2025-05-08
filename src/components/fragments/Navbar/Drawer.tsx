@@ -9,14 +9,14 @@ const Drawer = (props: Proptypes) => {
   const { isDrawerOpen } = props;
   return (
     <div
-      className={`left-0 top-0 fixed flex flex-col gap-4 p-5 w-4/5 min-h-screen transform bg-white z-50 ${
+      className={`lg:hidden left-0 top-0 fixed flex flex-col gap-4 p-5 w-4/5 min-h-screen transform bg-white z-50 ${
         isDrawerOpen ? "translate-x-0" : "-translate-x-full"
       } transition-transform duration-500 ease-in-out`}
     >
       <div className="flex justify-center items-center mb-5">
         <Link href="/">
           <Image
-            src={"/assets/images/logo.png"}
+            src={"/assets/images/logo-v2.png"}
             alt="logo"
             width={500}
             height={500}

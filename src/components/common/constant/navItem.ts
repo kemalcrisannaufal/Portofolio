@@ -9,7 +9,7 @@ export const navItem = [
   },
   {
     name: "Blogs",
-    url: "/blog",
+    url: "/blogs",
   },
   {
     name: "Contact",

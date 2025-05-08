@@ -14,7 +14,7 @@ const AboutView = () => {
 
   return (
     <>
-      <div className="lg:flex gap-10 px-10 md:px-20 lg:px-48 pb-5 lg:pb-20">
+      <div className="lg:flex gap-10 px-10 md:px-20 lg:px-48 pb-10 lg:pb-20">
         <div className="lg:top-36 lg:sticky self-start w-full lg:w-1/3">
           <Image
             src="/assets/images/home/foto.jpg"
