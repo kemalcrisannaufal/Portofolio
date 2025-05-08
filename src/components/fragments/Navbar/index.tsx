@@ -10,7 +10,7 @@ const Navbar = () => {
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
   return (
     <>
-      <div className="top-0 sticky flex justify-center items-center gap-5 md:gap-10 bg-white md:px-20 lg:px-40 w-full h-20">
+      <div className="top-0 z-50 sticky flex justify-center items-center gap-5 md:gap-10 bg-white md:px-20 lg:px-40 w-full h-20">
         <div className="hidden md:flex md:gap-10">
           {navItem.slice(0, 2).map((item, index) => {
             return <NavItem key={index} name={item.name} url={item.url} />;

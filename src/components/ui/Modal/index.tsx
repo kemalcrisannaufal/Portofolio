@@ -22,8 +22,11 @@ const Modal = (props: Proptypes) => {
   }, [onClose]);
 
   return (
-    <div className="fixed inset-0 flex justify-center items-center bg-black/50 p-5 w-full min-h-dvh">
-      <div className="relative bg-white p-5 rounded min-w-1/2" ref={ref}>
+    <div className="z-50 fixed inset-0 flex justify-center items-center bg-black/50 p-5 w-full min-h-dvh">
+      <div
+        className="relative bg-white p-5 rounded lg:w-[50%] max-h-[75%] overflow-y-auto"
+        ref={ref}
+      >
         {children}
         <button
           className="top-4 right-4 absolute cursor-pointer"

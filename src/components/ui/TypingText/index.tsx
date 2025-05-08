@@ -15,7 +15,7 @@ const TypingText = (props: Proptypes) => {
   const [isDeleting, setIsDeleting] = useState(false);
 
   useEffect(() => {
-    const typingSpeed = isDeleting ? 50 : 100;
+    const typingSpeed = isDeleting ? 75 : 150;
     const currentWord = words[wordIndex];
     const timeout = setTimeout(() => {
       if (isDeleting) {

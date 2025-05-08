@@ -6,18 +6,18 @@ import Modal from "@/components/ui/Modal";
 import { useState } from "react";
 
 const AboutView = () => {
-  const titleStyle = "mr-2 font-semibold text-lg";
-  const subtitleStyle = "text-neutral-600 text-sm";
-  const descriptionStyle = "text-neutral-600 text-xs";
+  const titleStyle = "mr-2 text-sm lg:text-md font-libre font-semibold";
+  const subtitleStyle = "text-neutral-600 text-xs lg:text-sm font-libre";
+  const descriptionStyle = "text-xs lg:text-xs font-libre";
 
   const [openDetail, setOpenDetail] = useState("");
 
   return (
     <>
-      <div className="lg:flex gap-10 px-10 md:px-20 lg:px-48 pb-10">
-        <div className="sticky w-full lg:w-1/3">
+      <div className="lg:flex gap-10 px-10 md:px-20 lg:px-48 pb-5 lg:pb-20">
+        <div className="lg:top-36 lg:sticky self-start w-full lg:w-1/3">
           <Image
-            src="/assets/images/foto.jpg"
+            src="/assets/images/home/foto.jpg"
             width={500}
             height={500}
             alt="kemalcrisannaufal"
@@ -27,7 +27,7 @@ const AboutView = () => {
 
         <div className="mt-5 lg:mt-0 w-full lg:w-1/3">
           <SectionBlock title="About Me">
-            <p className="text-neutral-600 text-sm">
+            <p className={subtitleStyle}>
               Informatics graduate from Telkom University with a passion for
               Software Engineering and Data Science. Currently focusing on React
               and Machine Learning.
@@ -45,7 +45,7 @@ const AboutView = () => {
                 <p className={subtitleStyle}>2021 - 2025</p>
                 <p className={subtitleStyle}>
                   CGPA : 3.98{" "}
-                  <span className="font-semibold text-black text-sm">
+                  <span className="font-libre text-black text-sm">
                     (Cumlaude)
                   </span>
                 </p>
@@ -53,14 +53,13 @@ const AboutView = () => {
             </SubsectionBlock>
           </SectionBlock>
 
-          <SectionBlock title="Achievment">
+          <SectionBlock title="Achievement">
             <SubsectionBlock image="/assets/images/about/telyu_logo.png">
               <div>
                 <p className={titleStyle}>Competitive Programming Finalist</p>
                 <p className={subtitleStyle}>
-                  Solved problems related to algorithms and university-level
-                  programming, became a finalist, and successfully finished in
-                  5th place out of 100+ participants.
+                  Finalist and 5th place out of 100+ in algorithm and
+                  university-level programming competition
                 </p>
               </div>
             </SubsectionBlock>
@@ -69,7 +68,7 @@ const AboutView = () => {
           <SectionBlock title="Publications">
             <SubsectionBlock image="/assets/images/about/scopus.png">
               <div>
-                <p className="mr-2 font-semibold text-sm">
+                <p className={titleStyle}>
                   Optimizing Support Vector Machine for Avocado Ripeness
                   Classification Using Moth Flame Optimization
                 </p>
@@ -77,7 +76,7 @@ const AboutView = () => {
                 <p className={subtitleStyle}>Scopus and Sinta 2</p>
                 <a
                   href="https://doi.org/10.35882/jeeemi.v7i2.652"
-                  className="font-semibold text-black text-xs underline"
+                  className="font-libre font-semibold text-black text-xs underline"
                 >
                   View Journal
                 </a>
@@ -113,7 +112,7 @@ const AboutView = () => {
                   className="mt-2 cursor-pointer"
                   onClick={() => setOpenDetail("asprak")}
                 >
-                  <p className="font-semibold text-black text-xs underline">
+                  <p className="font-libre font-semibold text-black text-xs underline">
                     View Certificate
                   </p>
                 </button>
@@ -166,7 +165,7 @@ const AboutView = () => {
       {openDetail === "asprak" && (
         <Modal onClose={() => setOpenDetail("")}>
           <div>
-            <h1 className="font-mono font-semibold text-2xl">Certificate</h1>
+            <h1 className="font-libre font-semibold text-2xl">Certificate</h1>
             <div className="flex justify-center mt-5 w-full">
               <Image
                 src={"/assets/images/about/sertifikat_asprak.png"}

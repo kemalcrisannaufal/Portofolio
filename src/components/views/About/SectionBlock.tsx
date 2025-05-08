@@ -7,7 +7,9 @@ const SectionBlock = (props: Proptypes) => {
   const { title, children } = props;
   return (
     <div className="mb-5">
-      <h1 className="font-mono font-semibold text-2xl">{title}</h1>
+      <h1 className="font-libre font-semibold text-md md:text-lg lg:text-xl">
+        {title}
+      </h1>
       {children}
     </div>
   );

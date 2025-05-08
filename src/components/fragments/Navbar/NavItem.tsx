@@ -8,8 +8,10 @@ type Proptypes = {
 const NavItem = (props: Proptypes) => {
   const { name, url } = props;
   return (
-    <Link href={url} className="p-3 hover:text-neutral-600">
-      <p className="font-mono font-thin text-md">{name.toUpperCase()}</p>
+    <Link href={url} className="p-3">
+      <p className="font-pragati font-light text-neutral-700 hover:text-black text-sm">
+        {name.toUpperCase()}
+      </p>
     </Link>
   );
 };

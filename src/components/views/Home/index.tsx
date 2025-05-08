@@ -18,16 +18,16 @@ const HomeView = () => {
 
       <div className="w-full md:w-2/3">
         <div>
-          <h1 className="font-mono font-thin text-lg md:text-xl lg:text-2xl">
+          <h1 className="font-libre font-thin text-lg md:text-xl lg:text-2xl">
             Hello, It&apos;s me
           </h1>
-          <h1 className="font-mono font-semibold text-2xl md:text-3xl lg:text-4xl">
+          <h1 className="font-libre md:text-2xl text-3xl lg:text-4xl">
             Kemal Crisannaufal
           </h1>
           <TypingText
             words={["Software Engineer", "Data Analyst", "AI Engineer"]}
             boxClassName="bg-neutral-200 px-3 py-1 rounded h-7 mt-2"
-            textClassName="font-mono font-thin text-sm md:text-md"
+            textClassName="font-libre font-thin text-sm md:text-sm lg:text-md"
           />
 
           <div className="md:hidden flex justify-center items-center mt-5 overflow-hidden">
@@ -40,7 +40,7 @@ const HomeView = () => {
               className="w-full object-cover"
             />
           </div>
-          <p className="my-5 font-inter text-neutral-600 md:text-md text-sm lg:text-lg text-justify">
+          <p className="my-5 font-libre text-neutral-600 lg:text-md text-sm text-justify leading-7">
             A passionate Informatics fresh graduate from Telkom University with
             a strong interest in Software Engineering and Data Science.
             Currently focused on building web applications using React and
@@ -50,7 +50,7 @@ const HomeView = () => {
         <Button onClick={() => {}}>
           <div className="flex items-center">
             <i className="mr-2 text-lg bx bx-briefcase" />
-            <p className="font-mono font-semibold">HIRE ME</p>
+            <p className="font-libre font-thin text-sm">HIRE ME</p>
           </div>
         </Button>
       </div>

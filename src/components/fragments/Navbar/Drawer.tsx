@@ -32,7 +32,7 @@ const Drawer = (props: Proptypes) => {
             key={index}
             className="flex justify-between mb-3 px-5"
           >
-            <p className="font-serif font-light text-2xl">{item.name}</p>
+            <p className="font-libre font-light text-2xl">{item.name}</p>
             <i className="bx-chevron-right text-3xl bx" />
           </Link>
         );

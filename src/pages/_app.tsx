@@ -8,7 +8,7 @@ export default function App({ Component, pageProps }: AppProps) {
     <>
       <Navbar />
       <SocialSideBar />
-      <div className="mt-5 lg:mt-10">
+      <div className="mt-5">
         <Component {...pageProps} />
       </div>
     </>
