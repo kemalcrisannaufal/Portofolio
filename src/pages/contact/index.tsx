@@ -1,27 +1,21 @@
 import ContactView from "@/components/views/Contact";
 import guestbookServices from "@/services/guestbook";
+import { Message } from "@/types/message.type";
+import { sortDataByDate } from "@/utils/sortData";
 import Head from "next/head";
 import { useEffect, useState } from "react";
 
 const ContactPage = () => {
-  const [messages, setMessages] = useState<
-    { name: string; message: string; created_at: Date }[]
-  >([]);
+  const [messages, setMessages] = useState<Message[]>([]);
+  const [isLoading, setIsLoading] = useState(false);
   useEffect(() => {
     const getMessages = async () => {
+      setIsLoading(true);
       const { data } = await guestbookServices.getAllMessages();
       if (data) {
-        const sortedMessages = data.data.sort(
-          (
-            a: { name: string; message: string; created_at: Date },
-            b: { name: string; message: string; created_at: Date }
-          ) => {
-            const dateA = new Date(a.created_at);
-            const dateB = new Date(b.created_at);
-            return dateB.getTime() - dateA.getTime();
-          }
-        );
+        const sortedMessages = sortDataByDate(data.data, "createdAt");
         setMessages(sortedMessages);
+        setIsLoading(false);
       }
     };
     getMessages();
@@ -31,7 +25,11 @@ const ContactPage = () => {
       <Head>
         <title>Contact</title>
       </Head>
-      <ContactView messages={messages} setMessages={setMessages} />
+      <ContactView
+        messages={messages}
+        setMessages={setMessages}
+        isLoading={isLoading}
+      />
     </>
   );
 };

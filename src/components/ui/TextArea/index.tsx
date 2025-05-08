@@ -4,16 +4,21 @@ type Proptypes = {
   placeholder: string;
   required?: boolean;
   defaultValue?: string;
+  rows?: number;
 };
 
 const TextArea = (props: Proptypes) => {
-  const { name, label, placeholder, required = false, defaultValue } = props;
+  const {
+    name,
+    label,
+    placeholder,
+    required = false,
+    defaultValue,
+    rows = 5,
+  } = props;
   return (
     <div className="mb-3">
-      <label
-        htmlFor={name}
-        className="block mb-1 font-mono font-semibold text-md"
-      >
+      <label htmlFor={name} className="block mb-1 font-libre text-md">
         {label}
         {required && <span className="text-red-500">*</span>}
       </label>
@@ -22,7 +27,7 @@ const TextArea = (props: Proptypes) => {
         name={name}
         placeholder={placeholder}
         cols={30}
-        rows={5}
+        rows={rows}
         defaultValue={defaultValue}
         required={required}
         className="p-2 border border-neutral-300 rounded w-full"

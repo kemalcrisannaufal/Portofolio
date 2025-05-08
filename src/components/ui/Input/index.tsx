@@ -25,7 +25,7 @@ const Input = (props: Proptypes) => {
     maxLength,
   } = props;
   return (
-    <div className="mb-3">
+    <div className="mb-1.5 md:mb-3">
       <label htmlFor={name} className="block mb-1 font-libre text-sm">
         {label}
         {required && <span className="text-red-500">*</span>}

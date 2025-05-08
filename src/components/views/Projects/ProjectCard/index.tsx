@@ -1,4 +1,4 @@
-import { Project } from "@/types";
+import { Project } from "@/types/project.type";
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/router";

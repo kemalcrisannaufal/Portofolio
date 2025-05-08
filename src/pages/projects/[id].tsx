@@ -1,7 +1,7 @@
 import ProjectDetailView from "@/components/views/ProjectDetail";
 import ProjectDetailSkeletonView from "@/components/views/ProjectDetail/skeleton";
 import projectServices from "@/services/projects";
-import { Project } from "@/types";
+import { Project } from "@/types/project.type";
 import Head from "next/head";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";

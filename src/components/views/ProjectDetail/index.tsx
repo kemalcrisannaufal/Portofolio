@@ -1,5 +1,5 @@
 import { techStacks } from "@/components/common/constant/techStack";
-import { Project } from "@/types";
+import { Project } from "@/types/project.type";
 import Image from "next/image";
 import { useState } from "react";
 

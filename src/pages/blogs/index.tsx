@@ -1,5 +1,15 @@
+import BlogsView from "@/components/views/Blogs";
+import Head from "next/head";
+
 const BlogsPage = () => {
-  return <div>Blogs</div>;
+  return (
+    <>
+      <Head>
+        <title>Blogs</title>
+      </Head>
+      <BlogsView />
+    </>
+  );
 };
 
 export default BlogsPage;

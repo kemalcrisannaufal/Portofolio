@@ -1,5 +1,5 @@
 import projectServices from "@/services/projects";
-import { Project } from "@/types";
+import { Project } from "@/types/project.type";
 import { useEffect, useState } from "react";
 
 export const useProject = () => {

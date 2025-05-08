@@ -2,7 +2,7 @@ import Button from "@/components/ui/Button";
 import Title from "@/components/ui/Title";
 import { Dispatch, SetStateAction, useState } from "react";
 import ModalAddProject from "./ModalAddProject";
-import { Project } from "@/types";
+import { Project } from "@/types/project.type";
 import Image from "next/image";
 import ModalUpdateProject from "./ModalUpdateProject";
 import { deleteFile } from "@/lib/firebase/service";

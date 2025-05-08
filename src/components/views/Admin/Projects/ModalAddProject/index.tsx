@@ -9,7 +9,7 @@ import TextArea from "@/components/ui/TextArea";
 import Title from "@/components/ui/Title";
 import { uploadFile } from "@/lib/firebase/service";
 import projectServices from "@/services/projects";
-import { Project } from "@/types";
+import { Project } from "@/types/project.type";
 import { Dispatch, FormEvent, SetStateAction, useState } from "react";
 import Image from "next/image";
 import Divider from "@/components/ui/Divider";
