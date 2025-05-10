@@ -12,6 +12,7 @@ import Divider from "@/components/ui/Divider";
 import { getExtension } from "@/utils/image";
 import { Blog } from "@/types/blog.type";
 import blogsServices from "@/services/blogs";
+import Checkbox from "@/components/ui/Checkbox";
 
 type Proptypes = {
   onClose: () => void;
@@ -21,6 +22,7 @@ const ModalAddBlog = (props: Proptypes) => {
   const { onClose } = props;
   const [isLoading, setIsLoading] = useState(false);
   const [thumbnail, setThumbnail] = useState<File | null>(null);
+  const [category, setCategory] = useState<string[]>([]);
 
   const uploadImage = async (id: string) => {
     const thumbnailName =
@@ -56,7 +58,7 @@ const ModalAddBlog = (props: Proptypes) => {
         title: form.blogTitle.value,
         slug: form.slug.value,
         content: form.content.value,
-        category: form.category.value,
+        category: category,
         thumbnail: "",
         visibility: form.visibility.value,
         topFeatured: form.topFeatured.value === "true" ? true : false,
@@ -97,6 +99,7 @@ const ModalAddBlog = (props: Proptypes) => {
               placeholder="Blog's slug"
               required
             />
+
             <TextArea
               name="content"
               label="Content"
@@ -104,22 +107,22 @@ const ModalAddBlog = (props: Proptypes) => {
               rows={20}
               required
             />
-            <Select
-              name="category"
-              label="Category"
+            <Checkbox
+              name="topFeatured"
+              label="Top featured"
               options={[
-                { name: "Coding", value: "Coding" },
-                { name: "Software Engineering", value: "Software Engineering" },
-                { name: "Data Science", value: "Data Science" },
-                {
-                  name: "Artificial Intelligence",
-                  value: "Artificial Intelligence",
-                },
-                { name: "Tips", value: "Tips" },
-                { name: "Life", value: "Life" },
-                { name: "Inspiration", value: "Inspiration" },
+                "Coding",
+                "Software Engineering",
+                "Data Science",
+                "Artificial Intelligence",
+                "Tips",
+                "Life",
+                "Inspiration",
               ]}
+              checked={category}
+              setChecked={setCategory}
             />
+
             <Select
               name="visibility"
               label="Visibility"

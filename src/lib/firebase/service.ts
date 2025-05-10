@@ -11,6 +11,7 @@ import {
   getFirestore,
   query,
   updateDoc,
+  where,
 } from "firebase/firestore";
 
 import {
@@ -37,6 +38,24 @@ export async function retreiveData(collectionName: string) {
 export async function retreiveDataById(collectionName: string, id: string) {
   const snapshot = await getDoc(doc(firestore, collectionName, id));
   const data = snapshot.data();
+  return data;
+}
+
+export async function retreiveDataByField(
+  collectionName: string,
+  field: string,
+  value: string
+) {
+  const q = query(
+    collection(firestore, collectionName),
+    where(field, "==", value)
+  );
+
+  const snapshot = await getDocs(q);
+  const data = snapshot.docs.map((doc) => ({
+    id: doc.id,
+    ...doc.data(),
+  }));
   return data;
 }
 

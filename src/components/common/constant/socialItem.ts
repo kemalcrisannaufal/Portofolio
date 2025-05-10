@@ -5,7 +5,7 @@ export const socialItem = [
     url: "https://github.com/kemalcrisannaufal",
   },
   {
-    name: "Linkedin",
+    name: "LinkedIn",
     icon: "bx bxl-linkedin",
     url: "https://www.linkedin.com/in/kemalcrisannaufal/",
   },

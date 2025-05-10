@@ -63,7 +63,7 @@ const Guestbook = (props: Proptypes) => {
                 })}
           </div>
 
-          <div className="md:px-5">
+          <div>
             <form
               onSubmit={handleSubmit}
               className="flex md:flex-row flex-col md:items-end md:gap-2 bg-slate-200 px-3 py-2 rounded w-full"

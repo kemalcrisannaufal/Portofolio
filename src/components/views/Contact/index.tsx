@@ -56,7 +56,12 @@ const ContactView = (props: Proptypes) => {
                 className="flex justify-center items-center hover:bg-black mt-1 md:mt-5 p-2 border border-neutral-200 rounded w-full overflow-hidden hover:text-white hover:transition-all hover:duration-300 cursor-pointer"
               >
                 <i className={`bx ${item.icon} text-xl md:text-2xl mr-2`} />
-                <span className="font-libre md:text-md text-sm">
+                <span
+                  className={`font-libre md:text-md text-sm ${
+                    item.name === "LinkedIn" ||
+                    (item.name === "Email" && "mt-1")
+                  }`}
+                >
                   {item.name}
                 </span>
               </div>

@@ -4,7 +4,7 @@ export type Blog = {
   slug: string;
   content: string;
   thumbnail: string;
-  category: string;
+  category: string[];
   visibility: string;
   topFeatured: boolean;
   createdAt: Date;

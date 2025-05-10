@@ -1,6 +1,6 @@
 const ProjectDetailSkeletonView = () => {
   return (
-    <div className="px-10 md:px-20 lg:px-48 pb-5 lg:pb-20">
+    <div className="px-10 md:px-20 lg:px-48 pb-10 lg:pb-20">
       <div className="flex flex-col items-center">
         <div className="bg-neutral-200 w-[50%] h-16 animate-pulse" />
         <div className="bg-neutral-200 mt-3 w-[80%] h-6 animate-pulse" />
@@ -13,7 +13,7 @@ const ProjectDetailSkeletonView = () => {
             .map((item) => (
               <div
                 key={item}
-                className="flex-shrink-0 bg-neutral-200 shadow border border-neutral-300 rounded w-28 h-28 animate-pulse"
+                className="flex-shrink-0 bg-neutral-200 shadow border border-neutral-300 rounded w-28 h-20 animate-pulse"
               />
             ))}
         </div>
