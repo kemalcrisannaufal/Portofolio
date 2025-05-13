@@ -6,7 +6,7 @@ const BlogCardSkeleton = () => {
       <div className="flex justify-center">
         <div className="lg:hidden bg-neutral-200 mb-3 w-[75%] h-6 animate-pulse" />
       </div>
-      <div className="bg-neutral-200 w-full h-80 animate-pulse" />
+      <div className="bg-neutral-200 w-full h-48 md:h-64 lg:h-80 animate-pulse" />
 
       <div className="mt-5">
         <div className="hidden lg:block bg-neutral-200 w-[75%] h-6 animate-pulse" />

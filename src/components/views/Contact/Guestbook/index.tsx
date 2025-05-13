@@ -51,9 +51,17 @@ const Guestbook = (props: Proptypes) => {
                       </div>
 
                       <div className="bg-neutral-200 px-4 py-2 rounded-xl">
-                        <p className="font-libre font-semibold text-xs md:text-sm">
-                          {item.name}
-                        </p>
+                        <div className="flex items-center mb-0.5">
+                          <span className="mr-2 font-libre font-semibold text-xs md:text-sm">
+                            {item.name}
+                          </span>
+
+                          {item.role === "admin" && (
+                            <span className="bg-amber-500 mr-2 px-2 py-0.5 rounded-full font-libre text-white text-xs">
+                              Admin
+                            </span>
+                          )}
+                        </div>
                         <p className="font-libre text-xs md:text-sm">
                           {item.message}
                         </p>

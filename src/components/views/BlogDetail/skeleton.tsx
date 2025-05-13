@@ -4,11 +4,11 @@ const BlogDetailSkeletonView = () => {
       <div className="flex flex-col items-center">
         <div className="bg-neutral-200 w-[75%] h-10 animate-pulse" />
         <div className="flex justify-center items-center gap-5 lg:gap-10 mt-2 overflow-hidden">
-          <div className="bg-neutral-200 w-20 md:w-40 h-6 animate-pulse" />
+          <div className="bg-neutral-200 w-16 md:w-40 h-6 animate-pulse" />
           <span className="text-neutral-600">|</span>
-          <div className="bg-neutral-200 w-20 md:w-40 h-6 animate-pulse" />
+          <div className="bg-neutral-200 w-16 md:w-40 h-6 animate-pulse" />
           <span className="text-neutral-600">|</span>
-          <div className="bg-neutral-200 w-20 md:w-40 h-6 animate-pulse" />
+          <div className="bg-neutral-200 w-16 md:w-40 h-6 animate-pulse" />
         </div>
       </div>
 

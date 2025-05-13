@@ -16,7 +16,6 @@ const BlogDetailPage = () => {
       setIsLoading(true);
       if (slug) {
         const { data } = await blogsServices.getBlogBySlug(slug as string);
-        console.log(data.data);
         if (data) {
           setBlog(data.data[0]);
           setIsLoading(false);

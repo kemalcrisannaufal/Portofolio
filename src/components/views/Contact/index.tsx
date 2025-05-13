@@ -1,9 +1,11 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { socialItem } from "@/components/common/constant/socialItem";
 import guestbookServices from "@/services/guestbook";
 import { Message } from "@/types/message.type";
 import { sortDataByDate } from "@/utils/sortData";
 import { Dispatch, FormEvent, SetStateAction, useState } from "react";
 import Guestbook from "./Guestbook";
+import { useSession } from "next-auth/react";
 
 type Proptypes = {
   messages: Message[];
@@ -14,6 +16,8 @@ type Proptypes = {
 const ContactView = (props: Proptypes) => {
   const { messages, setMessages, isLoading: messageFetchLoading } = props;
   const [isLoading, setIsLoading] = useState(false);
+  const session: any = useSession();
+
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     setIsLoading(true);
     e.preventDefault();
@@ -21,6 +25,7 @@ const ContactView = (props: Proptypes) => {
     const data = {
       name: form.username.value,
       message: form.message.value,
+      role: session?.data?.user?.role || "guest",
       createdAt: new Date(),
     };
 

@@ -1,4 +1,6 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import axios from "axios";
+import { getSession } from "next-auth/react";
 
 const headers = {
   Accept: "application/json",
@@ -14,7 +16,13 @@ const instance = axios.create({
 });
 
 instance.interceptors.request.use(
-  (config) => config,
+  async (request) => {
+    const session: any = await getSession();
+    if (!session) return request;
+    const token = `Bearer ${session.accessToken}`;
+    request.headers.Authorization = token;
+    return request;
+  },
   (error) => Promise.reject(error)
 );
 

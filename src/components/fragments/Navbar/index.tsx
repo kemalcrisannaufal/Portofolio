@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import Image from "next/image";
 import NavItem from "./NavItem";
 import Link from "next/link";
@@ -5,12 +6,21 @@ import HamburgerMenu from "@/components/ui/HamburgerMenu";
 import { useState } from "react";
 import Drawer from "./Drawer";
 import { navItem } from "@/components/common/constant/navItem";
+import { signOut, useSession } from "next-auth/react";
 
 const Navbar = () => {
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
+  const session: any = useSession();
   return (
-    <>
-      <div className="top-0 z-50 sticky flex justify-center items-center gap-5 md:gap-10 bg-white md:px-20 lg:px-40 w-full h-20">
+    <div className="top-0 z-50 sticky">
+      {session.status === "authenticated" && (
+        <div className="flex justify-end bg-neutral-200 pr-5 w-full h-max">
+          <button onClick={() => signOut()} className="py-2 cursor-pointer">
+            <p className="">Logout</p>
+          </button>
+        </div>
+      )}
+      <div className="flex justify-center items-center gap-5 md:gap-10 bg-white md:px-20 lg:px-40 w-full h-20">
         <div className="hidden md:flex md:gap-10">
           {navItem.slice(0, 2).map((item, index) => {
             return <NavItem key={index} name={item.name} url={item.url} />;
@@ -48,7 +58,7 @@ const Navbar = () => {
       {isDrawerOpen && (
         <Drawer isDrawerOpen={isDrawerOpen} setIsDrawerOpen={setIsDrawerOpen} />
       )}
-    </>
+    </div>
   );
 };
 

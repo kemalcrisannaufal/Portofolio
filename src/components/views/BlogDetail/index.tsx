@@ -17,15 +17,15 @@ const BlogDetailView = (props: Proptypes) => {
         {blog.title && blog.title.toUpperCase()}
       </h1>
       <div className="flex justify-center items-center gap-5 lg:gap-10 mt-2">
-        <h2 className="font-libre font-thin text-neutral-600 text-xs">
+        <h2 className="font-libre font-thin text-neutral-600 text-xs text-center">
           {getDate(new Date(blog.createdAt))}
         </h2>
         <span className="text-neutral-600">|</span>
-        <h2 className="font-libre font-thin text-neutral-600 text-xs">
+        <h2 className="font-libre font-thin text-neutral-600 text-xs text-center">
           {blog.category}
         </h2>
         <span className="text-neutral-600">|</span>
-        <h2 className="font-libre font-thin text-neutral-600 text-xs">
+        <h2 className="font-libre font-thin text-neutral-600 text-xs text-center">
           {blog.content && getEstimatedReadingTime(blog.content)} Min Read
         </h2>
       </div>
