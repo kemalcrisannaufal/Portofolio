@@ -1,4 +1,3 @@
-import { techStacks } from "@/components/common/constant/techStack";
 import Button from "@/components/ui/Button";
 import Checkbox from "@/components/ui/Checkbox";
 import Input from "@/components/ui/Input";
@@ -20,6 +19,7 @@ import {
 import Image from "next/image";
 import Divider from "@/components/ui/Divider";
 import { getExtension } from "@/utils/image";
+import { TECH_STACK } from "@/constants/list.constanst";
 
 type Proptypes = {
   onClose: () => void;
@@ -289,7 +289,7 @@ const ModalUpdateProject = (props: Proptypes) => {
               label="Tech Stack"
               checked={techStackChecked}
               setChecked={setTechStackChecked}
-              options={techStacks.map((stack) => stack.name)}
+              options={TECH_STACK.map((stack) => stack.name)}
             />
           </div>
 
