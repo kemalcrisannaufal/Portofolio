@@ -43,7 +43,7 @@ const LoginAdminView = () => {
   };
   return (
     <div className="flex justify-center items-center px-10 md:px-20 lg:px-48 pb-10 lg:pb-20 w-full min-h-screen">
-      <div className="shadow p-5 border border-neutral-200 rounded w-full max-w-md">
+      <div className="shadow p-5 border border-gray-200 rounded w-full max-w-md">
         <h1 className="mb-2 font-libre font-semibold text-2xl">Login</h1>
         <form onSubmit={handleSubmit}>
           <Input

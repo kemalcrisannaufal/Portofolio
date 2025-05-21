@@ -172,7 +172,7 @@ const ModalAddProject = (props: Proptypes) => {
             </p>
             <Divider />
             <div className="flex items-center gap-2 w-full">
-              <div className="bg-neutral-200 w-48 h-28">
+              <div className="bg-gray-200 w-48 h-28">
                 {thumbnail ? (
                   <Image
                     src={URL.createObjectURL(thumbnail)}
@@ -198,7 +198,7 @@ const ModalAddProject = (props: Proptypes) => {
               <p className="mb-1 font-mono font-semibold text-lg">Images</p>
 
               {images.length === 0 ? (
-                <div className="flex justify-center items-center bg-neutral-200 mb-3 w-full h-28">
+                <div className="flex justify-center items-center bg-gray-200 mb-3 w-full h-28">
                   No Image Uploaded
                 </div>
               ) : (

@@ -1,6 +1,6 @@
 export type Message = {
   name: string;
   message: string;
-  role: string;
-  created_at: Date;
+  role?: string | "guest";
+  createdAt?: Date;
 };

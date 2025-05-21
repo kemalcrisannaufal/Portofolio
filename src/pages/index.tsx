@@ -1,14 +1,11 @@
-import HomeView from "@/components/views/Home";
-import Head from "next/head";
+import MainLayout from "@/components/layouts/MainLayout";
+import Home from "@/components/views/Home";
 
 const HomePage = () => {
   return (
-    <>
-      <Head>
-        <title>Kemal Crisannaufal</title>
-      </Head>
-      <HomeView />
-    </>
+    <MainLayout title="Kemal Crisannaufal">
+      <Home />
+    </MainLayout>
   );
 };
 

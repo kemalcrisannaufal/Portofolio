@@ -148,7 +148,7 @@ const ModalAddBlog = (props: Proptypes) => {
             </p>
             <Divider />
             <div className="flex items-center gap-2 w-full">
-              <div className="bg-neutral-200 w-48 h-28">
+              <div className="bg-gray-200 w-48 h-28">
                 {thumbnail ? (
                   <Image
                     src={URL.createObjectURL(thumbnail)}

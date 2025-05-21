@@ -1,14 +1,11 @@
-import AboutView from "@/components/views/About";
-import Head from "next/head";
+import MainLayout from "@/components/layouts/MainLayout";
+import About from "@/components/views/About";
 
 const AboutPage = () => {
   return (
-    <>
-      <Head>
-        <title>About</title>
-      </Head>
-      <AboutView />
-    </>
+    <MainLayout title="About">
+      <About />
+    </MainLayout>
   );
 };
 

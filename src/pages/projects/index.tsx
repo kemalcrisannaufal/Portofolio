@@ -1,22 +1,11 @@
-import { useProject } from "@/components/hooks/useProject";
-import ProjectsView from "@/components/views/Projects";
-import ProjectsSkeletonView from "@/components/views/Projects/skeleton";
-import Head from "next/head";
+import MainLayout from "@/components/layouts/MainLayout";
+import Projects from "@/components/views/Projects";
 
 const ProjectPage = () => {
-  const { projects, isLoading } = useProject();
-
   return (
-    <>
-      <Head>
-        <title>Projects</title>
-      </Head>
-      {isLoading ? (
-        <ProjectsSkeletonView />
-      ) : (
-        <ProjectsView projects={projects} />
-      )}
-    </>
+    <MainLayout title="Projects">
+      <Projects />
+    </MainLayout>
   );
 };
 

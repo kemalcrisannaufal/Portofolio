@@ -1,10 +1,3 @@
-type Proptypes = {
-  children: React.ReactNode;
-};
-
-const Title = (props: Proptypes) => {
-  const { children } = props;
-  return <h1 className="font-libre font-semibold text-2xl">{children}</h1>;
-};
+import Title from "./Title";
 
 export default Title;

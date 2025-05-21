@@ -1,25 +1,26 @@
-import Navbar from "@/components/fragments/Navbar";
-import SocialSideBar from "@/components/fragments/SocialSideBar";
+import AppShell from "@/components/common/AppShell";
 import "@/styles/globals.css";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { SessionProvider } from "next-auth/react";
 import type { AppProps } from "next/app";
-import { useRouter } from "next/router";
 
-const withoutSocialSideBarPages = ["/contact"];
-const withoutNavbar = ["/auth/login"];
+const queryClient = new QueryClient({
+  defaultOptions: {
+    queries: {
+      refetchOnWindowFocus: false,
+      retry: false,
+    },
+  },
+});
+
 export default function App({ Component, pageProps }: AppProps) {
-  const router = useRouter();
   return (
     <SessionProvider session={pageProps.session}>
-      {!withoutNavbar.includes(router.pathname) && <Navbar />}
-
-      {!withoutSocialSideBarPages.includes(router.pathname) && (
-        <SocialSideBar />
-      )}
-
-      <div className="mt-5">
-        <Component {...pageProps} />
-      </div>
+      <QueryClientProvider client={queryClient}>
+        <AppShell>
+          <Component {...pageProps} />
+        </AppShell>
+      </QueryClientProvider>
     </SessionProvider>
   );
 }
