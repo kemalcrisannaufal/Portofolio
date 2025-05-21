@@ -1,16 +1,11 @@
-import { useProject } from "@/components/hooks/useProject";
-import ProjectsAdminView from "@/components/views/Admin/Projects";
-import Head from "next/head";
+import MainLayout from "@/components/layouts/MainLayout";
+import ProjectsAdmin from "@/components/views/Admin/Projects";
 
 const ProjectsAdminPage = () => {
-  const { projects, setProjects } = useProject();
   return (
-    <>
-      <Head>
-        <title>Admin | Project</title>
-      </Head>
-      <ProjectsAdminView projects={projects} setProjects={setProjects} />
-    </>
+    <MainLayout title="Admin | Projects">
+      <ProjectsAdmin />
+    </MainLayout>
   );
 };
 
