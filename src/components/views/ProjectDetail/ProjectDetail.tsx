@@ -18,10 +18,10 @@ const ProjectDetail = () => {
           <h1 className="font-libre font-thin text-2xl lg:text-3xl text-center">
             {dataProject?.name && dataProject?.name.toUpperCase()}
           </h1>
-          <h2 className="mt-3 font-libre font-thin text-default-500 text-center">
+          <h2 className="mt-3 font-libre font-thin text-neutral-500 text-center">
             {dataProject?.category}
           </h2>
-          <h3 className="mt-3 font-libre font-thin text-default-500 text-center">
+          <h3 className="mt-3 font-libre font-thin text-neutral-500 text-center">
             {dataProject?.description}
           </h3>
 
@@ -64,7 +64,7 @@ const ProjectDetail = () => {
                 {dataProject?.details?.map((detail, index) => (
                   <li
                     key={index}
-                    className="mb-1 ml-5 font-libre text-default-700 text-sm"
+                    className="mb-1 ml-5 font-libre text-neutral-700 text-sm"
                   >
                     {detail}
                   </li>

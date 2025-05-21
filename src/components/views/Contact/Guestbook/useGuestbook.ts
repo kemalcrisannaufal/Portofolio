@@ -5,8 +5,11 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import { useMutation, useQuery } from "@tanstack/react-query";
 import { useForm } from "react-hook-form";
 import * as yup from "yup";
+import { useContext } from "react";
+import { ToasterContext } from "@/contexts/ToasterContext";
 
 const useGuestbook = () => {
+  const { setToaster } = useContext(ToasterContext);
   const messageSchema = yup.object().shape({
     name: yup.string().required("Please enter your name"),
     message: yup.string().required("Please enter your message"),
@@ -34,11 +37,18 @@ const useGuestbook = () => {
   } = useMutation({
     mutationFn: addMessage,
     onError: (error) => {
-      console.log(error);
+      setToaster({
+        type: "Error",
+        message: error.message,
+      });
     },
     onSuccess: () => {
       reset();
       refetchMessages();
+      setToaster({
+        type: "Success",
+        message: "Message sent successfully!",
+      });
     },
   });
 

@@ -53,7 +53,7 @@ const BlogCard = (props: Proptypes) => {
             })}
           </div>
           <div>
-            <span className="font-libre font-semibold text-default-600 text-xs">
+            <span className="font-libre font-semibold text-neutral-600 text-xs">
               {getEstimatedReadingTime(blog.content)} Min Read
             </span>
           </div>

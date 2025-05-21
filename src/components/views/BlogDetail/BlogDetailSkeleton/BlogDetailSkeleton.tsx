@@ -5,9 +5,9 @@ const BlogDetailSkeleton = () => {
         <div className="bg-gray-200 w-[75%] h-10 animate-pulse" />
         <div className="flex justify-center items-center gap-5 lg:gap-10 mt-2 overflow-hidden">
           <div className="bg-gray-200 w-16 md:w-40 h-6 animate-pulse" />
-          <span className="text-default-600">|</span>
+          <span className="text-neutral-600">|</span>
           <div className="bg-gray-200 w-16 md:w-40 h-6 animate-pulse" />
-          <span className="text-default-600">|</span>
+          <span className="text-neutral-600">|</span>
           <div className="bg-gray-200 w-16 md:w-40 h-6 animate-pulse" />
         </div>
       </div>

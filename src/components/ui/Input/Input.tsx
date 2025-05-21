@@ -2,7 +2,9 @@ interface Proptypes {
   classname?: string;
   defaultValue?: string;
   disabled?: boolean;
-  label: string;
+  errorMessage?: string;
+  isInvalid?: boolean;
+  label?: string;
   maxLength?: number;
   name: string;
   onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
@@ -17,6 +19,8 @@ const Input = (props: Proptypes) => {
     classname,
     defaultValue,
     disabled = false,
+    errorMessage,
+    isInvalid = false,
     label,
     maxLength,
     name,
@@ -28,25 +32,31 @@ const Input = (props: Proptypes) => {
   } = props;
 
   return (
-    <div className="mb-1.5 md:mb-3">
-      <label htmlFor={name} className="block mb-1 font-libre text-sm">
-        {label}
-        {required && <span className="text-red-500">*</span>}
-      </label>
+    <div>
+      <div>
+        {label && (
+          <label htmlFor={name} className="block mb-1 font-libre text-sm">
+            {label}
+            {required && <span className="text-red-500">*</span>}
+          </label>
+        )}
 
-      <input
-        id={name}
-        name={name}
-        type={type}
-        required={required}
-        value={value}
-        className={`p-2 border border-gray-300 rounded w-full bg-white ${classname}`}
-        placeholder={placeholder}
-        onChange={onChange}
-        disabled={disabled}
-        maxLength={maxLength}
-        defaultValue={defaultValue}
-      />
+        <input
+          id={name}
+          name={name}
+          type={type}
+          required={required}
+          value={value}
+          className={`p-2 border border-gray-300 rounded w-full bg-white ${classname}`}
+          placeholder={placeholder}
+          onChange={onChange}
+          disabled={disabled}
+          maxLength={maxLength}
+          defaultValue={defaultValue}
+        />
+      </div>
+
+      {isInvalid && <p className="mt-1 text-red-500 text-xs">{errorMessage}</p>}
     </div>
   );
 };

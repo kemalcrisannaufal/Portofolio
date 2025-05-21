@@ -19,15 +19,15 @@ const BlogDetailView = () => {
               {dataBlog!.title && dataBlog!.title.toUpperCase()}
             </h1>
             <div className="flex justify-center items-center gap-5 lg:gap-10 mt-2">
-              <h2 className="font-libre font-thin text-default-600 text-xs text-center">
+              <h2 className="font-libre font-thin text-neutral-600 text-xs text-center">
                 {getDate(new Date(dataBlog!.createdAt))}
               </h2>
-              <span className="text-default-600">|</span>
-              <h2 className="font-libre font-thin text-default-600 text-xs text-center">
+              <span className="text-neutral-600">|</span>
+              <h2 className="font-libre font-thin text-neutral-600 text-xs text-center">
                 {dataBlog!.category}
               </h2>
-              <span className="text-default-600">|</span>
-              <h2 className="font-libre font-thin text-default-600 text-xs text-center">
+              <span className="text-neutral-600">|</span>
+              <h2 className="font-libre font-thin text-neutral-600 text-xs text-center">
                 {dataBlog!.content &&
                   getEstimatedReadingTime(dataBlog!.content)}{" "}
                 Min Read

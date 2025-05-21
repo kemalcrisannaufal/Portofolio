@@ -29,7 +29,7 @@ const Navbar = () => {
 
         {/* Mobile */}
         <div className="md:hidden flex justify-center items-center w-1/6">
-          <i className="text-default-600 text-lg bx bx-envelope" />
+          <i className="text-neutral-600 text-lg bx bx-envelope" />
         </div>
         <Link href="/" className="w-2/3 md:w-1/5">
           <Image

@@ -11,6 +11,7 @@ const Guestbook = () => {
     isLoadingMessages,
 
     control,
+    errors,
     handleSubmitForm,
 
     handleAddMessage,
@@ -77,7 +78,7 @@ const Guestbook = () => {
 
           <form
             onSubmit={handleSubmitForm(handleAddMessage)}
-            className="flex md:flex-row flex-col md:items-end md:gap-2 bg-slate-200 px-3 py-2 rounded w-full"
+            className="flex md:flex-row flex-col md:items-start gap-2 bg-slate-200 px-3 py-2 rounded w-full"
           >
             <Controller
               control={control}
@@ -85,16 +86,18 @@ const Guestbook = () => {
               render={({ field }) => (
                 <Input
                   {...field}
-                  label="Name"
+                  // label="Name"
                   type="text"
                   disabled={isPendingAddMessage}
                   placeholder="Type your name..."
                   maxLength={20}
+                  isInvalid={errors.name !== undefined}
+                  errorMessage={errors.name?.message}
                 />
               )}
             />
 
-            <div className="flex md:flex-row flex-col flex-grow md:items-end gap-2 w-full">
+            <div className="flex md:flex-row flex-col flex-grow md:items-start gap-2 w-full">
               <div className="flex-grow">
                 <Controller
                   control={control}
@@ -102,39 +105,40 @@ const Guestbook = () => {
                   render={({ field }) => (
                     <Input
                       {...field}
-                      label="Message"
+                      // label="Message"
                       type="text"
                       disabled={isPendingAddMessage}
                       placeholder="Type a message..."
                       maxLength={120}
                       classname=" w-full"
+                      isInvalid={errors.message !== undefined}
+                      errorMessage={errors.message?.message}
                     />
                   )}
                 />
               </div>
-              <div>
-                <Button
-                  classname="bg-black text-white block mb-3 w-full"
-                  type="submit"
-                  disabled={isPendingAddMessage}
-                >
-                  <div>
-                    <div className="md:hidden flex justify-center items-center">
-                      <p className="md:hidden mr-2">
-                        {isPendingAddMessage ? "Sending..." : "Send"}
-                      </p>
-                      <i className="bx bx-send" />
-                    </div>
-                    <div className="hidden md:block">
-                      {isPendingAddMessage ? (
-                        <i className="bx bx-loader" />
-                      ) : (
-                        <i className="bx bx-send" />
-                      )}
-                    </div>
+
+              <Button
+                classname="bg-black text-white block w-full md:max-w-10"
+                type="submit"
+                disabled={isPendingAddMessage}
+              >
+                <div>
+                  <div className="md:hidden flex justify-center items-center">
+                    <p className="md:hidden mr-2">
+                      {isPendingAddMessage ? "Sending..." : "Send"}
+                    </p>
+                    <i className="bx bx-send" />
                   </div>
-                </Button>
-              </div>
+                  <div className="hidden md:block">
+                    {isPendingAddMessage ? (
+                      <i className="bx bx-loader" />
+                    ) : (
+                      <i className="bx bx-send" />
+                    )}
+                  </div>
+                </div>
+              </Button>
             </div>
           </form>
         </div>

@@ -40,7 +40,7 @@ const Home = () => {
               className="w-full object-cover"
             />
           </div>
-          <p className="my-5 font-libre text-default-600 lg:text-md text-sm text-justify leading-7">
+          <p className="my-5 font-libre text-neutral-600 lg:text-md text-sm text-justify leading-7">
             A passionate Informatics fresh graduate from Telkom University with
             a strong interest in Software Engineering and Data Science.
             Currently focused on building web applications using React and

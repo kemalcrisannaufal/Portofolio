@@ -1,4 +1,5 @@
 import AppShell from "@/components/common/AppShell";
+import { ToasterProvider } from "@/contexts/ToasterContext";
 import "@/styles/globals.css";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { SessionProvider } from "next-auth/react";
@@ -17,9 +18,11 @@ export default function App({ Component, pageProps }: AppProps) {
   return (
     <SessionProvider session={pageProps.session}>
       <QueryClientProvider client={queryClient}>
-        <AppShell>
-          <Component {...pageProps} />
-        </AppShell>
+        <ToasterProvider>
+          <AppShell>
+            <Component {...pageProps} />
+          </AppShell>
+        </ToasterProvider>
       </QueryClientProvider>
     </SessionProvider>
   );

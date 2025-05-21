@@ -7,7 +7,7 @@ import { TECH_STACK } from "@/constants/list.constanst";
 
 const About = () => {
   const titleStyle = "mr-2 text-sm lg:text-md font-libre font-semibold";
-  const subtitleStyle = "text-default-600 text-xs lg:text-sm font-libre";
+  const subtitleStyle = "text-neutral-600 text-xs lg:text-sm font-libre";
   const descriptionStyle = "text-xs lg:text-xs font-libre";
 
   const { openDetail, setOpenDetail } = useAbout();

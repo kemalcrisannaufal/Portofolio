@@ -36,7 +36,7 @@ const ProjectCard = (props: Proptypes) => {
       <div className="flex flex-col mt-2 h-28">
         <div className="flex-grow">
           <h2 className="mb-1 font-libre text-lg">{project.name}</h2>
-          <p className="font-libre text-default-600 text-xs line-clamp-2 leading-5">
+          <p className="font-libre text-neutral-600 text-xs line-clamp-2 leading-5">
             {project.description}
           </p>
         </div>
