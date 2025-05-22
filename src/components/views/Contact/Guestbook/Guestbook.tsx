@@ -86,7 +86,6 @@ const Guestbook = () => {
               render={({ field }) => (
                 <Input
                   {...field}
-                  // label="Name"
                   type="text"
                   disabled={isPendingAddMessage}
                   placeholder="Type your name..."
@@ -105,7 +104,6 @@ const Guestbook = () => {
                   render={({ field }) => (
                     <Input
                       {...field}
-                      // label="Message"
                       type="text"
                       disabled={isPendingAddMessage}
                       placeholder="Type a message..."

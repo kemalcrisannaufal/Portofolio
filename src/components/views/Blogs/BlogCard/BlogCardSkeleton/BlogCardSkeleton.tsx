@@ -45,7 +45,9 @@ const BlogCardSkeleton = () => {
         </div>
 
         <div className="md:hidden flex justify-center mt-5">
-          <Button disabled>Read More</Button>
+          <Button disabled classname="dark:text-neutral-200">
+            Read More
+          </Button>
         </div>
       </div>
     </div>

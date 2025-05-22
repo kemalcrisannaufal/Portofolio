@@ -17,7 +17,7 @@ const BlogCard = (props: Proptypes) => {
   const { showProfileImage, setProfileImage } = useBlogCard();
 
   return (
-    <div className="dark:bg-neutral-800 p-2 rounded-xl dark:text-neutral-300 hover:scale-105 hover:transition hover:duration-300">
+    <div className="md:dark:bg-neutral-800 p-2 rounded dark:text-neutral-300 hover:scale-105 hover:transition hover:duration-300">
       <h2 className="lg:hidden block mb-3 font-libre text-lg text-center line-clamp-2">
         {blog.title}
       </h2>
@@ -26,7 +26,7 @@ const BlogCard = (props: Proptypes) => {
         className="block shadow h-[20vh] md:h-[45vh] overflow-hidden cursor-pointer"
       >
         <Image
-          className="w-full h-full object-cover"
+          className="w-full h-full object-cover object-top"
           src={blog.thumbnail}
           width={500}
           height={500}

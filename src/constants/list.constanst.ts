@@ -18,6 +18,8 @@ import {
   SiTensorflow,
   SiStreamlit,
   SiTableau,
+  SiMongodb,
+  SiExpress,
 } from "react-icons/si";
 import { DiHtml5, DiJava, DiPython, DiBootstrap } from "react-icons/di";
 
@@ -53,6 +55,19 @@ const CONTACTS = [
     url: "https://x.com/HaItsMe_Al",
   },
 ];
+
+const PAGE_DESCRIPTION = {
+  HOME: "Welcome to Kemal Crisannaufal's portfolio — showcasing skills in software engineering, machine learning, and web development. Explore projects, blogs, experience, and more.",
+  ABOUT:
+    "Learn more about Kemal Crisannaufal, an informatics graduate passionate about software engineering and data science, with a proven track record of academic and professional achievements.",
+  PROJECTS:
+    "Explore a curated collection of projects demonstrating expertise in web development, machine learning, and problem solving using modern technologies.",
+  PROJECT_DETAIL:
+    "Dive deep into the details of the project — features, technologies used, challenges solved, and key outcomes.",
+  BLOG: "Read insightful articles and tutorials on software development, programming tips, and industry trends by Kemal Crisannaufal.",
+  CONTACT:
+    "Get in touch with Kemal Crisannaufal for collaboration, inquiries, or opportunities in software development and data science.",
+};
 
 const TECH_STACK = [
   {
@@ -170,6 +185,16 @@ const TECH_STACK = [
     icon: SiTableau,
     className: "text-blue-600 text-md lg:text-2xl md:text-xl",
   },
+  {
+    name: "MongoDB",
+    icon: SiMongodb,
+    className: "text-green-600 text-md lg:text-2xl md:text-xl",
+  },
+  {
+    name: "Express.js",
+    icon: SiExpress,
+    className: "text-black text-md lg:text-2xl md:text-xl",
+  },
 ];
 
-export { CONTACTS, TECH_STACK };
+export { CONTACTS, PAGE_DESCRIPTION, TECH_STACK };

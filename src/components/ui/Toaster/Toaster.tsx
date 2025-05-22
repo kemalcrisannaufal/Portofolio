@@ -12,13 +12,13 @@ const Toaster = (props: IToaster) => {
   return (
     <div
       role="alert"
-      className="top-8 right-8 z-50 fixed flex items-center gap-5 bg-white shadow p-3 border border-gray-300 rounded max-w-xs"
+      className="top-8 right-8 z-50 fixed flex items-center gap-5 bg-white dark:bg-neutral-700 shadow p-3 border border-gray-300 rounded max-w-xs dark:text-neutral-300"
     >
       {iconList[type]}
       <div>
         <p
           className={`font-semibold  ${
-            type === "Success" ? "text-green-800" : "text-red-500"
+            type === "Success" ? "text-green-600" : "text-red-500"
           }`}
         >
           {type}

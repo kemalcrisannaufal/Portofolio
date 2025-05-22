@@ -15,7 +15,20 @@ const useProject = () => {
     queryFn: getProjects,
   });
 
-  return { dataProjects, isLoadingProjects };
+  const getTopFeaturedProject = (dataProjects: Project[]) => {
+    return dataProjects.filter((project) => project.isTopFeatured);
+  };
+
+  const getNotTopFeaturedProject = (dataProjects: Project[]) => {
+    return dataProjects.filter((project) => !project.isTopFeatured);
+  };
+
+  return {
+    dataProjects,
+    getNotTopFeaturedProject,
+    getTopFeaturedProject,
+    isLoadingProjects,
+  };
 };
 
 export default useProject;

@@ -18,7 +18,7 @@ const AboutSubsectionBlock = (props: Proptypes) => {
                 src={image}
                 width={500}
                 height={500}
-                alt={"image"}
+                alt={""}
                 priority
                 className="w-full h-full object-contain scale-75"
               />

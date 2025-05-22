@@ -116,7 +116,7 @@ const ModalAddProject = (props: Proptypes) => {
   return (
     <Modal onClose={onClose}>
       <Title>Add Project</Title>
-      <div className="mt-5">
+      <div className="mt-5 dark:text-neutral-300">
         <form onSubmit={handleSubmit}>
           <div>
             <Divider />

@@ -7,8 +7,9 @@ import { ToasterContext } from "@/contexts/ToasterContext";
 import { useRouter } from "next/router";
 import { ReactNode, useContext, useEffect } from "react";
 
-const DISABLED_CONTACT_SIDEBAR = ["/contact"];
-const DISABLED_NAVBAR = ["/auth/login"];
+const DISABLED_CONTACT_SIDEBAR = ["/contact", "/auth/login", "/admin/projects"];
+const DISABLED_NAVBAR = ["/auth/login", "/admin", "/admin/projects"];
+const DISABLED_FOOTER = ["/auth/login", "/admin", "/admin/projects"];
 
 interface Proptypes {
   children: ReactNode;
@@ -39,7 +40,7 @@ const AppShell = (props: Proptypes) => {
           <Toaster type={toaster.type} message={toaster.message} />
         )}
       </div>
-      <Footer />
+      {!DISABLED_FOOTER.includes(router.pathname) && <Footer />}
 
       <ThemeToggle />
     </main>

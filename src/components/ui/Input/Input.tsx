@@ -47,7 +47,7 @@ const Input = (props: Proptypes) => {
           type={type}
           required={required}
           value={value}
-          className={`p-2 border border-gray-300 rounded w-full bg-white dark:bg-neutral-300 dark:text-black ${classname}`}
+          className={`p-2 border border-gray-300 rounded w-full bg-white dark:bg-neutral-800 dark:text-white ${classname}`}
           placeholder={placeholder}
           onChange={onChange}
           disabled={disabled}

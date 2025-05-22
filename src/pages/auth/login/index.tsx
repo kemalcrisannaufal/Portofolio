@@ -1,14 +1,11 @@
-import LoginAdminView from "@/components/views/Login";
-import Head from "next/head";
+import MainLayout from "@/components/layouts/MainLayout";
+import LoginAdmin from "@/components/views/Login";
 
 const LoginAdminPage = () => {
   return (
-    <>
-      <Head>
-        <title>Admin | Login</title>
-      </Head>
-      <LoginAdminView />
-    </>
+    <MainLayout title="Admin | Login">
+      <LoginAdmin />
+    </MainLayout>
   );
 };
 

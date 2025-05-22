@@ -3,6 +3,7 @@ import Button from "@/components/ui/Button";
 import TypingText from "@/components/ui/TypingText";
 import Image from "next/image";
 import { fadeInUp } from "@/lib/animations/motionVariants";
+import { CONTACTS } from "@/constants/list.constanst";
 
 const Home = () => {
   return (
@@ -12,7 +13,6 @@ const Home = () => {
       initial="hidden"
       animate="visible"
     >
-      {/* FOTO PROFIL - DESKTOP */}
       <div className="hidden md:block relative rounded md:w-1/3 overflow-hidden hover:scale-110 duration-300">
         <Image
           src="/assets/images/home/foto_fix.jpg"
@@ -25,7 +25,6 @@ const Home = () => {
         <div className="hidden dark:block top-0 left-0 z-50 absolute bg-gradient-to-b from-transparent via-black/15 to-black/50 w-full h-full" />
       </div>
 
-      {/* TEKS & ISI */}
       <div className="w-full md:w-2/3">
         <h1 className="font-libre font-thin text-lg md:text-xl lg:text-2xl">
           Hello, It&apos;s me
@@ -42,7 +41,6 @@ const Home = () => {
           />
         </div>
 
-        {/* FOTO PROFIL - MOBILE */}
         <div className="md:hidden flex justify-center items-center mt-5 overflow-hidden">
           <Image
             src="/assets/images/home/foto_fix.jpg"
@@ -54,7 +52,6 @@ const Home = () => {
           />
         </div>
 
-        {/* PARAGRAF */}
         <p className="my-5 font-libre text-gray-600 lg:text-md dark:text-neutral-300 text-sm text-justify leading-7">
           A passionate Informatics fresh graduate from Telkom University with a
           strong interest in Software Engineering and Data Science. Currently
@@ -62,9 +59,8 @@ const Home = () => {
           field of Data Science, including Machine Learning
         </p>
 
-        {/* TOMBOL */}
         <div>
-          <Button onClick={() => {}}>
+          <Button onClick={() => window.open(CONTACTS[1].url)}>
             <div className="flex items-center">
               <i className="mr-2 text-lg bx bx-briefcase" />
               <p className="font-libre font-thin text-sm">HIRE ME</p>

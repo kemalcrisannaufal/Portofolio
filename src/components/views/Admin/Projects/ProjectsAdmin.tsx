@@ -7,10 +7,10 @@ import Image from "next/image";
 import ModalUpdateProject from "./ModalUpdateProject";
 import { deleteFile } from "@/lib/firebase/service";
 import projectServices from "@/services/projects";
-import useProject from "./useProjects";
+import useProjectsAdmin from "./useProjectsAdmin";
 
 const ProjectsAdmin = () => {
-  const { dataProjects } = useProject();
+  const { dataProjects } = useProjectsAdmin();
   const [projects, setProjects] = useState<Project[]>([]);
   const [modalAddProject, setModalAddProject] = useState(false);
   const [modalUpdateProject, setModalUpdateProject] = useState<Project>(
@@ -61,7 +61,7 @@ const ProjectsAdmin = () => {
   const cellStyle = "p-2 text-center";
   return (
     <>
-      <div className="px-10 md:px-20 lg:px-48 pb-10">
+      <div className="dark:text-neutral-300">
         <div className="flex justify-between items-center">
           <Title>Projects</Title>
           <Button onClick={() => setModalAddProject(true)}>

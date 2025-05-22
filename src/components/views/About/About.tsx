@@ -179,7 +179,7 @@ const About = () => {
                     key={index}
                     className="group relative dark:bg-neutral-600/25 mt-2 p-2 border border-gray-200 dark:border-neutral-600 rounded-full cursor-pointer"
                   >
-                    <div className="hidden group-hover:block -top-5 absolute bg-gray-200 p-2 rounded duration-300">
+                    <div className="hidden group-hover:block -top-5 z-50 absolute bg-gray-200 p-2 rounded duration-300">
                       <p className="font-mono text-xs">{stack.name}</p>
                     </div>
                     <stack.icon className={stack.className} />
