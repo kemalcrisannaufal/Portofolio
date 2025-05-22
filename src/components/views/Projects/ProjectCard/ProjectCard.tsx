@@ -13,7 +13,7 @@ const ProjectCard = (props: Proptypes) => {
   return (
     <div
       key={project.id}
-      className="dark:bg-neutral-800 md:p-2 border-gray-100 rounded overflow-hidden hover:scale-105 hover:transition duration-300"
+      className="dark:bg-gradient-to-b dark:from-neutral-600 dark:via-neutral-700 dark:to-neutral-800 md:p-2 border-gray-100 rounded overflow-hidden hover:scale-105 hover:transition duration-300"
     >
       <Link
         href={`/projects/${project.id}`}
@@ -40,7 +40,7 @@ const ProjectCard = (props: Proptypes) => {
         </div>
       </Link>
 
-      <div className="flex flex-col mt-2 p-1 h-28 dark:text-neutral-300">
+      <div className="flex flex-col mt-2 p-2 h-32 dark:text-neutral-300">
         <div className="flex-grow">
           <h2 className="mb-1 font-libre text-lg">{project.name}</h2>
           <p className="font-libre text-gray-600 dark:text-neutral-300 text-xs line-clamp-2 leading-5">
