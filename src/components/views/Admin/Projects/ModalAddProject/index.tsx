@@ -8,12 +8,12 @@ import TextArea from "@/components/ui/TextArea";
 import Title from "@/components/ui/Title";
 import { uploadFile } from "@/lib/firebase/service";
 import projectServices from "@/services/projects";
-import { Project } from "@/types/project.type";
 import { Dispatch, FormEvent, SetStateAction, useState } from "react";
 import Image from "next/image";
 import Divider from "@/components/ui/Divider";
 import { getExtension } from "@/utils/image";
 import { TECH_STACK } from "@/constants/list.constanst";
+import { Project } from "@/types/project.type";
 
 type Proptypes = {
   onClose: () => void;
@@ -94,6 +94,7 @@ const ModalAddProject = (props: Proptypes) => {
         link: form.link.value,
         details: details.filter((detail) => detail !== ""),
         techStacks: techStackChecked,
+        isTopFeatured: form.topFeatured.value,
         createdAt: new Date(),
         updatedAt: new Date(),
       };
@@ -145,6 +146,14 @@ const ModalAddProject = (props: Proptypes) => {
                   name: "Artificial Intelligence",
                   value: "Artificial Intelligence",
                 },
+              ]}
+            />
+            <Select
+              name="topFeatured"
+              label="Top Featured"
+              options={[
+                { name: "Yes", value: "true" },
+                { name: "No", value: "false" },
               ]}
             />
           </div>

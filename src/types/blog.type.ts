@@ -1,4 +1,4 @@
-export type Blog = {
+export interface Blog {
   id?: string;
   title: string;
   slug: string;
@@ -9,4 +9,4 @@ export type Blog = {
   topFeatured: boolean;
   createdAt: Date;
   updatedAt: Date;
-};
+}

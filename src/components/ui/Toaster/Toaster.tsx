@@ -12,7 +12,7 @@ const Toaster = (props: IToaster) => {
   return (
     <div
       role="alert"
-      className="top-8 right-8 z-50 fixed flex items-center gap-5 shadow p-3 border border-gray-300 rounded max-w-xs"
+      className="top-8 right-8 z-50 fixed flex items-center gap-5 bg-white shadow p-3 border border-gray-300 rounded max-w-xs"
     >
       {iconList[type]}
       <div>

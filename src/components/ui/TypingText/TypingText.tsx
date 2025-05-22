@@ -42,7 +42,7 @@ const TypingText = (props: Proptypes) => {
   }, [charIndex, isDeleting, wordIndex]);
 
   return (
-    <div className={`w-max flex items-center ${boxClassName}`}>
+    <div className={`w-max flex items-center  ${boxClassName}`}>
       <p className={`${textClassName}`}>{text}</p>
     </div>
   );

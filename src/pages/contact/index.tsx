@@ -1,14 +1,11 @@
+import MainLayout from "@/components/layouts/MainLayout";
 import Contact from "@/components/views/Contact";
-import Head from "next/head";
 
 const ContactPage = () => {
   return (
-    <>
-      <Head>
-        <title>Contact</title>
-      </Head>
+    <MainLayout title="Contact">
       <Contact />
-    </>
+    </MainLayout>
   );
 };
 

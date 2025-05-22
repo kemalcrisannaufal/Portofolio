@@ -24,15 +24,16 @@ const Modal = (props: Proptypes) => {
   return (
     <div className="z-50 fixed inset-0 flex justify-center items-center bg-black/50 p-5 w-full min-h-dvh">
       <div
-        className="relative bg-white p-5 rounded lg:w-[50%] max-h-[75%] overflow-y-auto"
+        className="relative bg-white dark:bg-neutral-800 p-5 rounded lg:w-[50%] max-h-[75%] overflow-y-auto"
         ref={ref}
       >
         {children}
         <button
           className="top-4 right-4 absolute cursor-pointer"
           onClick={onClose}
+          aria-label="close modal"
         >
-          <i className="bg-gray-200 p-2 rounded-full text-xl bx bx-x" />
+          <i className="bg-gray-200 dark:bg-neutral-300 p-2 rounded-full text-xl bx bx-x" />
         </button>
       </div>
     </div>

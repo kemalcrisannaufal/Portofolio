@@ -19,7 +19,7 @@ const Guestbook = () => {
   } = useGuestbook();
 
   return (
-    <div className="mt-10">
+    <div className="mt-10 dark:text-neutral-300">
       <h1 className="font-libre text-xl lg:text-2xl">Guestbook</h1>
       <p className="font-libre text-xs md:text-sm lg:text-base">
         Drop your thoughts, feedback, or just say hi!
@@ -38,8 +38,8 @@ const Guestbook = () => {
                           <div className="bg-black mr-3 rounded-full w-10 md:w-12 h-10 md:h-12 animate-pulse" />
                         </div>
                         <div className="px-4 py-2 rounded-xl w-full">
-                          <div className="bg-gray-200 w-1/2 h-6 animate-pulse" />
-                          <div className="bg-gray-200 mt-2 w-full h-10 animate-pulse" />
+                          <div className="bg-gray-200 dark:bg-neutral-600 w-1/2 h-6 animate-pulse" />
+                          <div className="bg-gray-200 dark:bg-neutral-600 mt-2 w-full h-10 animate-pulse" />
                         </div>
                       </div>
                     );
@@ -55,7 +55,7 @@ const Guestbook = () => {
                         </div>
                       </div>
 
-                      <div className="bg-gray-200 px-4 py-2 rounded-xl">
+                      <div className="bg-gray-200 dark:bg-neutral-600 px-4 py-2 rounded-xl dark:text-neutral-200">
                         <div className="flex items-center mb-0.5">
                           <span className="mr-2 font-libre font-semibold text-xs md:text-sm">
                             {item.name}
@@ -78,7 +78,7 @@ const Guestbook = () => {
 
           <form
             onSubmit={handleSubmitForm(handleAddMessage)}
-            className="flex md:flex-row flex-col md:items-start gap-2 bg-slate-200 px-3 py-2 rounded w-full"
+            className="flex md:flex-row flex-col md:items-start gap-2 bg-slate-200 dark:bg-neutral-600 px-3 py-2 rounded w-full"
           >
             <Controller
               control={control}

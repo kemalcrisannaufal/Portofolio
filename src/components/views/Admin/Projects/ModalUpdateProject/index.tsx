@@ -133,6 +133,7 @@ const ModalUpdateProject = (props: Proptypes) => {
       link: form.link.value,
       details: details.filter((detail) => detail !== ""),
       techStacks: techStackChecked,
+      isTopFeatured: form.topFeatured.value,
       updatedAt: new Date(),
     };
 
@@ -182,6 +183,14 @@ const ModalUpdateProject = (props: Proptypes) => {
                   name: "Artificial Intelligence",
                   value: "Artificial Intelligence",
                 },
+              ]}
+            />
+            <Select
+              name="topFeatured"
+              label="Top Featured"
+              options={[
+                { name: "Yes", value: "true" },
+                { name: "No", value: "false" },
               ]}
             />
           </div>

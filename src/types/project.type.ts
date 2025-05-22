@@ -1,4 +1,4 @@
-export type Project = {
+export interface Project {
   id?: string;
   name: string;
   thumbnail: string;
@@ -9,6 +9,7 @@ export type Project = {
   github?: string;
   details?: string[];
   techStacks: string[];
+  isTopFeatured: boolean;
   createdAt?: Date;
   updatedAt?: Date;
-};
+}

@@ -1,15 +1,15 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import instance from "@/lib/axios/instance";
-
-const endpoint = "/api/blogs";
+import endpoint from "../endpoint.constants";
 
 const blogsServices = {
-  getAllBlogs: () => instance.get(endpoint),
-  postBlog: (data: any) => instance.post(endpoint, { data }),
+  getAllBlogs: () => instance.get(endpoint.BLOG),
+  postBlog: (data: any) => instance.post(endpoint.BLOG, { data }),
   updateBlog: (id: string, data: any) =>
-    instance.put(`${endpoint}/${id}`, { data }),
+    instance.put(`${endpoint.BLOG}/${id}`, { data }),
 
-  getBlogBySlug: (slug: string) => instance.get(`${endpoint}/blog/${slug}`),
+  getBlogBySlug: (slug: string) =>
+    instance.get(`${endpoint.BLOG}/blog/${slug}`),
 };
 
 export default blogsServices;

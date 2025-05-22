@@ -1,10 +1,11 @@
 import Link from "next/link";
 import Guestbook from "./Guestbook";
 import { CONTACTS } from "@/constants/list.constanst";
+import { motion } from "framer-motion";
 
 const Contact = () => {
   return (
-    <div className="px-10 md:px-20 lg:px-48 pb-10 lg:pb-20">
+    <div className="dark:text-neutral-300">
       <div>
         <h1 className="font-libre text-xl lg:text-2xl">Let&apos;s connect. </h1>
         <p className="font-libre text-xs md:text-sm lg:text-base">
@@ -15,21 +16,34 @@ const Contact = () => {
         <div className="gap-2 grid grid-cols-1 md:grid-cols-3 lg:grid-cols-6 mt-3">
           {CONTACTS.map((item, index) => {
             return (
-              <Link
-                href={item.url}
+              <motion.div
                 key={index}
-                className="flex justify-center items-center hover:bg-black mt-1 md:mt-5 p-2 border border-gray-200 rounded w-full overflow-hidden hover:text-white hover:transition-all hover:duration-300 cursor-pointer"
+                initial={{ opacity: 0, x: 20 }}
+                animate={{
+                  opacity: 1,
+                  x: 0,
+                  transition: {
+                    duration: 0.5,
+                    delay: index * 0.3,
+                    ease: "easeInOut",
+                  },
+                }}
               >
-                <i className={`bx ${item.icon} text-xl md:text-2xl mr-2`} />
-                <span
-                  className={`font-libre md:text-md text-sm ${
-                    item.name === "LinkedIn" ||
-                    (item.name === "Email" && "mt-1")
-                  }`}
+                <Link
+                  href={item.url}
+                  className="flex justify-center items-center hover:bg-black dark:bg-neutral-800 dark:hover:bg-neutral-600 shadow mt-1 md:mt-5 p-2 border border-gray-200 rounded w-full overflow-hidden hover:text-white hover:transition-all hover:duration-300 cursor-pointer"
                 >
-                  {item.name}
-                </span>
-              </Link>
+                  <i className={`bx ${item.icon} text-xl md:text-2xl mr-2`} />
+                  <span
+                    className={`font-libre md:text-md text-sm ${
+                      item.name === "LinkedIn" ||
+                      (item.name === "Email" && "mt-1")
+                    }`}
+                  >
+                    {item.name}
+                  </span>
+                </Link>
+              </motion.div>
             );
           })}
         </div>

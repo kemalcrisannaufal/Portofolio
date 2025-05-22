@@ -1,5 +1,7 @@
 import ContactSideBar from "@/components/fragments/ContactSidebar";
+import Footer from "@/components/fragments/Footer";
 import Navbar from "@/components/fragments/Navbar";
+import ThemeToggle from "@/components/common/ThemeToggle";
 import Toaster from "@/components/ui/Toaster";
 import { ToasterContext } from "@/contexts/ToasterContext";
 import { useRouter } from "next/router";
@@ -26,17 +28,20 @@ const AppShell = (props: Proptypes) => {
   }, [toaster, setToaster]);
 
   return (
-    <main>
+    <main className="flex flex-col bg-white dark:bg-neutral-900 min-h-screen">
       {!DISABLED_NAVBAR.includes(router.pathname) && <Navbar />}
       {!DISABLED_CONTACT_SIDEBAR.includes(router.pathname) && (
         <ContactSideBar />
       )}
-      <div className="mt-5">
+      <div className="flex-grow mt-5">
         {children}
         {toaster.type !== "" && (
           <Toaster type={toaster.type} message={toaster.message} />
         )}
       </div>
+      <Footer />
+
+      <ThemeToggle />
     </main>
   );
 };

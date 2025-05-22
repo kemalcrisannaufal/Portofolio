@@ -1,18 +1,22 @@
 import Image from "next/image";
 import Link from "next/link";
 import { NAVBAR_ITEMS } from "../navbar.constant";
+import { motion } from "framer-motion";
 
 interface Proptypes {
-  isDrawerOpen: boolean;
   setIsDrawerOpen: React.Dispatch<React.SetStateAction<boolean>>;
 }
 const Drawer = (props: Proptypes) => {
-  const { isDrawerOpen, setIsDrawerOpen } = props;
+  const { setIsDrawerOpen } = props;
   return (
-    <div
-      className={`lg:hidden left-0 top-0 fixed flex flex-col gap-4 p-5 w-4/5 min-h-screen transform bg-white z-50 ${
-        isDrawerOpen ? "translate-x-0" : "-translate-x-full"
-      } transition-transform duration-500 ease-in-out`}
+    <motion.div
+      initial={{ x: "-100%" }}
+      animate={{
+        x: 0,
+        transition: { duration: 0.5, ease: "easeInOut" },
+      }}
+      exit={{ x: "-100%", transition: { duration: 0.5 } }}
+      className="lg:hidden top-0 left-0 z-50 fixed flex flex-col gap-4 bg-white dark:bg-neutral-800 p-5 w-4/5 min-h-screen"
     >
       <div className="flex justify-center items-center mb-5">
         <Link href="/" onClick={() => setIsDrawerOpen(false)}>
@@ -22,7 +26,15 @@ const Drawer = (props: Proptypes) => {
             width={500}
             height={500}
             priority
-            className="w-full object-contain"
+            className="dark:hidden w-full object-contain"
+          />
+          <Image
+            src={"/assets/images/logo-white.png"}
+            alt="logo"
+            width={500}
+            height={500}
+            priority
+            className="hidden dark:block w-full object-contain"
           />
         </Link>
       </div>
@@ -39,7 +51,7 @@ const Drawer = (props: Proptypes) => {
           </Link>
         );
       })}
-    </div>
+    </motion.div>
   );
 };
 

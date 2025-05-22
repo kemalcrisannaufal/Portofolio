@@ -1,15 +1,14 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import instance from "@/lib/axios/instance";
-
-const endpoint = "/api/projects";
+import endpoint from "../endpoint.constants";
 
 const projectServices = {
-  getAllProjects: () => instance.get(endpoint),
-  getProject: (id: string) => instance.get(`${endpoint}/${id}`),
-  addProject: (data: any) => instance.post(endpoint, { data }),
+  getAllProjects: () => instance.get(endpoint.PROJECT),
+  getProject: (id: string) => instance.get(`${endpoint.PROJECT}/${id}`),
+  addProject: (data: any) => instance.post(endpoint.PROJECT, { data }),
   updateProject: (id: string, data: any) =>
-    instance.put(`${endpoint}/${id}`, { data }),
-  deleteProject: (id: string) => instance.delete(`${endpoint}/${id}`),
+    instance.put(`${endpoint.PROJECT}/${id}`, { data }),
+  deleteProject: (id: string) => instance.delete(`${endpoint.PROJECT}/${id}`),
 };
 
 export default projectServices;

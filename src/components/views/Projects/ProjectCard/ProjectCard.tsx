@@ -2,6 +2,7 @@ import { Project } from "@/types/project.type";
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/router";
+import { SiPinboard } from "react-icons/si";
 
 interface Proptypes {
   project: Project;
@@ -12,7 +13,7 @@ const ProjectCard = (props: Proptypes) => {
   return (
     <div
       key={project.id}
-      className="md:p-2 border-gray-100 rounded overflow-hidden hover:scale-105 hover:transition duration-300"
+      className="dark:bg-neutral-800 md:p-2 border-gray-100 rounded overflow-hidden hover:scale-105 hover:transition duration-300"
     >
       <Link
         href={`/projects/${project.id}`}
@@ -26,6 +27,12 @@ const ProjectCard = (props: Proptypes) => {
           priority
           className="w-full h-full object-cover"
         />
+        {project.isTopFeatured && (
+          <div className="top-0 right-0 absolute flex items-center bg-yellow-500 px-3 py-1 rounded-bl">
+            <SiPinboard className="mr-2 text-white" />
+            <p className="text-white text-sm">Top Featured</p>
+          </div>
+        )}
 
         <div className="hidden z-10 absolute inset-0 group-hover:flex justify-center items-center bg-black/50 w-full h-full duration-300 group-hover:duration-500 group-hover:transform">
           <h2 className="mr-2 font-libre text-white text-lg">View Project</h2>
@@ -33,10 +40,10 @@ const ProjectCard = (props: Proptypes) => {
         </div>
       </Link>
 
-      <div className="flex flex-col mt-2 h-28">
+      <div className="flex flex-col mt-2 p-1 h-28 dark:text-neutral-300">
         <div className="flex-grow">
           <h2 className="mb-1 font-libre text-lg">{project.name}</h2>
-          <p className="font-libre text-neutral-600 text-xs line-clamp-2 leading-5">
+          <p className="font-libre text-gray-600 dark:text-neutral-300 text-xs line-clamp-2 leading-5">
             {project.description}
           </p>
         </div>

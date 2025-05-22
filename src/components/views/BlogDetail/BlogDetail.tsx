@@ -14,20 +14,20 @@ const BlogDetailView = () => {
         <BlogDetailSkeleton />
       ) : (
         dataBlog && (
-          <div>
-            <h1 className="font-libre font-thin text-2xl lg:text-3xl text-center">
+          <div className="dark:text-neutral-300">
+            <h1 className="font-libre font-thin dark:text-neutral-200 text-2xl lg:text-3xl text-center">
               {dataBlog!.title && dataBlog!.title.toUpperCase()}
             </h1>
             <div className="flex justify-center items-center gap-5 lg:gap-10 mt-2">
-              <h2 className="font-libre font-thin text-neutral-600 text-xs text-center">
+              <h2 className="font-libre font-thin text-gray-600 dark:text-neutral-300 text-xs text-center">
                 {getDate(new Date(dataBlog!.createdAt))}
               </h2>
-              <span className="text-neutral-600">|</span>
-              <h2 className="font-libre font-thin text-neutral-600 text-xs text-center">
+              <span className="text-gray-600 dark:text-neutral-300">|</span>
+              <h2 className="font-libre font-thin text-gray-600 dark:text-neutral-300 text-xs text-center">
                 {dataBlog!.category}
               </h2>
-              <span className="text-neutral-600">|</span>
-              <h2 className="font-libre font-thin text-neutral-600 text-xs text-center">
+              <span className="text-gray-600 dark:text-neutral-300">|</span>
+              <h2 className="font-libre font-thin text-gray-600 dark:text-neutral-300 text-xs text-center">
                 {dataBlog!.content &&
                   getEstimatedReadingTime(dataBlog!.content)}{" "}
                 Min Read

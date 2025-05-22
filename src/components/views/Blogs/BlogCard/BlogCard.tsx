@@ -17,7 +17,7 @@ const BlogCard = (props: Proptypes) => {
   const { showProfileImage, setProfileImage } = useBlogCard();
 
   return (
-    <div className="p-3 rounded-xl hover:scale-105 hover:transition hover:duration-300">
+    <div className="dark:bg-neutral-800 p-2 rounded-xl dark:text-neutral-300 hover:scale-105 hover:transition hover:duration-300">
       <h2 className="lg:hidden block mb-3 font-libre text-lg text-center line-clamp-2">
         {blog.title}
       </h2>
@@ -35,8 +35,8 @@ const BlogCard = (props: Proptypes) => {
         />
       </Link>
 
-      <div className="mt-5">
-        <h2 className="hidden lg:block font-libre text-lg line-clamp-2">
+      <div className="mt-3">
+        <h2 className="hidden lg:block font-libre dark:text-neutral-200 text-lg line-clamp-2">
           {blog.title}
         </h2>
         <div className="flex justify-between items-center mt-1">
@@ -45,7 +45,7 @@ const BlogCard = (props: Proptypes) => {
               return (
                 <span
                   key={index}
-                  className="block bg-gray-200 px-3 py-1 w-max font-libre text-xs"
+                  className="block bg-gray-200 dark:bg-neutral-600 px-3 py-1 rounded w-max font-libre text-xs"
                 >
                   {item}
                 </span>
@@ -53,7 +53,7 @@ const BlogCard = (props: Proptypes) => {
             })}
           </div>
           <div>
-            <span className="font-libre font-semibold text-neutral-600 text-xs">
+            <span className="font-libre font-semibold text-gray-600 dark:text-neutral-300 text-xs">
               {getEstimatedReadingTime(blog.content)} Min Read
             </span>
           </div>
@@ -67,7 +67,7 @@ const BlogCard = (props: Proptypes) => {
         <div className="hidden md:flex justify-between items-center mt-5">
           <div className="flex items-center">
             <div
-              className="flex justify-center items-center bg-gray-200 mr-3 border border-gray-200 rounded-full w-12 h-12 overflow-hidden cursor-pointer"
+              className="flex justify-center items-center bg-gray-200 dark:bg-neutral-600 mr-3 border border-gray-200 rounded-full w-12 h-12 overflow-hidden cursor-pointer"
               onMouseEnter={() => setProfileImage(true)}
               onMouseLeave={() => setProfileImage(false)}
             >

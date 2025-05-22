@@ -1,11 +1,10 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
 import instance from "@/lib/axios/instance";
-
-const endpoint = "/api/guestbook";
+import endpoint from "../endpoint.constants";
+import Message from "@/types/message.type";
 
 const guestbookServices = {
-  addMessage: (data: any) => instance.post(endpoint, { data }),
-  getAllMessages: () => instance.get(endpoint),
+  addMessage: (data: Message) => instance.post(endpoint.GUESTBOOK, { data }),
+  getAllMessages: () => instance.get(endpoint.GUESTBOOK),
 };
 
 export default guestbookServices;

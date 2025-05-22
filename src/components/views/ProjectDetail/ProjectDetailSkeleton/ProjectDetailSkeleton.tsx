@@ -2,23 +2,23 @@ const ProjectDetailSkeleton = () => {
   return (
     <>
       <div className="flex flex-col items-center">
-        <div className="bg-gray-200 w-[50%] h-16 animate-pulse" />
-        <div className="bg-gray-200 mt-3 w-[80%] h-6 animate-pulse" />
-        <div className="bg-gray-200 mt-3 w-[80%] h-6 animate-pulse" />
+        <div className="bg-gray-200 dark:bg-neutral-600 w-[50%] h-16 animate-pulse" />
+        <div className="bg-gray-200 dark:bg-neutral-600 mt-3 w-[80%] h-6 animate-pulse" />
+        <div className="bg-gray-200 dark:bg-neutral-600 mt-3 w-[80%] h-6 animate-pulse" />
       </div>
       <div className="flex lg:flex-row flex-col-reverse gap-2 mt-5 lg:h-[75vh]">
-        <div className="scrollbar-hidden flex lg:flex-col gap-3 pb-2 w-full lg:w-[15%] overflow-x-auto lg:overflow-y-auto">
+        <div className="scrollbar-hidden flex lg:flex-col items-center gap-3 pb-2 w-full lg:w-[15%] overflow-x-auto lg:overflow-y-auto">
           {Array(5)
             .fill(0)
             .map((_, index) => (
               <div
                 key={index}
-                className="flex-shrink-0 bg-gray-200 shadow border border-gray-300 rounded w-28 h-20 animate-pulse"
+                className="flex-shrink-0 bg-gray-200 dark:bg-neutral-600 shadow border border-gray-300 rounded w-32 h-20 animate-pulse"
               />
             ))}
         </div>
 
-        <div className="bg-gray-200 w-full lg:w-[85%] h-[300px] lg:h-full animate-pulse" />
+        <div className="bg-gray-200 dark:bg-neutral-600 w-full lg:w-[85%] h-[300px] lg:h-full animate-pulse" />
       </div>
 
       <div className="mt-10">
@@ -29,7 +29,7 @@ const ProjectDetailSkeleton = () => {
               .fill(0)
               .map((detail, index) => (
                 <li key={index} className="mb-2 ml-5">
-                  <span className="block bg-gray-200 w-full lg:w-[75%] h-6 animate-pulse" />
+                  <span className="block bg-gray-200 dark:bg-neutral-600 w-full lg:w-[75%] h-6 animate-pulse" />
                 </li>
               ))}
           </ul>
@@ -66,7 +66,7 @@ const ProjectDetailSkeleton = () => {
                 return (
                   <div
                     key={index}
-                    className="bg-gray-200 rounded w-10 h-10 animate-pulse"
+                    className="bg-gray-200 dark:bg-neutral-600 rounded w-10 h-10 animate-pulse"
                   />
                 );
               })}

@@ -19,7 +19,7 @@ const Button = (props: Proptypes) => {
   return (
     <button
       type={type}
-      className={`hover:bg-black p-2 border hover:text-white text-sm md:text-base cursor-pointer ${classname}`}
+      className={`hover:bg-black dark:hover:bg-neutral-600 p-2 border border-white hover:text-neutral-300 text-sm md:text-base cursor-pointer ${classname}`}
       onClick={onClick}
       disabled={disabled}
     >

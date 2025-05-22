@@ -11,17 +11,17 @@ const HamburgerMenu = (props: Proptypes) => {
       onClick={() => setIsMenuOpen(!isMenuOpen)}
     >
       <span
-        className={`left-0 top-0 absolute bg-black w-full h-0.5 transition-all duration-300 ${
+        className={`left-0 top-0 absolute bg-black dark:bg-neutral-300 w-full h-0.5 transition-all duration-300 ${
           isMenuOpen && "rotate-45 translate-y-1.5"
         }`}
       />
       <span
-        className={`left-0 top-1.5 absolute bg-black w-full h-0.5 transition-all duration-300 ${
+        className={`left-0 top-1.5 absolute bg-black dark:bg-neutral-300 w-full h-0.5 transition-all duration-300 ${
           isMenuOpen && "opacity-0"
         }`}
       />
       <span
-        className={`left-0 top-3 absolute bg-black w-full h-0.5 transition-all duration-300 ${
+        className={`left-0 top-3 absolute bg-black dark:bg-neutral-300 w-full h-0.5 transition-all duration-300 ${
           isMenuOpen && "-rotate-45 -translate-y-1.5"
         }`}
       />

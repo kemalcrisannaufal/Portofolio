@@ -6,7 +6,10 @@ const ContactSideBar = () => {
       <div>
         {CONTACTS.map((item, index) => {
           return (
-            <div key={index} className="hover:bg-black hover:text-white">
+            <div
+              key={index}
+              className="hover:bg-black dark:bg-neutral-800 dark:hover:bg-neutral-600 hover:text-white dark:text-white"
+            >
               <a href={item.url}>
                 <i className={`bx ${item.icon} text-xl p-2`} />
               </a>
