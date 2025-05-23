@@ -8,7 +8,7 @@ import TextArea from "@/components/ui/TextArea";
 import Title from "@/components/ui/Title";
 import { deleteFile, uploadFile } from "@/lib/firebase/service";
 import projectServices from "@/services/projects";
-import { Project } from "@/types/project.type";
+import { Project } from "@/types/project";
 import {
   Dispatch,
   FormEvent,
@@ -69,7 +69,7 @@ const ModalUpdateProject = (props: Proptypes) => {
   };
 
   const uploadImageAndUpdate = async (id: string, data: Project) => {
-    if (thumbnail) {
+    if (thumbnail && typeof thumbnail !== "string") {
       const thumbnailName = "thumbnail" + "." + getExtension(thumbnail.name);
       await deleteFile(project.thumbnail, async (status: boolean) => {
         if (status) {
@@ -126,6 +126,7 @@ const ModalUpdateProject = (props: Proptypes) => {
     const form = e.target as HTMLFormElement;
     const data: Project = {
       name: form.projectName.value,
+      slug: form.slug.value,
       thumbnail: project.thumbnail,
       category: form.category.value,
       description: form.description.value,
@@ -133,7 +134,7 @@ const ModalUpdateProject = (props: Proptypes) => {
       link: form.link.value,
       details: details.filter((detail) => detail !== ""),
       techStacks: techStackChecked,
-      isTopFeatured: form.topFeatured.value,
+      isTopFeatured: form.topFeatured.value === "true" ? true : false,
       updatedAt: new Date(),
     };
 
@@ -163,6 +164,13 @@ const ModalUpdateProject = (props: Proptypes) => {
               label="Name"
               placeholder="Project Name"
               defaultValue={project.name}
+              required
+            />
+            <Input
+              name="slug"
+              defaultValue={project.slug}
+              label="Slug"
+              placeholder="Project Slug"
               required
             />
             <TextArea

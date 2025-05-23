@@ -1,4 +1,4 @@
-import { Project } from "@/types/project.type";
+import { Project } from "@/types/project";
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/router";
@@ -13,10 +13,10 @@ const ProjectCard = (props: Proptypes) => {
   return (
     <div
       key={project.id}
-      className="dark:bg-gradient-to-b dark:from-neutral-600 dark:via-neutral-700 dark:to-neutral-800 md:p-2 border-gray-100 rounded overflow-hidden hover:scale-105 hover:transition duration-300"
+      className="dark:bg-gradient-to-b dark:from-neutral-700 dark:via-neutral-800 dark:to-neutral-900 dark:shadow-xl md:p-2 border-gray-100 rounded overflow-hidden hover:scale-105 hover:transition duration-300"
     >
       <Link
-        href={`/projects/${project.id}`}
+        href={`/projects/${project.slug}`}
         className="group block relative rounded-t w-full h-48 overflow-hidden cursor-pointer"
       >
         <Image
@@ -28,7 +28,7 @@ const ProjectCard = (props: Proptypes) => {
           className="w-full h-full object-cover"
         />
         {project.isTopFeatured && (
-          <div className="top-0 right-0 absolute flex items-center bg-teal-800 px-3 py-1 rounded-bl">
+          <div className="top-0 right-0 absolute flex items-center bg-teal-800 dark:bg-cyan-900 px-3 py-1 rounded-bl">
             <SiPinboard className="mr-2 text-white" />
             <p className="text-white text-sm">Top Featured</p>
           </div>

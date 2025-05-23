@@ -1,9 +1,10 @@
 import Button from "@/components/ui/Button";
 import Divider from "@/components/ui/Divider";
 import Input from "@/components/ui/Input";
-import { Message } from "@/types/message.type";
+import { Message } from "@/types/message";
 import useGuestbook from "./useGuestbook";
 import { Controller } from "react-hook-form";
+import { AVATAR_COLORS } from "@/constants/list.constanst";
 
 const Guestbook = () => {
   const {
@@ -48,7 +49,11 @@ const Guestbook = () => {
                   return (
                     <div key={index} className="flex items-start mb-3">
                       <div>
-                        <div className="flex justify-center items-center bg-black mr-3 rounded-full w-10 md:w-12 h-10 md:h-12">
+                        <div
+                          className={`flex justify-center items-center mr-3 rounded-full w-10 md:w-12 h-10 md:h-12 ${
+                            AVATAR_COLORS[index % AVATAR_COLORS.length]
+                          }`}
+                        >
                           <span className="block font-libre text-white text-lg md:text-xl">
                             {item && item.name.charAt(0).toUpperCase()}
                           </span>

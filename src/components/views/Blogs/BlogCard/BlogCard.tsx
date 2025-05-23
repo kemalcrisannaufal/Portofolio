@@ -1,12 +1,15 @@
 import Button from "@/components/ui/Button";
 import MarkdownText from "@/components/ui/MarkdownText";
-import { Blog } from "@/types/blog.type";
+import { Blog } from "@/types/blog";
 import { getEstimatedReadingTime, getShortDescription } from "@/utils/blog";
 import { getDate } from "@/utils/date";
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import useBlogCard from "./useBlogCard";
+import { AnimatePresence, motion } from "framer-motion";
+import { FaArrowRight } from "react-icons/fa";
+import { SiPinboard } from "react-icons/si";
 
 interface Proptypes {
   blog: Blog;
@@ -17,13 +20,13 @@ const BlogCard = (props: Proptypes) => {
   const { showProfileImage, setProfileImage } = useBlogCard();
 
   return (
-    <div className="md:dark:bg-neutral-800 p-2 rounded dark:text-neutral-300 hover:scale-105 hover:transition hover:duration-300">
+    <div className="group md:dark:bg-gradient-to-b md:dark:from-neutral-700 md:dark:via-neutral-800 md:dark:to-neutral-900 p-2 rounded-lg dark:text-neutral-300 hover:scale-105 hover:transition hover:duration-300 vi">
       <h2 className="lg:hidden block mb-3 font-libre text-lg text-center line-clamp-2">
         {blog.title}
       </h2>
       <Link
         href={`/blogs/${blog.slug}`}
-        className="block shadow h-[20vh] md:h-[45vh] overflow-hidden cursor-pointer"
+        className="block relative shadow h-[20vh] md:h-[45vh] overflow-hidden cursor-pointer"
       >
         <Image
           className="w-full h-full object-cover object-top"
@@ -33,6 +36,12 @@ const BlogCard = (props: Proptypes) => {
           alt={blog.title}
           priority
         />
+        {blog.topFeatured && (
+          <div className="top-0 right-0 absolute flex items-center bg-teal-800 dark:bg-cyan-900 px-3 py-1 rounded-bl">
+            <SiPinboard className="mr-2 text-white" />
+            <p className="text-white text-sm">Top Featured</p>
+          </div>
+        )}
       </Link>
 
       <div className="mt-3">
@@ -71,19 +80,30 @@ const BlogCard = (props: Proptypes) => {
               onMouseEnter={() => setProfileImage(true)}
               onMouseLeave={() => setProfileImage(false)}
             >
-              {showProfileImage ? (
-                <Image
-                  className="w-full"
-                  src={"/assets/images/home/foto_fix.jpg"}
-                  width={500}
-                  height={500}
-                  alt={"Kemal Crisannaufal"}
-                  priority
-                />
-              ) : (
-                <span className="font-libre text-xl">K</span>
-              )}
+              <AnimatePresence>
+                {showProfileImage ? (
+                  <motion.div
+                    initial={{ opacity: 0 }}
+                    animate={{
+                      opacity: 1,
+                      transition: { duration: 0.5 },
+                    }}
+                  >
+                    <Image
+                      className="w-full"
+                      src={"/assets/images/home/foto_fix.jpg"}
+                      width={500}
+                      height={500}
+                      alt={"Kemal Crisannaufal"}
+                      priority
+                    />
+                  </motion.div>
+                ) : (
+                  <span className="font-libre text-xl">K</span>
+                )}
+              </AnimatePresence>
             </div>
+
             <div>
               <h5 className="font-libre text-xs">Kemal Crisannaufal</h5>
               <h6 className="font-libre text-xs">
@@ -97,7 +117,7 @@ const BlogCard = (props: Proptypes) => {
               className="p-2 cursor-pointer"
               onClick={() => push(`/blogs/${blog.slug}`)}
             >
-              <i className="bx-right-arrow-alt text-xl bx" />
+              <FaArrowRight className="text-sm group-hover:transition group-hover:translate-x-2 group-hover:duration-300" />
             </button>
           </div>
         </div>

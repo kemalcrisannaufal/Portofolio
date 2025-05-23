@@ -1,4 +1,4 @@
-import { Project } from "@/types/project.type";
+import { Project } from "@/types/project";
 
 /* eslint-disable @typescript-eslint/no-explicit-any */
 const sortDataByDate = (data: any[], key: string) =>

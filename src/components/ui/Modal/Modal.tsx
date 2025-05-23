@@ -24,7 +24,7 @@ const Modal = (props: Proptypes) => {
   return (
     <div className="z-50 fixed inset-0 flex justify-center items-center bg-black/50 p-5 w-full min-h-dvh">
       <div
-        className="relative bg-white dark:bg-neutral-800 p-5 rounded lg:w-[50%] max-h-[75%] overflow-y-auto"
+        className="scrollbar-hidden relative bg-white dark:bg-neutral-800 p-5 rounded w-full lg:w-[50%] max-h-[75%] overflow-y-auto"
         ref={ref}
       >
         {children}

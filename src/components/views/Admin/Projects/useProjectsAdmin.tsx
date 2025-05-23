@@ -1,5 +1,5 @@
 import projectServices from "@/services/projects";
-import { Project } from "@/types/project.type";
+import { Project } from "@/types/project";
 import { sortDataByDate } from "@/utils/sortData";
 import { useQuery } from "@tanstack/react-query";
 

@@ -1,9 +1,21 @@
 import { useState } from "react";
 
 const useAbout = () => {
-  const [openDetail, setOpenDetail] = useState("");
+  const [isDetailOpen, setIsDetailOpen] = useState("");
 
-  return { openDetail, setOpenDetail };
+  const handleOpenDetail = (id: string) => {
+    if (id !== "") {
+      setIsDetailOpen("loading");
+      const timeout = setTimeout(() => {
+        setIsDetailOpen(id);
+      }, 300);
+      return () => clearTimeout(timeout);
+    }
+
+    setIsDetailOpen("");
+  };
+
+  return { isDetailOpen, handleOpenDetail };
 };
 
 export default useAbout;

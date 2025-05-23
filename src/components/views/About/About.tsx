@@ -15,7 +15,7 @@ const About = () => {
   const descriptionStyle =
     "text-xs lg:text-xs font-libre dark:text-neutral-300";
 
-  const { openDetail, setOpenDetail } = useAbout();
+  const { isDetailOpen, handleOpenDetail } = useAbout();
 
   return (
     <>
@@ -28,7 +28,7 @@ const About = () => {
             alt="kemalcrisannaufal"
             className="rounded-xl w-full object-contain"
           />
-          <div className="hidden dark:block top-0 left-0 z-50 absolute bg-gradient-to-b from-black/5 via-black/15 to-black/45 w-full h-full" />
+          <div className="hidden dark:block top-0 left-0 z-10 absolute bg-gradient-to-b from-black/5 via-black/15 to-black/45 rounded-xl w-full h-full" />
         </div>
 
         <motion.div
@@ -130,7 +130,7 @@ const About = () => {
                 </div>
                 <button
                   className="mt-2 cursor-pointer"
-                  onClick={() => setOpenDetail("asprak")}
+                  onClick={() => handleOpenDetail("asprak")}
                 >
                   <p className="font-libre font-semibold dark:text-neutral-300 text-xs underline">
                     View Certificate
@@ -191,21 +191,25 @@ const About = () => {
         </motion.div>
       </div>
 
-      {openDetail === "asprak" && (
-        <Modal onClose={() => setOpenDetail("")}>
+      {(isDetailOpen === "asprak" || isDetailOpen === "loading") && (
+        <Modal onClose={() => handleOpenDetail("")}>
           <div>
             <h1 className="font-libre font-semibold dark:text-white text-2xl">
               Certificate
             </h1>
-            <div className="flex justify-center mt-5 w-full">
-              <Image
-                src={"/assets/images/about/sertifikat_asprak.png"}
-                width={500}
-                height={500}
-                alt="asprak"
-                priority
-                className="w-full h-full object-contain"
-              />
+            <div className="flex justify-center mt-5 rounded w-full">
+              {isDetailOpen === "loading" ? (
+                <div className="bg-gray-200 dark:bg-neutral-600 w-full h-40 md:h-96 animate-pulse" />
+              ) : (
+                <Image
+                  src={"/assets/images/about/sertifikat_asprak.png"}
+                  width={500}
+                  height={500}
+                  alt="asprak"
+                  priority
+                  className="w-full h-full object-contain"
+                />
+              )}
             </div>
           </div>
         </Modal>

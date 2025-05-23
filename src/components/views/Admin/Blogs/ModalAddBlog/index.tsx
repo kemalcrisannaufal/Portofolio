@@ -10,7 +10,7 @@ import { FormEvent, useState } from "react";
 import Image from "next/image";
 import Divider from "@/components/ui/Divider";
 import { getExtension } from "@/utils/image";
-import { Blog } from "@/types/blog.type";
+import { Blog } from "@/types/blog";
 import blogsServices from "@/services/blogs";
 import Checkbox from "@/components/ui/Checkbox";
 
@@ -62,6 +62,7 @@ const ModalAddBlog = (props: Proptypes) => {
         thumbnail: "",
         visibility: form.visibility.value,
         topFeatured: form.topFeatured.value === "true" ? true : false,
+        comments: [],
         createdAt: new Date(),
         updatedAt: new Date(),
       };

@@ -1,6 +1,6 @@
 import { sortDataByDate } from "@/utils/sortData";
 import guestbookServices from "@/services/guestbook";
-import { Message } from "@/types/message.type";
+import { Message } from "@/types/message";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { useMutation, useQuery } from "@tanstack/react-query";
 import { useForm } from "react-hook-form";

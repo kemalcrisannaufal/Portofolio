@@ -1,5 +1,5 @@
 import blogsServices from "@/services/blogs";
-import { Blog } from "@/types/blog.type";
+import { Blog } from "@/types/blog";
 import { useQuery } from "@tanstack/react-query";
 
 const useBlogs = () => {

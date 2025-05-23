@@ -13,7 +13,7 @@ import Image from "next/image";
 import Divider from "@/components/ui/Divider";
 import { getExtension } from "@/utils/image";
 import { TECH_STACK } from "@/constants/list.constanst";
-import { Project } from "@/types/project.type";
+import { Project } from "@/types/project";
 
 type Proptypes = {
   onClose: () => void;
@@ -87,6 +87,7 @@ const ModalAddProject = (props: Proptypes) => {
 
       const data: Project = {
         name: form.projectName.value,
+        slug: form.slug.value,
         thumbnail: "",
         category: form.category.value,
         description: form.description.value,
@@ -94,7 +95,7 @@ const ModalAddProject = (props: Proptypes) => {
         link: form.link.value,
         details: details.filter((detail) => detail !== ""),
         techStacks: techStackChecked,
-        isTopFeatured: form.topFeatured.value,
+        isTopFeatured: form.topFeatured.value === "true" ? true : false,
         createdAt: new Date(),
         updatedAt: new Date(),
       };
@@ -128,6 +129,12 @@ const ModalAddProject = (props: Proptypes) => {
               name="projectName"
               label="Name"
               placeholder="Project Name"
+              required
+            />
+            <Input
+              name="slug"
+              label="Slug"
+              placeholder="Project Slug"
               required
             />
             <TextArea

@@ -1,3 +1,5 @@
+import { BlogComment } from "./comment";
+
 export interface Blog {
   id?: string;
   title: string;
@@ -7,6 +9,7 @@ export interface Blog {
   category: string[];
   visibility: string;
   topFeatured: boolean;
+  comments: BlogComment[];
   createdAt: Date;
   updatedAt: Date;
 }
