@@ -7,6 +7,7 @@ const HamburgerMenu = (props: Proptypes) => {
   const { isMenuOpen, setIsMenuOpen } = props;
   return (
     <button
+      aria-label="Toggle Menu"
       className="relative w-5 h-3"
       onClick={() => setIsMenuOpen(!isMenuOpen)}
     >

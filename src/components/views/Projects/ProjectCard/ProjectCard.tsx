@@ -28,7 +28,7 @@ const ProjectCard = (props: Proptypes) => {
           className="w-full h-full object-cover"
         />
         {project.isTopFeatured && (
-          <div className="top-0 right-0 absolute flex items-center bg-teal-800 dark:bg-cyan-900 px-3 py-1 rounded-bl">
+          <div className="top-0 right-0 z-20 absolute flex items-center bg-teal-800 dark:bg-cyan-900 px-3 py-1 rounded-bl">
             <SiPinboard className="mr-2 text-white" />
             <p className="text-white text-sm">Top Featured</p>
           </div>

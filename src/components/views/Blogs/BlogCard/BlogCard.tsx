@@ -20,13 +20,14 @@ const BlogCard = (props: Proptypes) => {
   const { showProfileImage, setProfileImage } = useBlogCard();
 
   return (
-    <div className="group md:dark:bg-gradient-to-b md:dark:from-neutral-700 md:dark:via-neutral-800 md:dark:to-neutral-900 p-2 rounded-lg dark:text-neutral-300 hover:scale-105 hover:transition hover:duration-300 vi">
-      <h2 className="lg:hidden block mb-3 font-libre text-lg text-center line-clamp-2">
+    <div className="group md:dark:bg-gradient-to-b md:dark:from-neutral-700 md:dark:via-neutral-800 md:dark:to-neutral-900 p-2 rounded-lg dark:text-neutral-300 hover:scale-105 hover:transition hover:duration-300">
+      <h2 className="lg:hidden block flex-grow mb-3 md:h-14 font-libre text-lg text-center line-clamp-2">
         {blog.title}
       </h2>
+
       <Link
         href={`/blogs/${blog.slug}`}
-        className="block relative shadow h-[20vh] md:h-[45vh] overflow-hidden cursor-pointer"
+        className="block relative shadow h-[200px] md:h-[200px] lg:h-[350px] overflow-hidden cursor-pointer"
       >
         <Image
           className="w-full h-full object-cover object-top"
@@ -37,11 +38,15 @@ const BlogCard = (props: Proptypes) => {
           priority
         />
         {blog.topFeatured && (
-          <div className="top-0 right-0 absolute flex items-center bg-teal-800 dark:bg-cyan-900 px-3 py-1 rounded-bl">
+          <div className="top-0 right-0 z-20 absolute flex items-center bg-teal-800 dark:bg-cyan-900 px-3 py-1 rounded-bl">
             <SiPinboard className="mr-2 text-white" />
             <p className="text-white text-sm">Top Featured</p>
           </div>
         )}
+        <div className="hidden z-10 absolute inset-0 group-hover:flex justify-center items-center bg-black/50 w-full h-full duration-300 group-hover:duration-500 group-hover:transform">
+          <h2 className="mr-2 font-libre text-white text-lg">View Project</h2>
+          <i className="bx-right-arrow-alt text-white text-2xl bx" />
+        </div>
       </Link>
 
       <div className="mt-3">

@@ -12,7 +12,7 @@ const MainLayout = (props: Proptypes) => {
   return (
     <>
       <PageHead title={title} description={description} />
-      <div className="dark:bg-neutral-900 px-10 md:px-20 lg:px-48 pb-10 lg:pb-16 3xl:container">
+      <div className="dark:bg-neutral-900 px-10 md:px-20 lg:px-24 xl:px-48 pb-10 xl:pb-16 3xl:container">
         {children}
       </div>
     </>

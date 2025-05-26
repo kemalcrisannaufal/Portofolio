@@ -21,7 +21,10 @@ const PageHead = ({ title, description }: Proptypes) => {
       />
       <title>{title} | My Portfolio</title>
 
-      <meta name="google-site-verification" content="oRKSv4li5XpvNYYomvx5rEQ71vDa5aD8-YYcOHDT-Ak" />
+      <meta
+        name="google-site-verification"
+        content="oRKSv4li5XpvNYYomvx5rEQ71vDa5aD8-YYcOHDT-Ak"
+      />
 
       {/* Basic SEO */}
       <meta name="description" content={description || defaultDescription} />

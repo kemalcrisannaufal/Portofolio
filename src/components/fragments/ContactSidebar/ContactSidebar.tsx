@@ -10,8 +10,13 @@ const ContactSideBar = () => {
               key={index}
               className="hover:bg-black dark:bg-neutral-800 dark:hover:bg-neutral-600 hover:text-white dark:text-white"
             >
-              <a href={item.url}>
-                <i className={`bx ${item.icon} text-xl p-2`} />
+              <a
+                href={item.url}
+                aria-label={`Link-${item.name}`}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <i className={`bx ${item.icon} text-xl p-2`} aria-hidden />
               </a>
             </div>
           );

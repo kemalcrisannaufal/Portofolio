@@ -35,6 +35,7 @@ export default function ThemeToggle() {
   return (
     <div className="right-2 bottom-2 z-50 fixed">
       <button
+        aria-label="Toggle Theme"
         onClick={() => setIsDark(!isDark)}
         className="block bg-gray-200 dark:bg-neutral-600 p-2 rounded text-black dark:text-white cursor-pointer"
       >
