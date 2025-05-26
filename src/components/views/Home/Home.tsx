@@ -4,6 +4,7 @@ import TypingText from "@/components/ui/TypingText";
 import Image from "next/image";
 import { fadeInUp } from "@/lib/animations/motionVariants";
 import { CONTACTS } from "@/constants/list.constanst";
+import Link from "next/link";
 
 const Home = () => {
   return (
@@ -59,7 +60,20 @@ const Home = () => {
           field of Data Science, including Machine Learning
         </p>
 
-        <div>
+        <div className="flex">
+          <Link
+            href={"/assets/files/resume.pdf"}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <Button classname="mr-2" variant="secondary">
+              <div className="flex items-center">
+                <i className="mr-2 text-lg bx bx-file" />
+                <p className="font-libre font-thin text-sm">View Resume</p>
+              </div>
+            </Button>
+          </Link>
+
           <Button onClick={() => window.open(CONTACTS[1].url)}>
             <div className="flex items-center">
               <i className="mr-2 text-lg bx bx-briefcase" />

@@ -6,6 +6,7 @@ interface Proptypes {
   disabled?: boolean;
   onClick?: () => void;
   type?: "button" | "submit" | "reset";
+  variant?: "primary" | "secondary";
 }
 
 const Button = (props: Proptypes) => {
@@ -15,11 +16,16 @@ const Button = (props: Proptypes) => {
     disabled = false,
     onClick,
     type = "button",
+    variant = "primary",
   } = props;
   return (
     <button
       type={type}
-      className={`hover:bg-black dark:hover:bg-neutral-600 p-2 border dark:border-white hover:text-neutral-300 text-sm md:text-base cursor-pointer ${classname}`}
+      className={`p-2 border dark:border-white text-sm md:text-base cursor-pointer ${classname} ${
+        variant === "primary"
+          ? "bg-white text-black dark:bg-neutral-600 dark:text-white hover:bg-black dark:hover:bg-neutral-600 hover:text-neutral-300"
+          : "bg-black text-white dark:bg-neutral-600 dark:text-white hover:bg-white hover:text-black dark:hover:bg-neutral-600"
+      }`}
       onClick={onClick}
       disabled={disabled}
     >
