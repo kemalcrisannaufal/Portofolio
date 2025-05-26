@@ -27,7 +27,7 @@ const ProjectDetail = () => {
               {dataProject?.description}
             </h3>
 
-            <div className="flex lg:flex-row flex-col-reverse gap-2 mt-5 lg:h-[75vh]">
+            <div className="flex lg:flex-row flex-col-reverse gap-2 mt-5 h-[300px] lg:h-[400px]">
               <div className="scrollbar-hidden flex lg:flex-col items-center gap-3 pb-2 w-full lg:w-[15%] overflow-x-auto lg:overflow-y-auto">
                 {images.map((image, index) => (
                   <button

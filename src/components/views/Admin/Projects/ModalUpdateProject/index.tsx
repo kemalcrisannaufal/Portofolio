@@ -19,7 +19,7 @@ import {
 import Image from "next/image";
 import Divider from "@/components/ui/Divider";
 import { getExtension } from "@/utils/image";
-import { TECH_STACK } from "@/constants/list.constanst";
+import { PROJECT_CATEGORIES, TECH_STACK } from "@/constants/list.constanst";
 
 type Proptypes = {
   onClose: () => void;
@@ -184,14 +184,7 @@ const ModalUpdateProject = (props: Proptypes) => {
               name="category"
               label="Category"
               defaultValue={project.category}
-              options={[
-                { name: "Software Engineering", value: "Software Engineering" },
-                { name: "Data Science", value: "Data Science" },
-                {
-                  name: "Artificial Intelligence",
-                  value: "Artificial Intelligence",
-                },
-              ]}
+              options={PROJECT_CATEGORIES}
             />
             <Select
               name="topFeatured"

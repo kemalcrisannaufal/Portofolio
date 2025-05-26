@@ -12,7 +12,7 @@ import { Dispatch, FormEvent, SetStateAction, useState } from "react";
 import Image from "next/image";
 import Divider from "@/components/ui/Divider";
 import { getExtension } from "@/utils/image";
-import { TECH_STACK } from "@/constants/list.constanst";
+import { PROJECT_CATEGORIES, TECH_STACK } from "@/constants/list.constanst";
 import { Project } from "@/types/project";
 
 type Proptypes = {
@@ -146,14 +146,7 @@ const ModalAddProject = (props: Proptypes) => {
             <Select
               name="category"
               label="Category"
-              options={[
-                { name: "Software Engineering", value: "Software Engineering" },
-                { name: "Data Science", value: "Data Science" },
-                {
-                  name: "Artificial Intelligence",
-                  value: "Artificial Intelligence",
-                },
-              ]}
+              options={PROJECT_CATEGORIES}
             />
             <Select
               name="topFeatured"

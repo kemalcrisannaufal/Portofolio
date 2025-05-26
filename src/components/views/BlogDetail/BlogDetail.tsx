@@ -54,7 +54,7 @@ const BlogDetailView = () => {
               </div>
 
               <div className="lg:px-20">
-                <div className="mt-5 w-full h-[25vh] md:h-[45vh] lg:h-[70vh]">
+                <div className="relative mt-5 w-full h-[250px] md:h-[350px] lg:h-[500px]">
                   <Image
                     src={dataBlog!.thumbnail}
                     width={500}

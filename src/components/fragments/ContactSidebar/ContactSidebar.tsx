@@ -1,4 +1,5 @@
 import { CONTACTS } from "@/constants/list.constanst";
+import Link from "next/link";
 
 const ContactSideBar = () => {
   return (
@@ -10,14 +11,9 @@ const ContactSideBar = () => {
               key={index}
               className="hover:bg-black dark:bg-neutral-800 dark:hover:bg-neutral-600 hover:text-white dark:text-white"
             >
-              <a
-                href={item.url}
-                aria-label={`Link-${item.name}`}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
+              <Link href={item.url} aria-label={`Link-${item.name}`}>
                 <i className={`bx ${item.icon} text-xl p-2`} aria-hidden />
-              </a>
+              </Link>
             </div>
           );
         })}

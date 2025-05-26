@@ -1,6 +1,15 @@
 const ProjectsSkeleton = () => {
   return (
     <>
+      <div className="bg-gray-200 dark:bg-neutral-600 w-full h-[200px] md:h-[300px] lg:h-[350px] animate-pulse" />
+      <div>
+        <h3 className="mt-10 mb-5 font-libre font-semibold md:text-md dark:text-neutral-300 text-xs sm:text-sm lg:text-base">
+          Latest Projects{" "}
+          <span className="bg-gray-200 dark:bg-neutral-300 px-2 py-1 rounded-full font-thin text-black">
+            {0}
+          </span>
+        </h3>
+      </div>
       <div className="gap-5 gap-y-8 grid grid-cols-1 lg:grid-cols-3">
         {Array(9)
           .fill(0)

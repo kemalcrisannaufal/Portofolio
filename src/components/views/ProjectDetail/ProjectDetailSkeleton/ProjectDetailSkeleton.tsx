@@ -6,7 +6,7 @@ const ProjectDetailSkeleton = () => {
         <div className="bg-gray-200 dark:bg-neutral-600 mt-3 w-[80%] h-6 animate-pulse" />
         <div className="bg-gray-200 dark:bg-neutral-600 mt-3 w-[80%] h-6 animate-pulse" />
       </div>
-      <div className="flex lg:flex-row flex-col-reverse gap-2 mt-5 lg:h-[75vh]">
+      <div className="flex lg:flex-row flex-col-reverse gap-2 mt-5 h-[300px] lg:h-[400px]">
         <div className="scrollbar-hidden flex lg:flex-col items-center gap-3 pb-2 w-full lg:w-[15%] overflow-x-auto lg:overflow-y-auto">
           {Array(5)
             .fill(0)

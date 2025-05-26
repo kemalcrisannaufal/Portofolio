@@ -89,6 +89,15 @@ const PAGE_DESCRIPTION = {
     "Get in touch with Kemal Crisannaufal for collaboration, inquiries, or opportunities in software development and data science.",
 };
 
+const PROJECT_CATEGORIES = [
+  { name: "Software Engineering", value: "Software Engineering" },
+  { name: "Data Science", value: "Data Science" },
+  {
+    name: "Artificial Intelligence",
+    value: "Artificial Intelligence",
+  },
+];
+
 const TECH_STACK = [
   {
     name: "HTML",
@@ -217,4 +226,10 @@ const TECH_STACK = [
   },
 ];
 
-export { AVATAR_COLORS, CONTACTS, PAGE_DESCRIPTION, TECH_STACK };
+export {
+  AVATAR_COLORS,
+  CONTACTS,
+  PAGE_DESCRIPTION,
+  PROJECT_CATEGORIES,
+  TECH_STACK,
+};

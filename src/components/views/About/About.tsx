@@ -19,8 +19,8 @@ const About = () => {
 
   return (
     <>
-      <div className="flex lg:flex-row flex-col lg:gap-10">
-        <div className="lg:top-36 relative lg:sticky self-start w-full lg:w-1/3">
+      <div className="flex xl:flex-row flex-col lg:gap-10">
+        <div className="xl:top-36 relative xl:sticky self-start rounded-xl w-full xl:w-1/3 overflow-hidden">
           <Image
             src="/assets/images/home/foto.jpg"
             width={500}
@@ -32,7 +32,7 @@ const About = () => {
         </div>
 
         <motion.div
-          className="mt-5 lg:mt-0 w-full lg:w-1/3"
+          className="mt-5 lg:mt-0 w-full xl:w-1/3"
           variants={fadeInUp}
           initial="hidden"
           animate="visible"
@@ -97,7 +97,7 @@ const About = () => {
         </motion.div>
 
         <motion.div
-          className="w-full lg:w-1/3"
+          className="w-full xl:w-1/3"
           variants={fadeInUp}
           initial="hidden"
           animate={{

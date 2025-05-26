@@ -21,6 +21,7 @@ const Home = () => {
           height={500}
           className="w-full h-full object-contain"
         />
+
         <div className="hidden dark:block top-0 left-0 z-50 absolute bg-gradient-to-b from-transparent via-black/15 to-black/50 w-full h-full" />
       </div>
 

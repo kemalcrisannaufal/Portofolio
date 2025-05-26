@@ -13,7 +13,7 @@ const BlogDetailSkeleton = () => {
       </div>
 
       <div className="lg:px-20">
-        <div className="bg-gray-200 dark:bg-neutral-600 mt-5 w-full h-[25vh] md:h-[45vh] lg:h-[70vh] animate-pulse" />
+        <div className="bg-gray-200 dark:bg-neutral-600 mt-5 w-full h-[250px] md:h-[350px] lg:h-[500px] animate-pulse" />
       </div>
 
       <div className="mt-10">
