@@ -23,8 +23,8 @@ const Button = (props: Proptypes) => {
       type={type}
       className={`p-2 border dark:border-white text-sm md:text-base cursor-pointer ${classname} ${
         variant === "primary"
-          ? "bg-white text-black dark:bg-neutral-600 dark:text-white hover:bg-black dark:hover:bg-neutral-600 hover:text-neutral-300"
-          : "bg-black text-white dark:bg-neutral-600 dark:text-white hover:bg-white hover:text-black dark:hover:bg-neutral-600"
+          ? "bg-black text-white dark:bg-neutral-600 dark:text-white hover:bg-white hover:text-black  dark:hover:bg-neutral-600"
+          : "bg-white text-black dark:bg-neutral-600 dark:text-white hover:bg-black dark:hover:bg-neutral-600 hover:text-neutral-300"
       }`}
       onClick={onClick}
       disabled={disabled}
