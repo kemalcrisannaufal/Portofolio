@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { NAVBAR_ITEMS } from "../navbar.constant";
+import { NAVBAR_ITEMS } from "../navbar.constants";
 import { motion } from "framer-motion";
 
 interface Proptypes {

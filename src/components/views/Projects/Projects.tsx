@@ -29,7 +29,36 @@ const Projects = () => {
               dataProjects={getTopFeaturedProject(dataProjects)}
             />
 
-            <div className="flex md:flex-row md:justify-between md:items-center gap-2 mt-10 mb-5 md:">
+            <div className="mt-10">
+              <h3 className="mb-5 font-libre font-semibold md:text-md dark:text-neutral-300 text-xs sm:text-sm lg:text-base">
+                Featured Projects{" "}
+                <span className="bg-gray-200 dark:bg-neutral-300 px-2 py-1 rounded-full font-thin text-black">
+                  {getTopFeaturedProject(dataProjects).length}
+                </span>
+              </h3>
+              <div className="gap-5 grid md:grid-cols-2 lg:grid-cols-3 md:grid-flow-row grid-flow-col auto-cols-[18rem] md:auto-cols-auto overflow-x-auto md:overflow-x-hidden md:overflow-y-hidden">
+                {getTopFeaturedProject(dataProjects).map((project, index) => (
+                  <motion.div
+                    initial={{ opacity: 0, y: 50 }}
+                    animate={{
+                      opacity: 1,
+                      y: 0,
+                      transition: {
+                        duration: 0.5,
+                        delay: index * 0.2,
+                        ease: "easeInOut",
+                      },
+                    }}
+                    key={project.id}
+                  >
+                    <ProjectCard project={project} />
+                  </motion.div>
+                ))}
+              </div>
+            </div>
+
+            {/* Project Filter */}
+            <div className="flex md:flex-row md:justify-between md:items-center gap-2 mt-10 mb-5">
               <h3 className="font-libre font-semibold md:text-md dark:text-neutral-300 text-xs sm:text-sm lg:text-base">
                 Latest Projects{" "}
                 <span className="bg-gray-200 dark:bg-neutral-300 px-2 py-1 rounded-full font-thin text-black">

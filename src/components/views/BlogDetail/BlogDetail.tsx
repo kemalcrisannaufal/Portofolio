@@ -175,7 +175,7 @@ const BlogDetailView = () => {
                           <p className="font-libre font-semibold">
                             {comment.name}
                           </p>
-                          <p className="font-libre text-xs">
+                          <p className="hidden md:block font-libre text-xs">
                             {getDate(comment.createdAt!)}
                           </p>
                         </div>

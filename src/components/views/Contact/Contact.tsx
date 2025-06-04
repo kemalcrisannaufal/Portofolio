@@ -31,7 +31,7 @@ const Contact = () => {
               >
                 <Link
                   href={item.url}
-                  className="flex justify-center items-center hover:bg-black dark:bg-neutral-800 dark:hover:bg-neutral-600 shadow mt-1 md:mt-5 p-2 border border-gray-200 rounded w-full overflow-hidden hover:text-white hover:transition-all hover:duration-300 cursor-pointer"
+                  className="flex justify-center items-center hover:bg-black dark:bg-black dark:hover:bg-neutral-600 shadow mt-1 md:mt-5 p-2 border border-gray-200 rounded w-full overflow-hidden hover:text-white hover:transition-all hover:duration-300 cursor-pointer"
                 >
                   <i className={`bx ${item.icon} text-xl md:text-2xl mr-2`} />
                   <span

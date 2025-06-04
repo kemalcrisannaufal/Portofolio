@@ -106,6 +106,7 @@ const ModalAddBlog = (props: Proptypes) => {
               label="Content"
               placeholder="Blog's content"
               rows={20}
+              maxLength={10000}
               required
             />
             <Checkbox

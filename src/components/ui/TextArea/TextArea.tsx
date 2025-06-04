@@ -36,7 +36,7 @@ const TextArea = (props: Proptypes) => {
       ? "border border-gray-300 dark:border-neutral-700 focus:border-black dark:focus:border-white focus:ring-1 focus:ring-black dark:focus:ring-white"
       : "border-none focus:outline-none outline-0";
   return (
-    <div  >
+    <div>
       <label
         htmlFor={name}
         className="block mb-1 font-medium text-gray-700 dark:text-gray-200 text-sm"

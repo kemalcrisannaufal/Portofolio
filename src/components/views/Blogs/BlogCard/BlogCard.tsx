@@ -20,14 +20,16 @@ const BlogCard = (props: Proptypes) => {
   const { showProfileImage, setProfileImage } = useBlogCard();
 
   return (
-    <div className="group md:dark:bg-gradient-to-b md:dark:from-neutral-700 md:dark:via-neutral-800 md:dark:to-neutral-900 p-2 rounded-lg dark:text-neutral-300 hover:scale-105 hover:transition hover:duration-300">
-      <h2 className="lg:hidden block flex-grow mb-3 md:h-14 font-libre text-lg text-center line-clamp-2">
-        {blog.title}
-      </h2>
+    <div className="group md:dark:bg-gradient-to-b md:dark:from-neutral-700 md:dark:via-neutral-800 md:dark:to-neutral-900 mb-5 p-2 rounded-lg dark:text-neutral-300 hover:scale-105 hover:transition hover:duration-300">
+      <div className="lg:hidden flex-grow">
+        <h2 className="mb-3 md:h-14 font-libre text-lg text-center line-clamp-2">
+          {blog.title}
+        </h2>
+      </div>
 
       <Link
         href={`/blogs/${blog.slug}`}
-        className="block relative shadow h-[200px] md:h-[200px] lg:h-[350px] overflow-hidden cursor-pointer"
+        className="block relative shadow h-[200px] md:h-[200px] lg:h-[300px] overflow-hidden cursor-pointer"
       >
         <Image
           className="w-full h-full object-cover object-top"
@@ -50,9 +52,11 @@ const BlogCard = (props: Proptypes) => {
       </Link>
 
       <div className="mt-3">
-        <h2 className="hidden lg:block font-libre dark:text-neutral-200 text-lg line-clamp-2">
-          {blog.title}
-        </h2>
+        <div className="hidden lg:block">
+          <h2 className="font-libre dark:text-neutral-200 text-lg line-clamp-1">
+            {blog.title}
+          </h2>
+        </div>
         <div className="flex justify-between items-center mt-1">
           <div className="flex items-center gap-2">
             {blog.category.map((item, index) => {
@@ -72,11 +76,12 @@ const BlogCard = (props: Proptypes) => {
             </span>
           </div>
         </div>
-
-        <MarkdownText
-          content={getShortDescription(blog.content)}
-          classname="mt-3 text-justify  line-clamp-3"
-        />
+        <div>
+          <MarkdownText
+            content={getShortDescription(blog.content)}
+            classname="mt-3 text-justify  line-clamp-3"
+          />
+        </div>
 
         <div className="hidden md:flex justify-between items-center mt-5">
           <div className="flex items-center">

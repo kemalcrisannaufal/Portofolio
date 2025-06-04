@@ -1,21 +1,21 @@
 import { useState } from "react";
 
 const useAbout = () => {
-  const [isDetailOpen, setIsDetailOpen] = useState("");
+  const [credentialUrl, setCredentialUrl] = useState("");
 
-  const handleOpenDetail = (id: string) => {
-    if (id !== "") {
-      setIsDetailOpen("loading");
+  const handleOpenDetail = (crendetialUrl: string) => {
+    if (crendetialUrl !== "") {
+      setCredentialUrl("loading");
       const timeout = setTimeout(() => {
-        setIsDetailOpen(id);
+        setCredentialUrl(crendetialUrl);
       }, 300);
       return () => clearTimeout(timeout);
     }
 
-    setIsDetailOpen("");
+    setCredentialUrl("");
   };
 
-  return { isDetailOpen, handleOpenDetail };
+  return { credentialUrl, handleOpenDetail };
 };
 
 export default useAbout;

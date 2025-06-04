@@ -26,10 +26,10 @@ const CarouselProject = (props: Proptypes) => {
   }, [dataProjects.length, idx, setNext]);
 
   return (
-    <div className="relative shadow border border-neutral-300 rounded-xl w-full h-[200px] md:h-[300px] lg:h-[350px] overflow-hidden">
-      <div className="top-3 left-3 z-20 absolute flex items-center bg-teal-700 dark:bg-cyan-700 px-3 py-1 rounded-xl">
+    <div className="relative shadow border-2 border-neutral-300 dark:border-neutral-600 rounded-xl w-full h-[250px] md:h-[300px] lg:h-[350px] overflow-hidden">
+      <div className="top-3 left-3 z-20 absolute flex items-center bg-teal-700 dark:bg-cyan-700 px-3 py-1">
         <SiPinboard className="mr-2 text-white" />
-        <p className="text-white text-sm">Top Featured</p>
+        <p className="text-white text-xs md:text-sm">Top Featured</p>
       </div>
 
       <div
@@ -47,7 +47,7 @@ const CarouselProject = (props: Proptypes) => {
 
       <Link
         href={`/projects/${dataProjects[idx].slug}`}
-        className="block rounded-xl overflow-hidden"
+        className="block overflow-hidden"
       >
         <AnimatePresence mode="popLayout">
           <motion.div
@@ -58,7 +58,7 @@ const CarouselProject = (props: Proptypes) => {
             transition={{ duration: 0.5 }}
           >
             <div
-              className="absolute inset-0 bg-gradient-to-b from-black/15 via-black/60 to-black rounded-xl"
+              className="absolute inset-0 bg-gradient-to-b from-black/15 via-black/60 to-black"
               aria-label="background gradient"
             />
             <Image
@@ -66,7 +66,7 @@ const CarouselProject = (props: Proptypes) => {
               alt={dataProjects[idx].name || "Project Thumbnail"}
               width={500}
               height={500}
-              className="w-full h-[200px] md:h-[300px] lg:h-[350px] object-cover"
+              className="w-full h-[250px] md:h-[300px] lg:h-[350px] object-cover"
             />
             <div className="bottom-0 left-0 absolute flex flex-col p-5 w-full max-w-[80%] md:max-w-[90%] lg:max-w-full h-max transition-all duration-500 ease-in-out">
               <p className="font-libre font-semibold text-white lg:text-2xl">

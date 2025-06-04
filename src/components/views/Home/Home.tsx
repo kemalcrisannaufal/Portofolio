@@ -14,7 +14,7 @@ const Home = () => {
       initial="hidden"
       animate="visible"
     >
-      <div className="hidden md:block relative rounded md:w-1/3 overflow-hidden hover:scale-110 duration-300">
+      <div className="hidden md:block relative shadow rounded md:w-1/3 max-h-[40vh] lg:max-h-[50vh] overflow-hidden hover:scale-110 duration-300">
         <Image
           src="/assets/images/home/foto_fix.jpg"
           alt="kemalcrisannaufal"
@@ -77,7 +77,7 @@ const Home = () => {
           <Button onClick={() => window.open(CONTACTS[1].url)}>
             <div className="flex items-center">
               <i className="mr-2 text-lg bx bx-briefcase" />
-              <p className="font-libre font-thin text-sm">HIRE ME</p>
+              <p className="font-libre font-thin text-sm">Hire Me</p>
             </div>
           </Button>
         </div>

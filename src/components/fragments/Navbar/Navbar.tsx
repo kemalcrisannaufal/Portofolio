@@ -3,7 +3,7 @@ import NavItem from "./NavbarItem/NavItem";
 import Link from "next/link";
 import HamburgerMenu from "@/components/ui/HamburgerMenu";
 import Drawer from "./Drawer/Drawer";
-import { NAVBAR_ITEMS } from "./navbar.constant";
+import { NAVBAR_ITEMS } from "./navbar.constants";
 import useNavbar from "./useNavbar";
 import { AnimatePresence } from "framer-motion";
 

@@ -6,6 +6,9 @@ import useAbout from "./useAbout";
 import { TECH_STACK } from "@/constants/list.constanst";
 import { motion } from "framer-motion";
 import { fadeInUp } from "@/lib/animations/motionVariants";
+import { FaAward } from "react-icons/fa";
+import { CERTIFICATION, EXPERIENCE } from "./About.constants";
+import Link from "next/link";
 
 const About = () => {
   const titleStyle =
@@ -15,18 +18,18 @@ const About = () => {
   const descriptionStyle =
     "text-xs lg:text-xs font-libre dark:text-neutral-300";
 
-  const { isDetailOpen, handleOpenDetail } = useAbout();
+  const { credentialUrl, handleOpenDetail } = useAbout();
 
   return (
     <>
       <div className="flex xl:flex-row flex-col lg:gap-10">
         <div className="xl:top-36 relative xl:sticky self-start rounded-xl w-full xl:w-1/3 overflow-hidden">
           <Image
-            src="/assets/images/home/foto.jpg"
+            src="/assets/images/home/foto_toga.jpg"
             width={500}
             height={500}
             alt="kemalcrisannaufal"
-            className="rounded-xl w-full object-contain"
+            className="shadow rounded-xl w-full max-h-[75vh] object-contain"
           />
           <div className="hidden dark:block top-0 left-0 z-10 absolute bg-gradient-to-b from-black/5 via-black/15 to-black/45 rounded-xl w-full h-full" />
         </div>
@@ -76,23 +79,34 @@ const About = () => {
             </AboutSubsectionBlock>
           </AboutSectionBlock>
 
-          <AboutSectionBlock title="Publications">
-            <AboutSubsectionBlock image="/assets/images/about/scopus.png">
-              <div>
-                <p className={titleStyle}>
-                  Optimizing Support Vector Machine for Avocado Ripeness
-                  Classification Using Moth Flame Optimization
-                </p>
+          <AboutSectionBlock title="Certifications">
+            {CERTIFICATION.map((item) => (
+              <AboutSubsectionBlock key={item.name}>
+                <div className="flex items-center mt-5">
+                  <div className="w-full max-w-1/3 overflow-hidden">
+                    <div className="flex justify-center items-center dark:bg-white rounded-full w-20 md:w-24 h-20 md:h-24 overflow-hidden">
+                      <FaAward className="w-1/2 h-1/2 text-teal-600" />
+                    </div>
+                  </div>
 
-                <p className={subtitleStyle}>Scopus and Sinta 2</p>
-                <a
-                  href="https://doi.org/10.35882/jeeemi.v7i2.652"
-                  className="font-libre font-semibold text-black dark:text-neutral-300 text-xs underline"
-                >
-                  View Journal
-                </a>
-              </div>
-            </AboutSubsectionBlock>
+                  <div className="max-w-2/3">
+                    <p className={`${titleStyle} mb-1`}>{item.publisher}</p>
+                    <p className={`${subtitleStyle} text-justify`}>
+                      {item.name}
+                    </p>
+                    <p className={descriptionStyle}>{item.date}</p>
+                    {item.credentialUrl !== "" && (
+                      <button
+                        className="font-libre font-semibold text-black dark:text-neutral-300 text-xs underline cursor-pointer"
+                        onClick={() => handleOpenDetail(item.credentialUrl)}
+                      >
+                        View Certificate
+                      </button>
+                    )}
+                  </div>
+                </div>
+              </AboutSubsectionBlock>
+            ))}
           </AboutSectionBlock>
         </motion.div>
 
@@ -106,64 +120,63 @@ const About = () => {
             transition: { duration: 0.6, delay: 0.5 },
           }}
         >
-          <AboutSectionBlock title="Experience">
-            <AboutSubsectionBlock image="/assets/images/about/if_lab.jpeg">
+          <AboutSectionBlock title="Publications">
+            <AboutSubsectionBlock image="/assets/images/about/scopus.png">
               <div>
-                <a href="https://doi.org/10.35882/jeeemi.v7i2.652">
-                  <p className={titleStyle}>Practicum Assistant</p>
-                </a>
-                <p className={subtitleStyle}>
-                  Informatics Laboratory Telkom University
+                <p className={titleStyle}>
+                  Optimizing Support Vector Machine for Avocado Ripeness
+                  Classification Using Moth Flame Optimization
                 </p>
-                <div className="flex items-center mt-1">
-                  <i className="bx-chevron-right mr-2 text-sm bx" />
-                  <p className={descriptionStyle}>
-                    Assisted in teaching and guiding students in the Data
-                    Structure course
-                  </p>
-                </div>
-                <div className="flex items-center mt-1">
-                  <i className="bx-chevron-right mr-2 text-sm bx" />
-                  <p className={descriptionStyle}>
-                    Conducted evaluations of students&apos; laboratory work.
-                  </p>
-                </div>
-                <button
-                  className="mt-2 cursor-pointer"
-                  onClick={() => handleOpenDetail("asprak")}
-                >
-                  <p className="font-libre font-semibold dark:text-neutral-300 text-xs underline">
-                    View Certificate
-                  </p>
-                </button>
-              </div>
-            </AboutSubsectionBlock>
 
-            <AboutSubsectionBlock image="/assets/images/about/telyu_logo.png">
-              <div>
-                <a href="https://doi.org/10.35882/jeeemi.v7i2.652">
-                  <p className={titleStyle}>Research Assistant</p>
-                </a>
-                <p className={subtitleStyle}>Telkom University</p>
-                <div className="flex items-center mt-1">
-                  <i className="bx-chevron-right mr-2 text-sm bx" />
-                  <p className={descriptionStyle}>
-                    Collected and processed data for research purposes
-                  </p>
-                </div>
-                <div className="flex items-center mt-1">
-                  <i className="bx-chevron-right mr-2 text-sm bx" />
-                  <p className={descriptionStyle}>
-                    Prepared and cleaned data related to Aksara Sunda for model
-                    training
-                  </p>
-                </div>
+                <p className={subtitleStyle}>Scopus and Sinta 2</p>
+                <Link
+                  href="https://doi.org/10.35882/jeeemi.v7i2.652"
+                  className="font-libre font-semibold text-black dark:text-neutral-300 text-xs underline"
+                >
+                  View Journal
+                </Link>
               </div>
             </AboutSubsectionBlock>
           </AboutSectionBlock>
 
+          <AboutSectionBlock title="Experience">
+            {EXPERIENCE.map((item, index) => (
+              <AboutSubsectionBlock
+                key={`${item.company}-${index}`}
+                image={item.image}
+              >
+                <div>
+                  <Link href="https://doi.org/10.35882/jeeemi.v7i2.652">
+                    <p className={titleStyle}>{item.position}</p>
+                  </Link>
+                  <p className={subtitleStyle}>{item.company}</p>
+                  {item.details.map((detail, index) => (
+                    <div
+                      key={`detail-${item.position}-${index}`}
+                      className="flex items-center mt-1"
+                    >
+                      <i className="bx-chevron-right mr-2 text-sm bx" />
+                      <p className={descriptionStyle}>{detail}</p>
+                    </div>
+                  ))}
+
+                  {item.credentialUrl !== "" && (
+                    <button
+                      className="mt-2 cursor-pointer"
+                      onClick={() => handleOpenDetail(item.credentialUrl)}
+                    >
+                      <p className="font-libre font-semibold dark:text-neutral-300 text-xs underline">
+                        View Certificate
+                      </p>
+                    </button>
+                  )}
+                </div>
+              </AboutSubsectionBlock>
+            ))}
+          </AboutSectionBlock>
+
           <AboutSectionBlock title="Tech Stack">
-            <div className="flex flex-wrap gap-x-5">
+            <div className="flex flex-wrap justify-between gap-x-5">
               {TECH_STACK.map((stack, index) => {
                 return (
                   <motion.div
@@ -188,24 +201,32 @@ const About = () => {
               })}
             </div>
           </AboutSectionBlock>
+
+          <Image
+            src={"/assets/images/about/code-ilustration.png"}
+            alt={"coding"}
+            width={1920}
+            height={800}
+            className="hidden lg:block w-full object-cover aspect-video"
+          />
         </motion.div>
       </div>
 
-      {(isDetailOpen === "asprak" || isDetailOpen === "loading") && (
+      {credentialUrl !== "" && (
         <Modal onClose={() => handleOpenDetail("")}>
           <div>
             <h1 className="font-libre font-semibold dark:text-white text-2xl">
               Certificate
             </h1>
             <div className="flex justify-center mt-5 rounded w-full">
-              {isDetailOpen === "loading" ? (
+              {credentialUrl === "loading" ? (
                 <div className="bg-gray-200 dark:bg-neutral-600 w-full h-40 md:h-96 animate-pulse" />
               ) : (
                 <Image
-                  src={"/assets/images/about/sertifikat_asprak.png"}
+                  src={credentialUrl}
                   width={500}
                   height={500}
-                  alt="asprak"
+                  alt={"certificate"}
                   priority
                   className="w-full h-full object-contain"
                 />
