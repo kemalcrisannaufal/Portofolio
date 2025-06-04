@@ -20,8 +20,8 @@ const BlogCard = (props: Proptypes) => {
   const { showProfileImage, setProfileImage } = useBlogCard();
 
   return (
-    <div className="group md:dark:bg-gradient-to-b md:dark:from-neutral-700 md:dark:via-neutral-800 md:dark:to-neutral-900 mb-5 p-2 rounded-lg dark:text-neutral-300 hover:scale-105 hover:transition hover:duration-300">
-      <div className="lg:hidden flex-grow">
+    <div className="group md:dark:bg-gradient-to-b lg:dark:from-neutral-700 lg:dark:via-neutral-800 lg:dark:to-neutral-900 mb-5 p-2 rounded-lg dark:text-neutral-300 hover:scale-105 hover:transition hover:duration-300">
+      <div className="md:hidden flex-grow">
         <h2 className="mb-3 md:h-14 font-libre text-lg text-center line-clamp-2">
           {blog.title}
         </h2>
@@ -52,7 +52,7 @@ const BlogCard = (props: Proptypes) => {
       </Link>
 
       <div className="mt-3">
-        <div className="hidden lg:block">
+        <div className="hidden md:block">
           <h2 className="font-libre dark:text-neutral-200 text-lg line-clamp-1">
             {blog.title}
           </h2>

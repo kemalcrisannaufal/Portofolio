@@ -1,35 +1,37 @@
-import { Project } from "@/types/project";
 import Image from "next/image";
 import { CiCircleChevLeft, CiCircleChevRight } from "react-icons/ci";
-import useCarouselProject from "./useCarouselProject";
-import { TECH_STACK } from "@/constants/list.constanst";
+import useCarouselBlog from "./useCarouselBlog";
 import Link from "next/link";
 import { useEffect } from "react";
 import { SiPinboard } from "react-icons/si";
 import { motion, AnimatePresence } from "framer-motion";
+import { Blog } from "@/types/blog";
+import MarkdownText from "@/components/ui/MarkdownText";
+import { getEstimatedReadingTime, getShortDescription } from "@/utils/blog";
+import { getDate } from "@/utils/date";
 
 interface Proptypes {
-  dataProjects: Project[];
+  dataBlogs: Blog[];
 }
 
-const CarouselProject = (props: Proptypes) => {
-  const { dataProjects } = props;
-  const { idx, setPrev, setNext, direction } = useCarouselProject();
+const CarouselBlog = (props: Proptypes) => {
+  const { dataBlogs } = props;
+  const { idx, setPrev, setNext, direction } = useCarouselBlog();
 
   const duration = 5000;
 
   useEffect(() => {
     const timeout = setTimeout(() => {
-      setNext(dataProjects.length);
+      setNext(dataBlogs.length);
     }, duration);
     return () => clearTimeout(timeout);
-  }, [dataProjects.length, idx, setNext]);
+  }, [dataBlogs.length, idx, setNext]);
 
   return (
-    <div className="relative shadow border-2 border-neutral-300 dark:border-neutral-600 rounded-xl w-full h-[250px] md:h-[300px] lg:h-[350px] overflow-hidden">
-      <div className="top-3 left-3 z-20 absolute flex items-center bg-teal-700 dark:bg-cyan-700 px-3 py-1">
+    <div className="hidden md:block relative shadow border-2 border-neutral-300 dark:border-neutral-600 rounded-xl w-full h-[250px] md:h-[350px] lg:h-[450px] overflow-hidden">
+      <div className="top-3 left-3 z-20 absolute flex items-center bg-teal-700 dark:bg-cyan-700 px-3 py-1 rounded-xl">
         <SiPinboard className="mr-2 text-white" />
-        <p className="rounded-xl text-white text-xs md:text-sm">Top Featured</p>
+        <p className="text-white text-xs md:text-sm">Top Featured</p>
       </div>
 
       <div
@@ -46,12 +48,12 @@ const CarouselProject = (props: Proptypes) => {
       </div>
 
       <Link
-        href={`/projects/${dataProjects[idx].slug}`}
+        href={`/blogs/${dataBlogs[idx].slug}`}
         className="block overflow-hidden"
       >
         <AnimatePresence mode="popLayout">
           <motion.div
-            key={dataProjects[idx].slug}
+            key={dataBlogs[idx].slug}
             initial={{ opacity: 0, x: direction === "left" ? -50 : 50 }}
             animate={{ opacity: 1, x: 0 }}
             exit={{ opacity: 0, x: direction === "left" ? 50 : -50 }}
@@ -62,44 +64,52 @@ const CarouselProject = (props: Proptypes) => {
               aria-label="background gradient"
             />
             <Image
-              src={dataProjects[idx].thumbnail}
-              alt={dataProjects[idx].name || "Project Thumbnail"}
+              src={dataBlogs[idx].thumbnail}
+              alt={dataBlogs[idx].title || "Project Thumbnail"}
               width={500}
               height={500}
-              className="w-full h-[250px] md:h-[300px] lg:h-[350px] object-cover"
+              className="w-full h-[250px] md:h-[350px] lg:h-[450px] object-center object-cover"
             />
             <div className="bottom-0 left-0 absolute flex flex-col p-5 w-full max-w-[80%] md:max-w-[90%] lg:max-w-full h-max transition-all duration-500 ease-in-out">
               <p className="font-libre font-semibold text-white lg:text-2xl">
-                {dataProjects[idx].name}
+                {dataBlogs[idx].title}
               </p>
-              <p className="font-libre text-white lg:text-md text-xs line-clamp-1">
-                {dataProjects[idx].description}
-              </p>
-              <div className="hidden lg:flex items-center gap-2 mt-2">
-                {dataProjects[idx].techStacks.map((tech, index) => {
-                  const techStack = TECH_STACK.find(
-                    (item) => item.name === tech
-                  );
+
+              <MarkdownText
+                content={getShortDescription(dataBlogs[idx].content, 50)}
+                classname="mt-3 text-justify  line-clamp-2 text-white"
+              />
+
+              <div className="flex items-center gap-5 mt-2">
+                {dataBlogs[idx].category.map((item, index) => {
                   return (
-                    <div
+                    <span
                       key={index}
-                      className="bg-neutral-600/50 px-2 py-1 rounded-full font-thin text-white"
+                      className="block bg-neutral-600/50 px-3 py-1 w-max font-libre text-white text-xs"
                     >
-                      {techStack && <techStack.icon />}
-                    </div>
+                      {item}
+                    </span>
                   );
                 })}
+
+                <span className="bg-neutral-600/50 px-3 py-1 rounded font-libre text-white text-xs">
+                  {getEstimatedReadingTime(dataBlogs[idx].content)} Min Read
+                </span>
+
+                <h6 className="bg-neutral-600/50 px-3 py-1 rounded font-libre text-white text-xs">
+                  {getDate(new Date(dataBlogs[idx].createdAt))}
+                </h6>
               </div>
             </div>
           </motion.div>
         </AnimatePresence>
       </Link>
 
-      <div className="right-4 bottom-3 absolute flex justify-center items-center gap-1">
+      <div className="right-3 bottom-3 absolute flex justify-center items-center gap-1">
         <button
           aria-label="previous project"
           className="cursor-pointer"
-          onClick={() => setPrev(dataProjects.length)}
+          onClick={() => setPrev(dataBlogs.length)}
         >
           <CiCircleChevLeft className="text-white text-3xl" />
         </button>
@@ -107,7 +117,7 @@ const CarouselProject = (props: Proptypes) => {
         <button
           aria-label="next project"
           className="cursor-pointer"
-          onClick={() => setNext(dataProjects.length)}
+          onClick={() => setNext(dataBlogs.length)}
         >
           <CiCircleChevRight className="text-white text-3xl" />
         </button>
@@ -115,4 +125,4 @@ const CarouselProject = (props: Proptypes) => {
     </div>
   );
 };
-export default CarouselProject;
+export default CarouselBlog;
