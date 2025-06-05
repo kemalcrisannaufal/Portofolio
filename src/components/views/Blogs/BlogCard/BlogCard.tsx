@@ -21,8 +21,8 @@ const BlogCard = (props: Proptypes) => {
 
   return (
     <div className="group md:dark:bg-gradient-to-b lg:dark:from-neutral-700 lg:dark:via-neutral-800 lg:dark:to-neutral-900 mb-5 p-2 rounded-lg dark:text-neutral-300 hover:scale-105 hover:transition hover:duration-300">
-      <div className="md:hidden flex-grow">
-        <h2 className="mb-3 md:h-14 font-libre text-lg text-center line-clamp-2">
+      <div className="md:hidden flex-grow mb-3 md:h-14">
+        <h2 className="font-libre text-lg text-center line-clamp-2">
           {blog.title}
         </h2>
       </div>
@@ -32,10 +32,10 @@ const BlogCard = (props: Proptypes) => {
         className="block relative shadow h-[200px] md:h-[200px] lg:h-[300px] overflow-hidden cursor-pointer"
       >
         <Image
-          className="w-full h-full object-cover object-top"
+          className="object-cover object-top aspect-video"
           src={blog.thumbnail}
-          width={500}
-          height={500}
+          width={1920}
+          height={800}
           alt={blog.title}
           priority
         />
@@ -46,7 +46,7 @@ const BlogCard = (props: Proptypes) => {
           </div>
         )}
         <div className="hidden z-10 absolute inset-0 group-hover:flex justify-center items-center bg-black/50 w-full h-full duration-300 group-hover:duration-500 group-hover:transform">
-          <h2 className="mr-2 font-libre text-white text-lg">View Project</h2>
+          <h2 className="mr-2 font-libre text-white text-lg">View Blog</h2>
           <i className="bx-right-arrow-alt text-white text-2xl bx" />
         </div>
       </Link>

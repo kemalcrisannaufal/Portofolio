@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import Image from "next/image";
 import AboutSectionBlock from "./AboutSectionBlock/AboutSectionBlock";
 import AboutSubsectionBlock from "./AboutSubsectionBlock/AboutSubsectionBlock";
@@ -82,7 +83,7 @@ const About = () => {
           <AboutSectionBlock title="Certifications">
             {CERTIFICATION.map((item) => (
               <AboutSubsectionBlock key={item.name}>
-                <div className="flex items-center mt-5">
+                <div className="flex items-center">
                   <div className="w-full max-w-1/3 overflow-hidden">
                     <div className="flex justify-center items-center dark:bg-white rounded-full w-20 md:w-24 h-20 md:h-24 overflow-hidden">
                       <FaAward className="w-1/2 h-1/2 text-teal-600" />
@@ -176,7 +177,7 @@ const About = () => {
           </AboutSectionBlock>
 
           <AboutSectionBlock title="Tech Stack">
-            <div className="flex flex-wrap justify-between gap-x-5">
+            <div className="grid grid-cols-6 md:grid-cols-10 lg:grid-cols-6">
               {TECH_STACK.map((stack, index) => {
                 return (
                   <motion.div
@@ -190,25 +191,53 @@ const About = () => {
                       },
                     }}
                     key={index}
-                    className="group relative dark:bg-neutral-600/25 mt-2 p-2 border border-gray-200 dark:border-neutral-600 rounded-full cursor-pointer"
+                    className="group relative dark:bg-neutral-600/25 mt-2 p-2 border border-gray-200 dark:border-neutral-600 rounded-full w-max cursor-pointer"
                   >
                     <div className="hidden group-hover:block -top-5 z-50 absolute bg-gray-200 p-2 rounded duration-300">
                       <p className="font-mono text-xs">{stack.name}</p>
                     </div>
+
                     <stack.icon className={stack.className} />
                   </motion.div>
                 );
               })}
             </div>
           </AboutSectionBlock>
-
-          <Image
-            src={"/assets/images/about/code-ilustration.png"}
-            alt={"coding"}
-            width={1920}
-            height={800}
-            className="hidden lg:block w-full object-cover aspect-video"
-          />
+          <motion.div
+            className="mt-3"
+            initial={{ opacity: 0 }}
+            whileHover={{ scale: 1.1 }}
+            animate={{
+              opacity: 1,
+              transition: {
+                duration: 1,
+                delay: TECH_STACK.length * 0.3,
+              },
+            }}
+          >
+            <AboutSectionBlock title="Coding Stats">
+              <AboutSubsectionBlock>
+                <Link
+                  href={
+                    "https://wakatime.com/@56f938c5-7cbc-42ac-adff-98c8ed90c840"
+                  }
+                >
+                  <Image
+                    src="https://wakatime.com/badge/user/56f938c5-7cbc-42ac-adff-98c8ed90c840.svg"
+                    alt="Total time coded since May 23 2025"
+                    width={150}
+                    height={50}
+                    className="mb-2"
+                  />
+                </Link>
+                <img
+                  src="https://github-readme-stats.vercel.app/api/wakatime?username=kemalcrisannaufal&hide_border=true&layout=compact&theme=dark"
+                  alt="WakaTime Stats"
+                  className="w-full h-auto"
+                />
+              </AboutSubsectionBlock>
+            </AboutSectionBlock>
+          </motion.div>
         </motion.div>
       </div>
 

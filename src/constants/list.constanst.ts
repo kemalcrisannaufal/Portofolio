@@ -87,6 +87,8 @@ const PAGE_DESCRIPTION = {
   BLOG: "Read insightful articles and tutorials on software development, programming tips, and industry trends by Kemal Crisannaufal.",
   CONTACT:
     "Get in touch with Kemal Crisannaufal for collaboration, inquiries, or opportunities in software development and data science.",
+  GALLERY:
+    "Discover a collection of Kemal Crisannaufal's Gallery showcasing me.",
 };
 
 const PROJECT_CATEGORIES = [
@@ -122,7 +124,7 @@ const TECH_STACK = [
   {
     name: "Axios",
     icon: SiAxios,
-    className: "text-black text-md lg:text-2xl md:text-xl",
+    className: "text-black dark:text-white text-md lg:text-2xl md:text-xl",
   },
   {
     name: "Firebase",
@@ -152,7 +154,7 @@ const TECH_STACK = [
   {
     name: "Next.js",
     icon: SiNextdotjs,
-    className: "text-black text-md lg:text-2xl md:text-xl",
+    className: "text-black dark:text-white text-md lg:text-2xl md:text-xl",
   },
   {
     name: "Java",
@@ -222,7 +224,7 @@ const TECH_STACK = [
   {
     name: "Express.js",
     icon: SiExpress,
-    className: "text-black text-md lg:text-2xl md:text-xl",
+    className: "text-black dark:text-white text-md lg:text-2xl md:text-xl",
   },
 ];
 

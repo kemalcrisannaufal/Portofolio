@@ -21,10 +21,10 @@ const Button = (props: Proptypes) => {
   return (
     <button
       type={type}
-      className={`p-2 shadow rounded-sm text-sm md:text-base cursor-pointer ${classname} ${
+      className={`px-3 py-2 shadow rounded-sm text-sm md:text-base cursor-pointer ${classname} ${
         variant === "primary"
           ? "bg-black text-white dark:border dark:border-neutral-300 dark:bg-black dark:text-white hover:bg-neutral-300 hover:text-black  dark:hover:bg-neutral-600"
-          : "bg-white border border-neutral-300 text-black dark:bg-transparent dark:bg-transparent  dark:text-neutral-300 hover:bg-neutral-300  dark:hover:bg-neutral-600 "
+          : "bg-white border border-neutral-300 text-black dark:bg-transparent  dark:text-neutral-300 hover:bg-neutral-300  dark:hover:bg-neutral-600 "
       }`}
       onClick={onClick}
       disabled={disabled}

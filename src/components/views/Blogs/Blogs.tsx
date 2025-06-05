@@ -18,13 +18,13 @@ const Blogs = () => {
       ) : (
         <div>
           <CarouselBlog dataBlogs={getTopFeaturedBlog(dataBlogs!)} />
-          <h3 className="md:hidden mt-5 mb-5 font-libre font-semibold md:text-md dark:text-neutral-300 text-xs sm:text-sm lg:text-base">
+          <h3 className="mt-5 mb-5 font-libre font-semibold md:text-md dark:text-neutral-300 text-xs sm:text-sm lg:text-base">
             Featured Blogs{" "}
             <span className="bg-gray-200 dark:bg-neutral-300 px-2 py-1 rounded-full font-thin text-black">
               {getTopFeaturedBlog(dataBlogs!).length}
             </span>
           </h3>
-          <div className="md:hidden gap-5 grid grid-cols-1 md:grid-cols-2">
+          <div className="gap-5 grid grid-cols-1 md:grid-cols-2">
             {getTopFeaturedBlog(dataBlogs!).map((blog, index) => {
               return (
                 <motion.div

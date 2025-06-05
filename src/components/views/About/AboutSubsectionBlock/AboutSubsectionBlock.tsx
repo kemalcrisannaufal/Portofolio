@@ -27,7 +27,7 @@ const AboutSubsectionBlock = (props: Proptypes) => {
           <div className="w-2/3">{children}</div>
         </div>
       ) : (
-        children
+        <div className="mt-3 p-2">{children}</div>
       )}
     </div>
   );

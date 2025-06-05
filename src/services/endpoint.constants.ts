@@ -3,6 +3,7 @@ const endpoint: Record<string, string> = {
   BLOG: "/api/blogs",
   GUESTBOOK: "/api/guestbook",
   PROJECT: "/api/projects",
+  GALLERY: "/api/gallery",
 };
 
 export default endpoint;
