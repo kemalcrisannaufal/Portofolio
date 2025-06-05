@@ -32,12 +32,11 @@ const BlogCard = (props: Proptypes) => {
         className="block relative shadow h-[200px] md:h-[200px] lg:h-[300px] overflow-hidden cursor-pointer"
       >
         <Image
-          className="object-cover object-top aspect-video"
+          className="h-[200px] md:h-[200px] lg:h-[300px] object-cover object-top aspect-video"
           src={blog.thumbnail}
           width={1920}
           height={800}
           alt={blog.title}
-          priority
         />
         {blog.topFeatured && (
           <div className="top-0 right-0 z-20 absolute flex items-center bg-teal-800 dark:bg-cyan-900 px-3 py-1 rounded-bl">
