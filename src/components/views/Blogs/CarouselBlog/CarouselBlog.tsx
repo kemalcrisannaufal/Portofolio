@@ -68,7 +68,7 @@ const CarouselBlog = (props: Proptypes) => {
               alt={dataBlogs[idx].title || "Project Thumbnail"}
               width={500}
               height={500}
-              className="w-full h-[250px] md:h-[350px] lg:h-[450px] object-center object-cover"
+              className="z-10 w-full h-[250px] md:h-[350px] lg:h-[450px] object-center object-cover"
             />
             <div className="bottom-0 left-0 absolute flex flex-col p-5 w-full max-w-[80%] md:max-w-[90%] lg:max-w-full h-max transition-all duration-500 ease-in-out">
               <p className="font-libre font-semibold text-white lg:text-2xl">

@@ -83,14 +83,14 @@ const About = () => {
           <AboutSectionBlock title="Certifications">
             {CERTIFICATION.map((item) => (
               <AboutSubsectionBlock key={item.name}>
-                <div className="flex items-center">
-                  <div className="w-full max-w-1/3 overflow-hidden">
+                <div className="flex items-center w-full">
+                  <div className="lg:w-1/3 overflow-hidden">
                     <div className="flex justify-center items-center dark:bg-white rounded-full w-20 md:w-24 h-20 md:h-24 overflow-hidden">
                       <FaAward className="w-1/2 h-1/2 text-teal-600" />
                     </div>
                   </div>
 
-                  <div className="max-w-2/3">
+                  <div className="lg:w-2/3">
                     <p className={`${titleStyle} mb-1`}>{item.publisher}</p>
                     <p className={`${subtitleStyle} text-justify`}>
                       {item.name}
@@ -211,7 +211,6 @@ const About = () => {
               opacity: 1,
               transition: {
                 duration: 1,
-                delay: TECH_STACK.length * 0.3,
               },
             }}
           >
