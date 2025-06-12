@@ -2,12 +2,14 @@ import Image from "next/image";
 import Link from "next/link";
 import { NAVBAR_ITEMS } from "../navbar.constants";
 import { motion } from "framer-motion";
+import { useRouter } from "next/router";
 
 interface Proptypes {
   setIsDrawerOpen: React.Dispatch<React.SetStateAction<boolean>>;
 }
 const Drawer = (props: Proptypes) => {
   const { setIsDrawerOpen } = props;
+  const router = useRouter();
   return (
     <motion.div
       initial={{ x: "-100%" }}
@@ -43,7 +45,11 @@ const Drawer = (props: Proptypes) => {
           <Link
             href={item.url}
             key={index}
-            className="flex justify-between mb-3 px-5"
+            className={`flex justify-between mb-1 px-5 py-2 rounded-md ${
+              router.pathname.startsWith(item.url)
+                ? "bg-gray-200  dark:bg-neutral-600"
+                : ""
+            }`}
             onClick={() => setIsDrawerOpen(false)}
           >
             <p className="font-libre font-light text-2xl">{item.name}</p>

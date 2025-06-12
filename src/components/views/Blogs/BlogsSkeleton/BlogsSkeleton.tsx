@@ -3,7 +3,7 @@ import BlogCardSkeleton from "../BlogCard/BlogCardSkeleton/BlogCardSkeleton";
 const BlogsSkeleton = () => {
   return (
     <>
-      <div className="hidden md:block bg-gray-200 dark:bg-neutral-600 w-full h-[250px] md:h-[350px] lg:h-[450px] animate-pulse" />
+      <div className="hidden md:block bg-gray-200 dark:bg-neutral-600 rounded-lg w-full h-[250px] md:h-[350px] lg:h-[450px] animate-pulse" />
       <div>
         <h3 className="mt-10 mb-5 font-libre font-semibold md:text-md dark:text-neutral-300 text-xs sm:text-sm lg:text-base">
           Featured Blogs{" "}

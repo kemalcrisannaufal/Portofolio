@@ -232,7 +232,7 @@ const About = () => {
                 <img
                   src="https://github-readme-stats.vercel.app/api/wakatime?username=kemalcrisannaufal&hide_border=true&layout=compact&theme=dark"
                   alt="WakaTime Stats"
-                  className="w-full h-auto"
+                  className="w-full md:w-1/2 xl:w-full h-auto"
                 />
               </AboutSubsectionBlock>
             </AboutSectionBlock>

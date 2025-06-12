@@ -15,6 +15,10 @@ const NAVBAR_ITEMS = [
     name: "Contact",
     url: "/contact",
   },
+  {
+    name: "Gallery",
+    url: "/gallery",
+  },
 ];
 
 export { NAVBAR_ITEMS };
