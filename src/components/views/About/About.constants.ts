@@ -11,7 +11,7 @@ const CERTIFICATION = [
     publisher: "WPU Course",
     name: "Belajar MERN Stack",
     date: "In Progress",
-    credentialUrl: "",
+    credentialUrl: "/assets/images/about/mern.png",
   },
   {
     tag: "certification",
