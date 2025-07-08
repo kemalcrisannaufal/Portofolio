@@ -17,6 +17,7 @@ interface Proptypes {
 
 const AppShell = (props: Proptypes) => {
   const { children } = props;
+
   const router = useRouter();
   const { toaster, setToaster } = useContext(ToasterContext);
 

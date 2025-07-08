@@ -6,12 +6,18 @@ import Drawer from "./Drawer/Drawer";
 import { NAVBAR_ITEMS } from "./navbar.constants";
 import useNavbar from "./useNavbar";
 import { AnimatePresence } from "framer-motion";
+import useScrolled from "../../../../hooks/useScrolled";
 
 const Navbar = () => {
+  const scrolled = useScrolled();
   const { isDrawerOpen, setIsDrawerOpen } = useNavbar();
 
   return (
-    <div className="top-0 z-50 sticky dark:bg-neutral-900 dark:text-white">
+    <div
+      className={`top-0 z-50 sticky dark:bg-neutral-900 dark:text-white bg-white ${
+        scrolled && "shadow-md transition-all duration-300 ease-in-out "
+      }`}
+    >
       <div className="flex items-center">
         <div className="flex justify-center items-center gap-5 md:gap-10 bg-white dark:bg-neutral-900 md:px-20 lg:px-40 w-full h-20 dark:text-white">
           <div className="hidden md:flex md:gap-10">
