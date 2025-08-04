@@ -14,7 +14,7 @@ const GalleryPresentation = () => {
 
   return (
     <>
-      <h2 className="font-medium text-xl lg:text-2xl">Presentation</h2>
+      <h2 className="font-medium text-lg lg:text-xl">Presentation</h2>
       <p>A collection of my past presentations — from class projects.</p>
 
       <motion.div

@@ -30,13 +30,13 @@ const Projects = () => {
             />
 
             <div className="mt-10">
-              <h3 className="mb-5 font-libre font-semibold md:text-md dark:text-neutral-300 text-xs sm:text-sm lg:text-base">
+              <h3 className="mb-5 font-semibold md:text-md dark:text-neutral-300">
                 Featured Projects{" "}
-                <span className="bg-gray-200 dark:bg-neutral-300 px-2 py-1 rounded-full font-thin text-black">
+                <span className="bg-gray-200 dark:bg-neutral-300 px-2 py-1 rounded-full text-black">
                   {getTopFeaturedProject(dataProjects).length}
                 </span>
               </h3>
-              <div className="gap-5 grid md:grid-cols-2 lg:grid-cols-3 md:grid-flow-row grid-flow-col auto-cols-[18rem] md:auto-cols-auto overflow-x-auto md:overflow-x-hidden md:overflow-y-hidden hide-scrollbar">
+              <div className="gap-5 grid md:grid-cols-2 xl:grid-cols-3 md:grid-flow-row grid-flow-col auto-cols-[18rem] md:auto-cols-auto overflow-x-auto md:overflow-x-hidden md:overflow-y-hidden scrollbar-hide">
                 {getTopFeaturedProject(dataProjects).map((project, index) => (
                   <motion.div
                     initial={{ opacity: 0, y: 50 }}
@@ -59,9 +59,9 @@ const Projects = () => {
 
             {/* Project Filter */}
             <div className="flex md:flex-row md:justify-between md:items-center gap-2 mt-10 mb-5">
-              <h3 className="font-libre font-semibold md:text-md dark:text-neutral-300 text-xs sm:text-sm lg:text-base">
+              <h3 className="font-semibold md:text-md dark:text-neutral-300">
                 Latest Projects{" "}
-                <span className="bg-gray-200 dark:bg-neutral-300 px-2 py-1 rounded-full font-thin text-black">
+                <span className="bg-gray-200 dark:bg-neutral-300 px-2 py-1 rounded-full text-black">
                   {
                     getFilteredProjects(getNotTopFeaturedProject(dataProjects))
                       .length
@@ -71,7 +71,7 @@ const Projects = () => {
               <div className="hidden md:flex items-center gap-1 lg:gap-2">
                 {PROJECT_CATEGORIES.map((category) => (
                   <button
-                    className={`flex items-center px-2 py-2 mb-1 rounded-full font-thin font-libre shadow cursor-pointer
+                    className={`flex items-center px-2 py-2 mb-1 rounded-full shadow cursor-pointer
                       ${
                         isInCategoryFilter(category.value)
                           ? "bg-neutral-700 text-white dark:bg-neutral-600"
@@ -93,7 +93,7 @@ const Projects = () => {
               </div>
             </div>
 
-            <div className="gap-5 lg:gap-y-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+            <div className="gap-5 lg:gap-y-8 grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3">
               {getFilteredProjects(getNotTopFeaturedProject(dataProjects)).map(
                 (project, index) => (
                   <motion.div

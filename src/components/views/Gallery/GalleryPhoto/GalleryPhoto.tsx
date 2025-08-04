@@ -15,7 +15,7 @@ const GalleryPhoto = () => {
 
   return (
     <div className="mt-5">
-      <h2 className="font-medium text-xl lg:text-2xl">Photos</h2>
+      <h2 className="font-medium text-lg lg:text-xl">Photos</h2>
       <p>
         Just some snapshots from my life — the serious, the random, and
         everything in between.

@@ -1,12 +1,9 @@
-"use client";
-
 import { useRef } from "react";
 import { Project } from "@/types/project";
 import Image from "next/image";
 import Link from "next/link";
 import { SiPinboard } from "react-icons/si";
 import { CiCircleChevLeft, CiCircleChevRight } from "react-icons/ci";
-import { motion } from "framer-motion";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Swiper as SwiperClass } from "swiper";
 import { Pagination, Autoplay } from "swiper/modules";
@@ -24,22 +21,9 @@ const CarouselProject = ({ dataProjects }: Proptypes) => {
 
   return (
     <div className="relative shadow rounded-xl w-full h-[250px] md:h-[300px] lg:h-[350px] overflow-hidden">
-      <div className="top-3 left-3 z-20 absolute flex items-center bg-teal-700 dark:bg-cyan-700 px-3 py-1 rounded-lg">
-        <SiPinboard className="mr-2 text-white" />
-        <p className="text-white text-xs md:text-sm">Top Featured</p>
-      </div>
-
-      <div
-        className="top-3 right-3 z-20 absolute bg-neutral-300 rounded-full w-6 md:w-10 h-2 md:h-3 overflow-hidden"
-        aria-label="progress bar"
-      >
-        <motion.div
-          key={dataProjects.length}
-          initial={{ width: 0 }}
-          animate={{ width: "100%" }}
-          transition={{ duration: 5, ease: "linear" }}
-          className="bg-teal-700 dark:bg-cyan-700 h-full"
-        />
+      <div className="top-3 left-3 z-20 absolute flex items-center bg-teal-600 px-3 py-1 rounded-lg text-white">
+        <SiPinboard className="mr-2" />
+        <p className="text-xs md:text-sm">Top Featured</p>
       </div>
 
       <Swiper
@@ -57,10 +41,9 @@ const CarouselProject = ({ dataProjects }: Proptypes) => {
           <SwiperSlide key={`slider-${project.id}`}>
             <Link
               href={`/projects/${project.slug}`}
-              className="block overflow-hidden"
+              className="overflow-hidden"
             >
-              <div className="absolute inset-0 bg-gradient-to-b from-black/15 via-black/60 to-black" />
-
+              <div className="absolute inset-0 bg-gradient-to-b from-black/15 via-black/60 to-[var(--color-primary-dark)]" />
               <Image
                 src={project.thumbnail}
                 alt={project.name || "Project Thumbnail"}
@@ -70,10 +53,10 @@ const CarouselProject = ({ dataProjects }: Proptypes) => {
               />
 
               <div className="bottom-0 left-0 absolute flex flex-col p-5 w-full max-w-[80%] md:max-w-[90%] lg:max-w-full h-max transition-all duration-500 ease-in-out">
-                <p className="font-libre font-semibold text-white lg:text-2xl">
+                <p className="font-semibold text-white text-xl lg:text-2xl">
                   {project.name}
                 </p>
-                <p className="font-libre text-white lg:text-md text-xs line-clamp-1">
+                <p className="text-white text-sm md:text-base line-clamp-2 md:line-clamp-1">
                   {project.description}
                 </p>
 
