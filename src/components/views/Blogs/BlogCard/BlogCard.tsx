@@ -20,9 +20,9 @@ const BlogCard = (props: Proptypes) => {
   const { showProfileImage, setProfileImage } = useBlogCard();
 
   return (
-    <div className="group md:dark:bg-gradient-to-b lg:dark:from-neutral-700 lg:dark:via-neutral-800 lg:dark:to-neutral-900 mb-5 p-2 rounded-lg dark:text-neutral-300 hover:scale-105 hover:transition hover:duration-300">
+    <div className="group lg:dark:bg-gradient-to-b lg:dark:from-[var(--color-secondary-dark)] lg:dark:via-neutral-800 lg:dark:to-[var(--color-primary-dark)] p-2 rounded-lg dark:text-white hover:scale-105 hover:transition hover:duration-300">
       <div className="md:hidden flex-grow mb-3 md:h-14">
-        <h2 className="font-libre text-lg text-center line-clamp-2">
+        <h2 className="font-medium text-xl text-center line-clamp-2">
           {blog.title}
         </h2>
       </div>
@@ -39,20 +39,20 @@ const BlogCard = (props: Proptypes) => {
           alt={blog.title}
         />
         {blog.topFeatured && (
-          <div className="top-0 right-0 z-20 absolute flex items-center bg-teal-800 dark:bg-cyan-900 px-3 py-1 rounded-bl">
+          <div className="top-0 right-0 z-20 absolute flex items-center bg-cyan-700 px-3 py-1 rounded-bl">
             <SiPinboard className="mr-2 text-white" />
             <p className="text-white text-sm">Top Featured</p>
           </div>
         )}
         <div className="hidden z-10 absolute inset-0 group-hover:flex justify-center items-center bg-black/50 w-full h-full duration-300 group-hover:duration-500 group-hover:transform">
-          <h2 className="mr-2 font-libre text-white text-lg">View Blog</h2>
+          <h2 className="mr-2 text-white text-lg">View Blog</h2>
           <i className="bx-right-arrow-alt text-white text-2xl bx" />
         </div>
       </Link>
 
       <div className="mt-3">
         <div className="hidden md:block">
-          <h2 className="font-libre dark:text-neutral-200 text-lg line-clamp-1">
+          <h2 className="font-medium dark:text-white text-xl line-clamp-1">
             {blog.title}
           </h2>
         </div>
@@ -62,7 +62,7 @@ const BlogCard = (props: Proptypes) => {
               return (
                 <span
                   key={index}
-                  className="block bg-gray-200 dark:bg-neutral-600 px-3 py-1 rounded w-max font-libre text-xs"
+                  className="block bg-gray-200 dark:bg-neutral-600 px-3 py-1 dark:border dark:border-neutral-700 rounded w-max dark:text-[var(--color-neon)] text-sm"
                 >
                   {item}
                 </span>
@@ -70,7 +70,7 @@ const BlogCard = (props: Proptypes) => {
             })}
           </div>
           <div>
-            <span className="font-libre font-semibold text-gray-600 dark:text-neutral-300 text-xs">
+            <span className="font-semibold text-gray-600 dark:text-neutral-300 text-sm">
               {getEstimatedReadingTime(blog.content)} Min Read
             </span>
           </div>
@@ -78,14 +78,14 @@ const BlogCard = (props: Proptypes) => {
         <div>
           <MarkdownText
             content={getShortDescription(blog.content)}
-            classname="mt-3 text-justify  line-clamp-3"
+            classname="mt-3 text-justify line-clamp-3 dark:text-neutral-300 text-sm"
           />
         </div>
 
         <div className="hidden md:flex justify-between items-center mt-5">
           <div className="flex items-center">
             <div
-              className="flex justify-center items-center bg-gray-200 dark:bg-neutral-600 mr-3 border border-gray-200 rounded-full w-12 h-12 overflow-hidden cursor-pointer"
+              className="flex justify-center items-center bg-gray-200 dark:bg-[var(--color-secondary-dark)] mr-3 border border-gray-200 dark:border-neutral-800 rounded-full w-12 h-12 overflow-hidden cursor-pointer"
               onMouseEnter={() => setProfileImage(true)}
               onMouseLeave={() => setProfileImage(false)}
             >
@@ -108,14 +108,14 @@ const BlogCard = (props: Proptypes) => {
                     />
                   </motion.div>
                 ) : (
-                  <span className="font-libre text-xl">K</span>
+                  <span className="text-xl">K</span>
                 )}
               </AnimatePresence>
             </div>
 
             <div>
-              <h5 className="font-libre text-xs">Kemal Crisannaufal</h5>
-              <h6 className="font-libre text-xs">
+              <h5 className="font-medium text-sm">Kemal Crisannaufal</h5>
+              <h6 className="dark:text-neutral-300 text-xs">
                 {getDate(new Date(blog.createdAt))}
               </h6>
             </div>

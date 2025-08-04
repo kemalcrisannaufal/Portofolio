@@ -100,7 +100,7 @@ const BlogDetailView = () => {
                       opacity: 0,
                       transition: { duration: 0.3, ease: "easeInOut" },
                     }}
-                    className="bg-white dark:bg-neutral-800 shadow-md mb-5 p-4 rounded-xl"
+                    className="bg-white dark:bg-[var(--color-secondary-dark)] shadow-md mb-5 p-4 rounded-xl"
                   >
                     <form
                       onSubmit={handleSubmit(handleAddComment)}
@@ -145,7 +145,7 @@ const BlogDetailView = () => {
               </AnimatePresence>
 
               {dataBlog.comments.length === 0 ? (
-                <div className="bg-gray-200 dark:bg-neutral-700 p-2 rounded text-center">
+                <div className="bg-gray-200 dark:bg-neutral-800 p-2 rounded text-center">
                   <p className="font-libre text-neutral-600 dark:text-neutral-300">
                     No comments yet
                   </p>

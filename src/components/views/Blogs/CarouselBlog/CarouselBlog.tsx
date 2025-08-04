@@ -1,12 +1,9 @@
-"use client";
-
 import { useRef } from "react";
 import { Blog } from "@/types/blog";
 import Image from "next/image";
 import Link from "next/link";
 import { SiPinboard } from "react-icons/si";
 import { CiCircleChevLeft, CiCircleChevRight } from "react-icons/ci";
-import { motion } from "framer-motion";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Swiper as SwiperClass } from "swiper";
 import { Pagination, Autoplay } from "swiper/modules";
@@ -25,22 +22,11 @@ const CarouselBlog = ({ dataBlogs }: Props) => {
   const swiperRef = useRef<SwiperClass>(null);
 
   return (
-    <div className="hidden md:block relative shadow border-2 border-neutral-300 dark:border-neutral-600 rounded-xl w-full h-[250px] md:h-[350px] lg:h-[450px] overflow-hidden">
+    <div className="hidden md:block relative shadow border-2 border-neutral-300 dark:border-neutral-800 rounded-xl w-full h-[250px] md:h-[350px] lg:h-[450px] overflow-hidden">
       {/* Badge Featured */}
-      <div className="top-3 left-3 z-20 absolute flex items-center bg-teal-700 dark:bg-cyan-700 px-3 py-1 rounded-xl">
+      <div className="top-3 left-3 z-20 absolute flex items-center bg-cyan-700 px-3 py-1 rounded-xl">
         <SiPinboard className="mr-2 text-white" />
         <p className="text-white text-xs md:text-sm">Top Featured</p>
-      </div>
-
-      {/* Progress Bar */}
-      <div className="top-3 right-3 z-20 absolute bg-neutral-300 rounded-full w-6 md:w-10 h-2 md:h-3 overflow-hidden">
-        <motion.div
-          key={dataBlogs.length}
-          initial={{ width: 0 }}
-          animate={{ width: "100%" }}
-          transition={{ duration: 5, ease: "linear" }}
-          className="bg-teal-700 dark:bg-cyan-700 h-full"
-        />
       </div>
 
       {/* Swiper */}
@@ -73,7 +59,7 @@ const CarouselBlog = ({ dataBlogs }: Props) => {
 
               {/* Blog Info */}
               <div className="bottom-0 left-0 absolute flex flex-col p-5 w-full max-w-[80%] md:max-w-[90%] lg:max-w-full h-max transition-all duration-500 ease-in-out">
-                <p className="font-libre font-semibold text-white lg:text-2xl">
+                <p className="font-semibold text-white lg:text-2xl">
                   {blog.title}
                 </p>
 
@@ -86,15 +72,15 @@ const CarouselBlog = ({ dataBlogs }: Props) => {
                   {blog.category.map((item, index) => (
                     <span
                       key={index}
-                      className="bg-neutral-600/50 px-3 py-1 rounded font-libre text-white text-xs"
+                      className="bg-neutral-600/50 px-3 py-1 rounded text-white text-xs"
                     >
                       {item}
                     </span>
                   ))}
-                  <span className="bg-neutral-600/50 px-3 py-1 rounded font-libre text-white text-xs">
+                  <span className="bg-neutral-600/50 px-3 py-1 rounded text-white text-xs">
                     {getEstimatedReadingTime(blog.content)} Min Read
                   </span>
-                  <span className="bg-neutral-600/50 px-3 py-1 rounded font-libre text-white text-xs">
+                  <span className="bg-neutral-600/50 px-3 py-1 rounded text-white text-xs">
                     {getDate(new Date(blog.createdAt))}
                   </span>
                 </div>
@@ -106,14 +92,16 @@ const CarouselBlog = ({ dataBlogs }: Props) => {
               <button
                 aria-label="previous blog"
                 onClick={() => swiperRef.current?.slidePrev()}
+                className="text-white hover:text-[var(--color-neon)] transition-colors duration-300 cursor-pointer"
               >
-                <CiCircleChevLeft className="text-white text-3xl" />
+                <CiCircleChevLeft className="text-3xl" />
               </button>
               <button
                 aria-label="next blog"
                 onClick={() => swiperRef.current?.slideNext()}
+                className="text-white hover:text-[var(--color-neon)] transition-colors duration-300 cursor-pointer"
               >
-                <CiCircleChevRight className="text-white text-3xl" />
+                <CiCircleChevRight className="text-3xl" />
               </button>
             </div>
           </SwiperSlide>

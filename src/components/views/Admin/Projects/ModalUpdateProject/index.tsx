@@ -25,10 +25,11 @@ type Proptypes = {
   onClose: () => void;
   project: Project;
   setProjects: Dispatch<SetStateAction<Project[]>>;
+  isOpen: boolean;
 };
 
 const ModalUpdateProject = (props: Proptypes) => {
-  const { onClose, project, setProjects } = props;
+  const { onClose, project, setProjects, isOpen } = props;
   const [isLoading, setIsLoading] = useState(false);
   const [thumbnail, setThumbnail] = useState<File | null>(null);
   const [techStackChecked, setTechStackChecked] = useState<string[]>([]);
@@ -149,7 +150,7 @@ const ModalUpdateProject = (props: Proptypes) => {
   };
 
   return (
-    <Modal onClose={onClose}>
+    <Modal onClose={onClose} isOpen={isOpen}>
       <Title>Update Project</Title>
       <div className="mt-5">
         <form onSubmit={handleSubmit}>

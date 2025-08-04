@@ -18,9 +18,9 @@ const Blogs = () => {
       ) : (
         <div>
           <CarouselBlog dataBlogs={getTopFeaturedBlog(dataBlogs!)} />
-          <h3 className="mt-5 mb-5 font-libre font-semibold md:text-md dark:text-neutral-300 text-xs sm:text-sm lg:text-base">
+          <h3 className="mt-5 mb-5 font-semibold dark:text-neutral-300">
             Featured Blogs{" "}
-            <span className="bg-gray-200 dark:bg-neutral-300 px-2 py-1 rounded-full font-thin text-black">
+            <span className="bg-gray-200 dark:bg-neutral-300 px-2 py-1 rounded-full text-black">
               {getTopFeaturedBlog(dataBlogs!).length}
             </span>
           </h3>
@@ -45,9 +45,9 @@ const Blogs = () => {
               );
             })}
           </div>
-          <h3 className="mt-5 mb-5 font-libre font-semibold md:text-md dark:text-neutral-300 text-xs sm:text-sm lg:text-base">
+          <h3 className="mt-5 mb-5 font-semibold dark:text-neutral-300">
             Latest Blogs{" "}
-            <span className="bg-gray-200 dark:bg-neutral-300 px-2 py-1 rounded-full font-thin text-black">
+            <span className="bg-gray-200 dark:bg-neutral-300 p-2 py-1 rounded-full text-black">
               {getNotTopFeaturedBlog(dataBlogs!).length}
             </span>
           </h3>

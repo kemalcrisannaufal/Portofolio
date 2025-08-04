@@ -19,7 +19,10 @@ const ProjectsAdminView = () => {
         </div>
       </div>
 
-      {modalAddBlog && <ModalAddBlog onClose={() => setModalAddBlog(false)} />}
+      <ModalAddBlog
+        onClose={() => setModalAddBlog(false)}
+        isOpen={modalAddBlog}
+      />
     </>
   );
 };

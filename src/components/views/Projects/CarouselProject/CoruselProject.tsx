@@ -43,7 +43,7 @@ const CarouselProject = ({ dataProjects }: Proptypes) => {
               href={`/projects/${project.slug}`}
               className="overflow-hidden"
             >
-              <div className="absolute inset-0 bg-gradient-to-b from-black/15 via-black/60 to-[var(--color-primary-dark)]" />
+              <div className="absolute inset-0 bg-gradient-to-b from-black/15 via-black/60 to-black" />
               <Image
                 src={project.thumbnail}
                 alt={project.name || "Project Thumbnail"}
@@ -81,17 +81,17 @@ const CarouselProject = ({ dataProjects }: Proptypes) => {
             <div className="right-4 bottom-3 z-30 absolute flex justify-center items-center gap-1">
               <button
                 aria-label="previous project"
-                className="cursor-pointer"
+                className="text-white hover:text-[var(--color-neon)] transition-colors duration-300 cursor-pointer"
                 onClick={() => swiperRef.current?.slidePrev()}
               >
-                <CiCircleChevLeft className="text-white text-3xl" />
+                <CiCircleChevLeft className="text-3xl" />
               </button>
               <button
                 aria-label="next project"
-                className="cursor-pointer"
+                className="text-white hover:text-[var(--color-neon)] transition-colors duration-300 cursor-pointer"
                 onClick={() => swiperRef.current?.slideNext()}
               >
-                <CiCircleChevRight className="text-white text-3xl" />
+                <CiCircleChevRight className="text-3xl" />
               </button>
             </div>
           </SwiperSlide>

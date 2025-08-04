@@ -117,20 +117,18 @@ const ProjectsAdmin = () => {
         </div>
       </div>
 
-      {modalAddProject && (
-        <ModalAddProject
-          onClose={() => setModalAddProject(false)}
-          setProjects={setProjects}
-        />
-      )}
+      <ModalAddProject
+        onClose={() => setModalAddProject(false)}
+        setProjects={setProjects}
+        isOpen={modalAddProject}
+      />
 
-      {Object.keys(modalUpdateProject).length > 0 && (
-        <ModalUpdateProject
-          onClose={() => setModalUpdateProject({} as Project)}
-          project={modalUpdateProject}
-          setProjects={setProjects}
-        />
-      )}
+      <ModalUpdateProject
+        onClose={() => setModalUpdateProject({} as Project)}
+        project={modalUpdateProject}
+        setProjects={setProjects}
+        isOpen={Object.keys(modalUpdateProject).length > 0}
+      />
     </>
   );
 };

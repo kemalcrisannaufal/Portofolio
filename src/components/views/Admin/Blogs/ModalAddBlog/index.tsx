@@ -16,10 +16,11 @@ import Checkbox from "@/components/ui/Checkbox";
 
 type Proptypes = {
   onClose: () => void;
+  isOpen: boolean;
 };
 
 const ModalAddBlog = (props: Proptypes) => {
-  const { onClose } = props;
+  const { onClose, isOpen } = props;
   const [isLoading, setIsLoading] = useState(false);
   const [thumbnail, setThumbnail] = useState<File | null>(null);
   const [category, setCategory] = useState<string[]>([]);
@@ -78,7 +79,7 @@ const ModalAddBlog = (props: Proptypes) => {
   };
 
   return (
-    <Modal onClose={onClose}>
+    <Modal onClose={onClose} isOpen={isOpen}>
       <Title>Add Blog</Title>
       <div className="mt-5">
         <form onSubmit={handleSubmit}>
