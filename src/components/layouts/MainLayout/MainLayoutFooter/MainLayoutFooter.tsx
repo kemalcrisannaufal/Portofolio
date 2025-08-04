@@ -6,6 +6,14 @@ import cn from "@/utils/cn";
 const MainLayoutFooter = () => {
   const router = useRouter();
   const year = new Date().getFullYear();
+
+  const isActive = (href: string) => {
+    return (
+      (router.pathname.startsWith(href) && href !== "/") ||
+      (router.pathname === "/" && href === "/")
+    );
+  };
+
   return (
     <div className="flex flex-col justify-center items-center w-full">
       <div className="flex flex-col items-center gap-4 p-5 border-gray-200 dark:border-neutral-700 border-t w-full text-gray-600 dark:text-neutral-200 text-xs sm:text-sm">
@@ -16,8 +24,8 @@ const MainLayoutFooter = () => {
               key={index}
               className={cn(
                 "hover:underline",
-                router.pathname === item.url &&
-                  "underline font-semibold text-neon"
+                isActive(item.url) &&
+                  "underline font-semibold dark:text-[var(--color-neon)] text-black"
               )}
             >
               {item.name}

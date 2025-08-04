@@ -26,6 +26,14 @@ const MainLayoutNavbar = () => {
       window.removeEventListener("scroll", handleScroll);
     };
   }, [scrolled]);
+
+  const isActive = (href: string) => {
+    return (
+      (router.pathname.startsWith(href) && href !== "/") ||
+      (router.pathname === "/" && href === "/")
+    );
+  };
+
   return (
     <>
       <nav className="top-2 md:top-5 z-50 sticky xl:p-0 px-3">
@@ -52,7 +60,7 @@ const MainLayoutNavbar = () => {
                   href={item.url}
                   className={cn(
                     "text-neutral-700 hover:text-black dark:hover:text-[var(--color-neon)] dark:text-neutral-300 transition-colors duration-300",
-                    router.pathname === item.url &&
+                    isActive(item.url) &&
                       "text-black dark:text-[var(--color-neon)] font-medium"
                   )}
                 >

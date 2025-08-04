@@ -11,6 +11,14 @@ interface Proptypes {
 const MainLayoutNavbarDrawer = (props: Proptypes) => {
   const { setIsDrawerOpen } = props;
   const router = useRouter();
+
+  const isActive = (href: string) => {
+    return (
+      (router.pathname.startsWith(href) && href !== "/") ||
+      (router.pathname === "/" && href === "/")
+    );
+  };
+
   return (
     <motion.div
       initial={{ x: "-100%" }}
@@ -37,7 +45,7 @@ const MainLayoutNavbarDrawer = (props: Proptypes) => {
             key={`drawer-item-${item.name}`}
             className={cn(
               "flex justify-between items-center mb-1 px-5 py-2 rounded-md",
-              router.pathname.startsWith(item.url) &&
+              isActive(item.url) &&
                 "bg-[var(--color-primary-dark)] text-[var(--color-neon)]"
             )}
             onClick={() => setIsDrawerOpen(false)}

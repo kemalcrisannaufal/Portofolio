@@ -28,7 +28,7 @@ const MainLayout = (props: Proptypes) => {
 
       <div className="relative dark:bg-neutral-900 w-full min-h-screen dark:text-white">
         {!hideNavbar && <MainLayoutNavbar />}
-        <div className="px-10 md:px-20 lg:px-24 xl:px-48 pb-10 xl:pb-16">
+        <div className="mt-10 px-10 md:px-20 lg:px-24 xl:px-48 pb-10 xl:pb-16">
           {children}
         </div>
         {!hideFooter && <MainLayoutFooter />}
