@@ -8,11 +8,13 @@ import { motion } from "framer-motion";
 import { FaAward } from "react-icons/fa";
 import { CERTIFICATION, EXPERIENCE } from "./About.constants";
 import Link from "next/link";
+import cn from "@/utils/cn";
 
 const About = () => {
-  const titleStyle = "mr-2 text-sm md:text-md font-semibold dark:text-white";
-  const subtitleStyle = "text-neutral-800 text-sm dark:text-neutral-300";
-  const descriptionStyle = "text-xs lg:text-sm dark:text-neutral-300";
+  const titleStyle = "mr-2 font-semibold dark:text-white";
+  const subtitleStyle =
+    "text-neutral-800 dark:text-neutral-300 text-sm md:text-base";
+  const descriptionStyle = "text-sm md:text-base dark:text-neutral-300";
 
   const { credentialUrl, handleOpenDetail } = useAbout();
 
@@ -46,7 +48,7 @@ const About = () => {
         >
           {/* About Me */}
           <AboutSectionBlock title="About Me">
-            <p className={descriptionStyle}>
+            <p className={"dark:text-neutral-300 text-sm md:text-base"}>
               Informatics graduate from Telkom University with a passion for
               Software Engineering and Data Science. Currently focusing on React
               and Machine Learning.
@@ -105,7 +107,7 @@ const About = () => {
                     <p className={descriptionStyle}>{item.date}</p>
                     {item.credentialUrl !== "" && (
                       <button
-                        className="font-semibold text-black dark:text-neutral-300 text-xs underline cursor-pointer"
+                        className="font-semibold text-black dark:text-neutral-300 text-sm underline cursor-pointer"
                         onClick={() => handleOpenDetail(item.credentialUrl)}
                       >
                         View Certificate
@@ -129,7 +131,11 @@ const About = () => {
           <AboutSectionBlock title="Publications">
             <AboutSubsectionBlock image="/assets/images/about/scopus.png">
               <div>
-                <p className={titleStyle}>
+                <p
+                  className={cn(
+                    "mr-2 font-semibold md:text-md dark:text-white"
+                  )}
+                >
                   Optimizing Support Vector Machine for Avocado Ripeness
                   Classification Using Moth Flame Optimization
                 </p>
@@ -137,7 +143,7 @@ const About = () => {
                 <p className={subtitleStyle}>Scopus and Sinta 2</p>
                 <Link
                   href="https://doi.org/10.35882/jeeemi.v7i2.652"
-                  className="font-semibold text-black dark:text-neutral-300 text-xs underline"
+                  className="font-semibold text-black dark:text-neutral-300 text-sm underline"
                 >
                   View Journal
                 </Link>

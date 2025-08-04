@@ -21,10 +21,8 @@ const Guestbook = () => {
 
   return (
     <div className="mt-10 dark:text-white">
-      <h2 className="font-medium text-xl lg:text-2xl">Guestbook</h2>
-      <p className="text-sm lg:text-base">
-        Drop your thoughts, feedback, or just say hi!
-      </p>
+      <h2 className="font-medium text-2xl">Guestbook</h2>
+      <p>Drop your thoughts, feedback, or just say hi!</p>
       <Divider />
 
       <div>
@@ -60,7 +58,7 @@ const Guestbook = () => {
 
                       <div className="bg-gray-200 dark:bg-neutral-700 px-4 py-2 rounded-xl dark:text-neutral-200">
                         <div className="flex items-center mb-0.5">
-                          <span className="mr-2 font-semibold text-xs md:text-sm">
+                          <span className="mr-2 font-semibold text-sm md:text-base">
                             {item.name}
                           </span>
 
@@ -70,7 +68,7 @@ const Guestbook = () => {
                             </span>
                           )}
                         </div>
-                        <p className="text-xs md:text-sm">{item.message}</p>
+                        <p className="text-sm md:text-base">{item.message}</p>
                       </div>
                     </div>
                   );

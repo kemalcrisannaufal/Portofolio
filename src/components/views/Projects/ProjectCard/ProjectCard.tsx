@@ -13,7 +13,7 @@ const ProjectCard = (props: Proptypes) => {
   return (
     <div
       key={project.id}
-      className="dark:bg-gradient-to-b dark:from-[var(--color-secondary-dark)] dark:to-[var(--color-primary-dark)] dark:shadow-xl md:p-2 border-gray-100 rounded overflow-hidden hover:scale-105 hover:transition duration-300"
+      className="dark:bg-gradient-to-b dark:from-[var(--color-secondary-dark)] dark:to-[var(--color-primary-dark)] dark:shadow-xl md:p-2 border-gray-100 rounded overflow-hidden xl:hover:scale-105 hover:transition-all duration-300"
     >
       <Link
         href={`/projects/${project.slug}`}

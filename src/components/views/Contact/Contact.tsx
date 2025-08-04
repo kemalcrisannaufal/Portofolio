@@ -7,8 +7,8 @@ const Contact = () => {
   return (
     <>
       <div>
-        <h1 className="font-medium text-xl lg:text-2xl">Let&apos;s connect.</h1>
-        <p className="text-sm lg:text-base">
+        <h1 className="font-medium text-2xl">Let&apos;s connect.</h1>
+        <p>
           Interested in collaborating or have any questions? Feel free to reach
           out to me! I&apos;m always open to new opportunities and projects
         </p>

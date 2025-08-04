@@ -36,7 +36,7 @@ const Projects = () => {
                   {getTopFeaturedProject(dataProjects).length}
                 </span>
               </h3>
-              <div className="gap-5 grid md:grid-cols-2 xl:grid-cols-3 md:grid-flow-row grid-flow-col auto-cols-[18rem] md:auto-cols-auto overflow-x-auto md:overflow-x-hidden md:overflow-y-hidden scrollbar-hide">
+              <div className="gap-5 grid md:grid-cols-2 xl:grid-cols-3 md:grid-flow-row grid-flow-col auto-cols-[18rem] md:auto-cols-auto overflow-x-auto md:overflow-x-hidden md:overflow-y-hidden hide-scrollbar">
                 {getTopFeaturedProject(dataProjects).map((project, index) => (
                   <motion.div
                     initial={{ opacity: 0, y: 50 }}
