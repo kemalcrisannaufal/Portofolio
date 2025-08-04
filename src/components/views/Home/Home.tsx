@@ -1,111 +1,136 @@
-import { motion } from "framer-motion";
 import Button from "@/components/ui/Button";
-import TypingText from "@/components/ui/TypingText";
+import { CONTACTS, TECH_STACK } from "@/constants/list.constanst";
 import Image from "next/image";
-import { fadeInUp } from "@/lib/animations/motionVariants";
-import { CONTACTS } from "@/constants/list.constanst";
-import Link from "next/link";
+import { motion } from "framer-motion";
+
+const containerVariant = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.2,
+      delayChildren: 0.3,
+    },
+  },
+};
+
+const itemVariant = {
+  hidden: { opacity: 0, y: 30 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.6, ease: "easeOut" },
+  },
+};
 
 const Home = () => {
   return (
     <motion.div
-      className="flex xl:flex-row-reverse flex-col items-center gap-10 min-h-[75vh] dark:text-neutral-200"
-      variants={fadeInUp}
+      variants={containerVariant}
       initial="hidden"
       animate="visible"
+      className="flex xl:flex-row flex-col justify-center items-center gap-10 min-h-[80vh]"
     >
-      {/* FOTO & CARD */}
-      <motion.div
-        className="group hidden xl:block bg-neutral-50 dark:bg-neutral-900 p-3 xl:p-5 rounded-md xl:w-1/3 max-h-[40vh] xl:max-h-[60vh] animate-glow"
-        initial={{ opacity: 0, x: 50 }}
-        animate={{ opacity: 1, x: 0 }}
-        transition={{ duration: 0.6 }}
-      >
-        <div className="relative">
-          <Image
-            src="/assets/images/home/foto_fix.jpg"
-            alt="kemalcrisannaufal"
-            width={500}
-            height={500}
-            className="rounded-md w-full max-h-[320px] object-cover group-hover:scale-[102%] group-hover:transition-all group-hover:duration-300"
-          />
-          <div className="hidden dark:block top-0 left-0 z-50 absolute bg-gradient-to-b from-transparent via-black/15 to-black/50 w-full h-full" />
-        </div>
+      {/* Left Home Side */}
+      <motion.div variants={itemVariant} className="w-full xl:w-1/2">
+        <div className="flex flex-col items-start gap-5">
+          <motion.p variants={itemVariant} className="text-4xl md:text-6xl">
+            Hi, I{"'"}m a Full Stack Developer.
+          </motion.p>
+          <motion.p
+            variants={itemVariant}
+            className="text-gray-500 text-md dark:text-gray-300 leading-relaxed"
+          >
+            Fresh graduate in Informatics from Telkom University, deeply
+            interested in building modern web applications.
+          </motion.p>
 
-        <div className="mt-5 text-neutral-800 dark:text-neutral-300">
-          <h3 className="font-libre font-semibold text-md xl:text-lg tracking-wide">
-            Kemal Crisannaufal{" "}
-            <span className="hidden xl:inline-block animate-wiggle">⭐</span>{" "}
-          </h3>
-
-          <p className="hidden xl:block mt-1 font-libre font-thin text-gray-600 dark:text-neutral-400 text-sm">
-            Let&apos;s build something together.
-          </p>
+          <motion.div
+            variants={itemVariant}
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+          >
+            <Button
+              onClick={() => window.open(CONTACTS[1].url)}
+              variant="primary"
+            >
+              <div className="flex items-center">
+                <i className="mr-2 text-lg bx bx-briefcase" />
+                <p>Hire Me</p>
+              </div>
+            </Button>
+          </motion.div>
         </div>
       </motion.div>
 
-      {/* CONTENT */}
-      <motion.div
-        className="w-full xl:w-2/3"
-        initial={{ opacity: 0, y: 40 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6 }}
-        viewport={{ once: true }}
-      >
-        <h1 className="font-libre font-thin text-lg md:text-xl xl:text-2xl">
-          Hello, It&apos;s me
-        </h1>
-        <h1 className="font-libre md:text-2xl text-3xl xl:text-4xl">
-          Kemal Crisannaufal
-        </h1>
-
-        <div>
-          <TypingText
-            words={["Software Engineer", "Data Analyst", "AI Engineer"]}
-            boxClassName="bg-gray-200 px-3 py-1 rounded h-7 mt-2 dark:bg-neutral-600"
-            textClassName="font-libre font-thin text-sm md:text-sm xl:text-md dark:text-white"
-          />
-        </div>
-
-        <div className="xl:hidden flex justify-center items-center mt-8">
-          <Image
-            src="/assets/images/home/foto_fix.jpg"
-            alt="kemalcrisannaufal"
-            width={300}
-            height={300}
-            priority
-            className="w-full md:max-h-[50dvh] object-center object-cover animate-glow"
-          />
-        </div>
-
-        <p className="my-5 font-libre text-gray-600 xl:text-md dark:text-neutral-300 text-sm text-justify leading-7">
-          A passionate Informatics fresh graduate from Telkom University with a
-          strong interest in Software Engineering and Data Science. Currently
-          focused on building web applications using React and exploring the
-          field of Data Science, including Machine Learning
-        </p>
-
-        <div className="flex">
-          <Link
-            href={"/assets/files/resume.pdf"}
-            target="_blank"
-            rel="noopener noreferrer"
+      {/* Right Home Side */}
+      <motion.div variants={itemVariant} className="w-full xl:w-1/2">
+        <div className="flex md:flex-row flex-col-reverse items-center gap-4 w-full">
+          <motion.div
+            variants={itemVariant}
+            whileHover={{ scale: 1.02 }}
+            className="flex flex-col justify-between gap-3 dark:bg-[var(--color-secondary-dark)] shadow-lg p-4 rounded-xl w-full md:w-1/2 md:h-[250px]"
           >
+            <div>
+              <p className="font-bold text-lg">Kemal Crisannaufal</p>
+              <p className="text-gray-500 text-md dark:text-gray-300">
+                Bandung, Indonesia
+              </p>
+            </div>
+            <p className="mt-2 text-gray-500 dark:text-gray-300 text-sm italic">
+              &quot;I want my GitHub to be as green as my garden in Grow a
+              Garden.&quot;
+            </p>
             <Button classname="mr-2" variant="secondary">
               <div className="flex items-center">
                 <i className="mr-2 text-lg bx bx-file" />
-                <p className="font-libre font-thin text-sm">View Resume</p>
+                <p>View Resume</p>
               </div>
             </Button>
-          </Link>
+          </motion.div>
 
-          <Button onClick={() => window.open(CONTACTS[1].url)}>
-            <div className="flex items-center">
-              <i className="mr-2 text-lg bx bx-briefcase" />
-              <p className="font-libre font-thin text-sm">Hire Me</p>
-            </div>
-          </Button>
+          <motion.div
+            variants={itemVariant}
+            whileHover={{ scale: 1.03 }}
+            className="relative w-full md:w-1/2 h-[250px]"
+          >
+            <Image
+              src="/assets/images/home/foto_fix.jpg"
+              alt="kemalcrisannaufal"
+              fill
+              className="shadow-xl rounded-xl object-cover"
+            />
+            <div className="absolute inset-0 dark:bg-gradient-to-b dark:from-black/10 via-transparent dark:to-[var(--color-primary-dark)] rounded-xl w-full h-full" />
+          </motion.div>
         </div>
+
+        <motion.div
+          variants={itemVariant}
+          className="flex md:flex-row flex-col items-center gap-4 mt-4"
+        >
+          <div className="rounded-lg w-full md:w-2/3 md:h-[125px] text-white">
+            <img
+              src="https://github-readme-stats.vercel.app/api/wakatime?username=kemalcrisannaufal&hide_border=true&layout=compact&theme=dark"
+              alt="WakaTime Stats"
+              className="rounded-lg w-full md:w-[350px] md:h-[125px] object-cover"
+            />
+          </div>
+
+          <motion.div
+            variants={itemVariant}
+            className="hidden gap-4 md:grid grid-cols-3 w-1/3 h-[100px]"
+          >
+            {TECH_STACK.slice(0, 6).map((tech) => (
+              <motion.div
+                key={tech.name}
+                whileHover={{ scale: 1.1 }}
+                className="flex flex-col justify-center items-center dark:bg-[var(--color-secondary-dark)] shadow p-2 rounded-full"
+              >
+                {<tech.icon className={tech.className} />}
+              </motion.div>
+            ))}
+          </motion.div>
+        </motion.div>
       </motion.div>
     </motion.div>
   );

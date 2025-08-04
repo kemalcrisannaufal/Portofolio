@@ -1,7 +1,7 @@
-import { CONTACTS } from "@/constants/list.constanst";
 import Link from "next/link";
+import { CONTACTS } from "../mainLayout.constants";
 
-const ContactSideBar = () => {
+const MainLayoutSideContact = () => {
   return (
     <div className="top-1/2 left-0 fixed -translate-y-1/2 transform">
       <div>
@@ -9,7 +9,7 @@ const ContactSideBar = () => {
           return (
             <div
               key={index}
-              className="hover:bg-black dark:bg-neutral-800 dark:hover:bg-neutral-600 hover:text-white dark:text-white"
+              className="hover:bg-black dark:bg-[var(--color-dark-primary)] hover:text-white dark:hover:text-[var(--color-neon)]"
             >
               <Link href={item.url} aria-label={`Link-${item.name}`}>
                 <i className={`bx ${item.icon} text-xl p-2`} aria-hidden />
@@ -22,4 +22,4 @@ const ContactSideBar = () => {
   );
 };
 
-export default ContactSideBar;
+export default MainLayoutSideContact;

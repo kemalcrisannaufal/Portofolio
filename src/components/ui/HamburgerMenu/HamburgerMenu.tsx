@@ -1,31 +1,31 @@
+import cn from "@/utils/cn";
+import { Dispatch, SetStateAction } from "react";
+
 interface Proptypes {
   isMenuOpen: boolean;
-  setIsMenuOpen: (isOpen: boolean) => void;
+  setIsMenuOpen: Dispatch<SetStateAction<boolean>>;
 }
 
 const HamburgerMenu = (props: Proptypes) => {
   const { isMenuOpen, setIsMenuOpen } = props;
   return (
     <button
-      aria-label="Toggle Menu"
-      className="relative w-5 h-3"
+      aria-label="hamburger-menu"
+      className="md:hidden relative w-9 h-5"
       onClick={() => setIsMenuOpen(!isMenuOpen)}
     >
       <span
-        className={`left-0 top-0 absolute bg-black dark:bg-neutral-300 w-full h-0.5 transition-all duration-300 ${
-          isMenuOpen && "rotate-45 translate-y-1.5"
-        }`}
-      />
+        className={cn(
+          "top-0 left-0 absolute bg-[var(--color-primary-dark)] dark:bg-white w-full h-1 transition-all duration-300 ease-in-out",
+          isMenuOpen && "rotate-45 top-2.5"
+        )}
+      ></span>
       <span
-        className={`left-0 top-1.5 absolute bg-black dark:bg-neutral-300 w-full h-0.5 transition-all duration-300 ${
-          isMenuOpen && "opacity-0"
-        }`}
-      />
-      <span
-        className={`left-0 top-3 absolute bg-black dark:bg-neutral-300 w-full h-0.5 transition-all duration-300 ${
-          isMenuOpen && "-rotate-45 -translate-y-1.5"
-        }`}
-      />
+        className={cn(
+          "bottom-0 left-0 absolute bg-[var(--color-primary-dark)] dark:bg-white w-full h-1 transition-all duration-300 ease-in-out",
+          isMenuOpen && "-rotate-45 top-2.5"
+        )}
+      ></span>
     </button>
   );
 };

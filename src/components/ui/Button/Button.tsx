@@ -1,3 +1,4 @@
+import cn from "@/utils/cn";
 import { ReactNode } from "react";
 
 interface Proptypes {
@@ -21,11 +22,14 @@ const Button = (props: Proptypes) => {
   return (
     <button
       type={type}
-      className={`px-3 py-2 shadow rounded-sm text-sm md:text-base cursor-pointer ${classname} ${
-        variant === "primary"
-          ? "bg-black text-white dark:border dark:border-neutral-300 dark:bg-black dark:text-white hover:bg-neutral-300 hover:text-black  dark:hover:bg-neutral-600"
-          : "bg-white border border-neutral-300 text-black dark:bg-transparent  dark:text-neutral-300 hover:bg-neutral-300  dark:hover:bg-neutral-600 "
-      }`}
+      className={cn(
+        "shadow px-4 py-2 rounded-xl hover:scale-[101%] transition-all duration-200 ease-in-out cursor-pointer",
+        variant === "primary" &&
+          "bg-black dark:border dark:text-[var(--color-neon)] text-white dark:bg-[var(--color-secondary-dark)] hover:bg-neutral-700 dark:hover:text-white",
+        variant === "secondary" &&
+          "bg-neutral-300 hover:bg-neutral-200 dark:bg-neutral-700 dark:hover:bg-neutral-600 text-neutral-700 dark:text-white",
+        classname
+      )}
       onClick={onClick}
       disabled={disabled}
     >

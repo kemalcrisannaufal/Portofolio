@@ -102,6 +102,36 @@ const PROJECT_CATEGORIES = [
 
 const TECH_STACK = [
   {
+    name: "Typescript",
+    icon: SiTypescript,
+    className: "text-blue-500 text-md lg:text-2xl md:text-xl",
+  },
+  {
+    name: "Tailwind CSS",
+    icon: SiTailwindcss,
+    className: "text-teal-400 text-md lg:text-2xl md:text-xl",
+  },
+  {
+    name: "Next.js",
+    icon: SiNextdotjs,
+    className: "text-black dark:text-white text-md lg:text-2xl md:text-xl",
+  },
+  {
+    name: "Express.js",
+    icon: SiExpress,
+    className: "text-black dark:text-white text-md lg:text-2xl md:text-xl",
+  },
+  {
+    name: "Laravel",
+    icon: SiLaravel,
+    className: "text-red-600 text-md lg:text-2xl md:text-xl",
+  },
+  {
+    name: "MongoDB",
+    icon: SiMongodb,
+    className: "text-green-600 text-md lg:text-2xl md:text-xl",
+  },
+  {
     name: "HTML",
     icon: DiHtml5,
     className: "text-orange-500 text-md lg:text-2xl md:text-xl",
@@ -116,11 +146,7 @@ const TECH_STACK = [
     icon: SiJavascript,
     className: "text-yellow-500 text-md lg:text-2xl md:text-xl",
   },
-  {
-    name: "Typescript",
-    icon: SiTypescript,
-    className: "text-blue-500 text-md lg:text-2xl md:text-xl",
-  },
+
   {
     name: "Axios",
     icon: SiAxios,
@@ -132,11 +158,6 @@ const TECH_STACK = [
     className: "text-orange-400 text-md lg:text-2xl md:text-xl",
   },
   {
-    name: "Laravel",
-    icon: SiLaravel,
-    className: "text-red-600 text-md lg:text-2xl md:text-xl",
-  },
-  {
     name: "PHP",
     icon: SiPhp,
     className: "text-blue-700 text-md lg:text-2xl md:text-xl",
@@ -145,16 +166,6 @@ const TECH_STACK = [
     name: "React",
     icon: SiReact,
     className: "text-cyan-400 text-md lg:text-2xl md:text-xl",
-  },
-  {
-    name: "Tailwind CSS",
-    icon: SiTailwindcss,
-    className: "text-teal-400 text-md lg:text-2xl md:text-xl",
-  },
-  {
-    name: "Next.js",
-    icon: SiNextdotjs,
-    className: "text-black dark:text-white text-md lg:text-2xl md:text-xl",
   },
   {
     name: "Java",
@@ -215,16 +226,6 @@ const TECH_STACK = [
     name: "Tableau",
     icon: SiTableau,
     className: "text-blue-600 text-md lg:text-2xl md:text-xl",
-  },
-  {
-    name: "MongoDB",
-    icon: SiMongodb,
-    className: "text-green-600 text-md lg:text-2xl md:text-xl",
-  },
-  {
-    name: "Express.js",
-    icon: SiExpress,
-    className: "text-black dark:text-white text-md lg:text-2xl md:text-xl",
   },
 ];
 

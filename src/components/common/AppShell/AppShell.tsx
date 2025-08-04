@@ -1,24 +1,20 @@
-import ContactSideBar from "@/components/fragments/ContactSidebar";
-import Footer from "@/components/fragments/Footer";
-import Navbar from "@/components/fragments/Navbar";
-import ThemeToggle from "@/components/common/ThemeToggle";
 import Toaster from "@/components/ui/Toaster";
 import { ToasterContext } from "@/contexts/ToasterContext";
-import { useRouter } from "next/router";
 import { ReactNode, useContext, useEffect } from "react";
-
-const DISABLED_CONTACT_SIDEBAR = ["/contact", "/auth/login", "/admin/projects"];
-const DISABLED_NAVBAR = ["/auth/login", "/admin", "/admin/projects"];
-const DISABLED_FOOTER = ["/auth/login", "/admin", "/admin/projects"];
+import { Inter } from "next/font/google";
+import cn from "@/utils/cn";
 
 interface Proptypes {
   children: ReactNode;
 }
 
+const inter = Inter({
+  subsets: ["latin"],
+  weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
+});
+
 const AppShell = (props: Proptypes) => {
   const { children } = props;
-
-  const router = useRouter();
   const { toaster, setToaster } = useContext(ToasterContext);
 
   useEffect(() => {
@@ -30,20 +26,11 @@ const AppShell = (props: Proptypes) => {
   }, [toaster, setToaster]);
 
   return (
-    <main className="flex flex-col bg-white dark:bg-neutral-900 min-h-screen">
-      {!DISABLED_NAVBAR.includes(router.pathname) && <Navbar />}
-      {!DISABLED_CONTACT_SIDEBAR.includes(router.pathname) && (
-        <ContactSideBar />
+    <main className={cn(inter.className)}>
+      {children}
+      {toaster.type !== "" && (
+        <Toaster type={toaster.type} message={toaster.message} />
       )}
-      <div className="flex-grow mt-5">
-        {children}
-        {toaster.type !== "" && (
-          <Toaster type={toaster.type} message={toaster.message} />
-        )}
-      </div>
-      {!DISABLED_FOOTER.includes(router.pathname) && <Footer />}
-
-      <ThemeToggle />
     </main>
   );
 };

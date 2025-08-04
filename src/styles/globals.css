@@ -5,6 +5,13 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+
+  --color-primary: #ffffff;
+  --color-secondary: #f3f4f6;
+
+  --color-primary-dark: #121212;
+  --color-secondary-dark: #1c1c1c;
+  --color-neon: #2effe5;
 }
 
 @theme inline {
@@ -16,6 +23,49 @@
   --font-libre: "Libre Baskerville";
   --font-pragati: "Pragati Narrow";
   --font-ruhl: "Frank Ruhl Libre";
+}
+
+@layer utilities {
+  .bg-primary {
+    background-color: var(--color-primary);
+  }
+  .bg-secondary {
+    background-color: var(--color-secondary);
+  }
+
+  .bg-primary-dark {
+    background-color: var(--color-primary-dark);
+  }
+  .bg-secondary-dark {
+    background-color: var(--color-secondary-dark);
+  }
+
+  .bg-neon {
+    background-color: var(--color-neon);
+  }
+  .bg-skeleton {
+    background-color: var(--color-skeleton);
+  }
+  .hover\:bg-neon:hover {
+    background-color: var(--color-neon);
+  }
+  .hover\:text-neon:hover {
+    color: var(--color-neon);
+  }
+  .text-primary-dark {
+    color: var(--color-primary-dark);
+  }
+  .text-neon,
+  .dark\:text-neon {
+    color: var(--color-neon);
+  }
+  .hide-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  .hide-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
 }
 
 @media (prefers-color-scheme: dark) {

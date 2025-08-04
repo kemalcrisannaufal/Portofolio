@@ -5,7 +5,7 @@ import { PAGE_DESCRIPTION } from "@/constants/list.constanst";
 const HomePage = () => {
   return (
     <MainLayout title="Kemal Crisannaufal" description={PAGE_DESCRIPTION.HOME}>
-      <Home />
+      <Home/>
     </MainLayout>
   );
 };

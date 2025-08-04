@@ -1,7 +1,5 @@
-"use client";
-
 import { useEffect, useState } from "react";
-import { CiDark, CiLight } from "react-icons/ci";
+import { FaMoon, FaSun } from "react-icons/fa";
 
 export default function ThemeToggle() {
   const [isDark, setIsDark] = useState<boolean | null>(null);
@@ -33,18 +31,12 @@ export default function ThemeToggle() {
   if (isDark === null) return null;
 
   return (
-    <div className="right-2 bottom-2 z-50 fixed">
-      <button
-        aria-label="Toggle Theme"
-        onClick={() => setIsDark(!isDark)}
-        className="block bg-gray-200 dark:bg-neutral-600 p-2 rounded text-black dark:text-white cursor-pointer"
-      >
-        {isDark ? (
-          <CiDark className="text-2xl lg:text-3xl" />
-        ) : (
-          <CiLight className="text-2xl lg:text-3xl" />
-        )}
-      </button>
-    </div>
+    <button
+      aria-label="toggle-theme"
+      onClick={() => setIsDark(!isDark)}
+      className="flex justify-center items-center bg-transparent hover:bg-neutral-200 dark:bg-neutral-100 dark:hover:bg-[var(--color-neon)] p-2 border border-neutral-200 rounded-full w-9 h-9 text-yellow-400 dark:text-black transition-colors duration-300 cursor-pointer"
+    >
+      {isDark ? <FaMoon className="text-lg" /> : <FaSun className="text-lg" />}
+    </button>
   );
 }
