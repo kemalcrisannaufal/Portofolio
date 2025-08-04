@@ -5,10 +5,10 @@ import { motion } from "framer-motion";
 
 const Contact = () => {
   return (
-    <div className="dark:text-neutral-300">
+    <>
       <div>
-        <h1 className="font-libre text-xl lg:text-2xl">Let&apos;s connect. </h1>
-        <p className="font-libre text-xs md:text-sm lg:text-base">
+        <h1 className="font-medium text-xl lg:text-2xl">Let&apos;s connect.</h1>
+        <p className="text-sm lg:text-base">
           Interested in collaborating or have any questions? Feel free to reach
           out to me! I&apos;m always open to new opportunities and projects
         </p>
@@ -31,17 +31,10 @@ const Contact = () => {
               >
                 <Link
                   href={item.url}
-                  className="flex justify-center items-center hover:bg-black dark:bg-black dark:hover:bg-neutral-600 shadow mt-1 md:mt-5 p-2 border border-gray-200 rounded w-full overflow-hidden hover:text-white hover:transition-all hover:duration-300 cursor-pointer"
+                  className="flex justify-center items-center hover:bg-[var(--color-primary-dark)] dark:hover:bg-[var(--color-neon)] dark:bg-[var(--color-secondary-dark)] shadow mt-1 md:mt-5 p-2 border border-neutral-200 dark:border-neutral-800 rounded w-full overflow-hidden hover:text-white dark:hover:text-black hover:transition-all hover:duration-300 cursor-pointer"
                 >
                   <i className={`bx ${item.icon} text-xl md:text-2xl mr-2`} />
-                  <span
-                    className={`font-libre md:text-md text-sm ${
-                      item.name === "LinkedIn" ||
-                      (item.name === "Email" && "mt-1")
-                    }`}
-                  >
-                    {item.name}
-                  </span>
+                  <span className={`md:text-md text-sm`}>{item.name}</span>
                 </Link>
               </motion.div>
             );
@@ -49,7 +42,7 @@ const Contact = () => {
         </div>
       </div>
       <Guestbook />
-    </div>
+    </>
   );
 };
 

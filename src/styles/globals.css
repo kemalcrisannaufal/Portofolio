@@ -81,53 +81,18 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
-.scrollbar-hidden::-webkit-scrollbar {
-  display: none;
-}
-.scrollbar-hidden {
-  scrollbar-width: none;
-}
-
-.animate-wiggle {
-  animation: wiggle 1s ease-in-out infinite;
-}
-
-.animate-glow {
-  animation: glow 5s ease-in-out infinite;
-}
-
-@keyframes glow {
+@keyframes shimmer {
   0% {
-    box-shadow: 0 0 4px #bebdbd;
+    background-position: -200% 0;
   }
   100% {
-    box-shadow: 0 0 8px #e5e7eb, 0 0 20px #e5e7eb;
+    background-position: 200% 0;
   }
 }
 
-@keyframes wiggle {
-  0% {
-    transform: rotate(0deg);
-  }
-  25% {
-    transform: rotate(10deg);
-  }
-  50% {
-    transform: rotate(0deg);
-  }
-  75% {
-    transform: rotate(-10deg);
-  }
-  100% {
-    transform: rotate(0deg);
-  }
-}
-
-.hide-scrollbar {
-  scrollbar-width: none;
-  -ms-overflow-style: none;
-}
-
-.hide-scrollbar::-webkit-scrollbar {
-  display: none;
+.skeleton {
+  background: linear-gradient(90deg, #2e2e2e 25%, #3a3a3a 50%, #2e2e2e 75%);
+  border-radius: 8px;
+  background-size: 200% 100%;
+  animation: shimmer 5s infinite;
 }
