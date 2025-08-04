@@ -13,11 +13,9 @@ const GalleryPresentation = () => {
   } = useGalleryPresentation();
 
   return (
-    <div className="mt-5">
-      <h2 className="font-libre font-semibold">Presentation</h2>
-      <p className="font-libre">
-        A collection of my past presentations — from class projects.
-      </p>
+    <>
+      <h2 className="font-medium text-xl lg:text-2xl">Presentation</h2>
+      <p>A collection of my past presentations — from class projects.</p>
 
       <motion.div
         variants={fadeInUp}
@@ -58,7 +56,7 @@ const GalleryPresentation = () => {
                   />
                 ))}
             </div>
-            <div className="lg:hidden flex gap-3 mt-3 px-1 overflow-x-auto scroll-snap-x snap-mandatory">
+            <div className="lg:hidden flex gap-3 mt-3 px-1 overflow-x-auto scroll-snap-x snap-mandatory scrollbar-hide">
               {dataGalleryPresentation?.map((presentation: IGallery) => (
                 <div key={presentation.id} className="w-64 snap-start shrink-0">
                   <PresentationVideo
@@ -81,7 +79,7 @@ const GalleryPresentation = () => {
           <FaChevronRight className="text-2xl" />
         </button>
       </motion.div>
-    </div>
+    </>
   );
 };
 

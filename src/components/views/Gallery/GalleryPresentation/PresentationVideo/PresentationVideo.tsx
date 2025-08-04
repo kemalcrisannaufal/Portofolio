@@ -13,7 +13,7 @@ const PresentationVideo = (props: Proptypes) => {
   return (
     <div className="shadow-md rounded-xl h-74 overflow-hidden">
       {isLoading ? (
-        <div className="flex justify-center items-center bg-gray-200 dark:bg-neutral-300 w-full h-full animate-pulse">
+        <div className="flex justify-center items-center bg-gray-200 dark:bg-neutral-700 w-full h-full animate-pulse">
           <div className="border-4 border-t-transparent border-black rounded-full w-8 lg:w-10 h-8 lg:h-10 animate-spin" />
         </div>
       ) : playVideo ? (
@@ -34,8 +34,8 @@ const PresentationVideo = (props: Proptypes) => {
               KCR PRESENTATION
             </h4>
           </div>
-          <div className="bottom-0 left-0 absolute flex items-center bg-black/50 p-5 w-full h-[25%] text-white">
-            <p className="font-libre line-clamp-2">{title}</p>
+          <div className="bottom-0 left-0 absolute flex items-center bg-gradient-to-b from-transparent via-black/75 to-[var(--color-primary-dark)] p-5 w-full h-[25%] text-white">
+            <p className="line-clamp-2">{title}</p>
           </div>
         </div>
       )}
