@@ -42,7 +42,7 @@ const MainLayoutNavbar = () => {
             "flex justify-between items-center gap-10 bg-white dark:bg-[var(--color-secondary-dark)] mb-5 p-3 rounded-xl w-full md:w-full xl:w-1/2",
             "sticky md:left-5",
             scrolled &&
-              "dark:bg-black/40! bg-white! backdrop-blur-xl border border-neutral-200 dark:border-neutral-700 shadow"
+              "dark:bg-black/40! bg-white! backdrop-blur-xl border border-neutral-50 dark:border-neutral-700 shadow"
           )}
         >
           {/* Navbar Brand */}

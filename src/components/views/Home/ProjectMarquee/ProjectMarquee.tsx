@@ -26,7 +26,7 @@ const ProjectBox = ({
   return (
     <Link
       href={href}
-      className="flex items-center gap-3 h-[50px] font-bold text-neutral-600 hover:text-black dark:text-white text-2xl whitespace-nowrap transition-colors duration-300"
+      className="flex items-center gap-3 h-[50px] font-bold text-neutral-600 hover:text-black dark:hover:text-white dark:text-neutral-300 text-2xl whitespace-nowrap transition-colors duration-300"
       key={"yatta-1"}
     >
       {image && (
