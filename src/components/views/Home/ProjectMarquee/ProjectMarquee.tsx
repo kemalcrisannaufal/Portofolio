@@ -4,6 +4,44 @@ import "swiper/css";
 import "swiper/css/autoplay";
 import { PROJECTS } from "./project.constants";
 import { motion } from "framer-motion";
+import Link from "next/link";
+import Image from "next/image";
+import cn from "@/utils/cn";
+
+const ProjectBox = ({
+  className,
+  href,
+  image,
+  name,
+  width = 50,
+  height = 50,
+}: {
+  className?: string;
+  href: string;
+  image?: string;
+  name: string;
+  width?: number;
+  height?: number;
+}) => {
+  return (
+    <Link
+      href={href}
+      className="flex items-center gap-3 h-[50px] font-bold text-neutral-600 hover:text-black dark:text-white text-2xl whitespace-nowrap transition-colors duration-300"
+      key={"yatta-1"}
+    >
+      {image && (
+        <Image
+          src={`/assets/images/projects/${image}`}
+          alt={`logo-${name}`}
+          width={width}
+          height={height}
+          className={cn("dark:filter-none invert filter", className)}
+        />
+      )}
+      {name}
+    </Link>
+  );
+};
 
 const ProjectMarquee = () => {
   const MARQUEE_PROJECTS = [...PROJECTS, ...PROJECTS];
@@ -35,7 +73,15 @@ const ProjectMarquee = () => {
       >
         {MARQUEE_PROJECTS.map((item, index) => (
           <SwiperSlide key={index} className="px-4 !w-auto">
-            {item}
+            <ProjectBox
+              key={`${item.name}-${index}`}
+              className={item.className}
+              href={item.href}
+              image={item.image}
+              name={item.name}
+              width={item.width}
+              height={item.height}
+            />
           </SwiperSlide>
         ))}
       </Swiper>
