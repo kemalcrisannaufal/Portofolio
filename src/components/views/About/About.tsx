@@ -22,19 +22,52 @@ const About = () => {
     <>
       <div className="flex xl:flex-row flex-col lg:gap-10">
         <div className="xl:top-32 relative xl:sticky flex justify-center self-start rounded-xl w-full xl:w-1/3 overflow-hidden">
-          <div className="relative w-[300px] lg:w-[350px] xl:w-full">
-            <Image
-              src="/assets/images/home/foto_toga.jpg"
-              width={500}
-              height={500}
-              alt="kemalcrisannaufal"
-              className="shadow rounded-xl w-full h-full object-contain"
+          <div className="relative shadow-lg rounded-xl w-[300px] lg:w-[350px] xl:w-full overflow-hidden">
+            <motion.div
+              initial={{ y: 0 }}
+              animate={{ y: "100%" }}
+              transition={{
+                duration: 1.2,
+                ease: [0.77, 0, 0.175, 1],
+              }}
+              className="top-0 left-0 z-10 absolute bg-white dark:bg-[var(--color-secondary-dark)] w-full h-full"
             />
+
+            <motion.div
+              initial={{ opacity: 0, scale: 1.05 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{
+                duration: 1.2,
+                delay: 0.3,
+                ease: "easeOut",
+              }}
+            >
+              <Image
+                src="/assets/images/home/foto_toga.jpg"
+                width={500}
+                height={500}
+                alt="kemalcrisannaufal"
+                className="w-full h-full object-contain"
+              />
+            </motion.div>
+
             <div className="bottom-0 left-0 absolute bg-gradient-to-b from-transparent to-black px-3 py-4 w-full">
-              <p className="font-semibold text-white text-xl">
+              <motion.p
+                initial={{ y: 20, opacity: 0 }}
+                animate={{ y: 0, opacity: 1 }}
+                transition={{ delay: 1.2, duration: 0.6 }}
+                className="font-semibold text-white text-xl"
+              >
                 Kemal Crisannaufal
-              </p>
-              <p className="text-neutral-300 text-sm">March, 18 2003</p>
+              </motion.p>
+              <motion.p
+                initial={{ y: 20, opacity: 0 }}
+                animate={{ y: 0, opacity: 1 }}
+                transition={{ delay: 1.4, duration: 0.6 }}
+                className="text-neutral-300 text-sm"
+              >
+                March, 18 2003
+              </motion.p>
             </div>
           </div>
         </div>
@@ -43,7 +76,7 @@ const About = () => {
         <motion.div
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.2 }}
+          transition={{ duration: 0.5, delay: 1 }}
           className="mt-5 lg:mt-0 w-full xl:w-1/3"
         >
           {/* About Me */}
@@ -124,7 +157,7 @@ const About = () => {
         <motion.div
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.2 }}
+          transition={{ duration: 0.5, delay: 1.4 }}
           className="w-full xl:w-1/3"
         >
           {/* Publications */}
