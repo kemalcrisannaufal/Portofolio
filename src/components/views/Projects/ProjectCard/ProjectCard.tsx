@@ -13,7 +13,7 @@ const ProjectCard = (props: Proptypes) => {
   return (
     <div
       key={project.id}
-      className="dark:bg-gradient-to-b dark:from-[var(--color-secondary-dark)] dark:to-[var(--color-primary-dark)] dark:shadow-xl md:p-2 border-gray-100 rounded overflow-hidden xl:hover:scale-105 hover:transition-all duration-300"
+      className="group dark:bg-gradient-to-b dark:from-[var(--color-secondary-dark)] dark:to-[var(--color-primary-dark)] dark:shadow-xl md:p-2 border-gray-100 rounded overflow-hidden xl:hover:scale-105 hover:transition-all duration-300"
     >
       <Link
         href={`/projects/${project.slug}`}
@@ -34,7 +34,7 @@ const ProjectCard = (props: Proptypes) => {
           </div>
         )}
 
-        <div className="hidden z-10 absolute inset-0 group-hover:flex justify-center items-center bg-black/50 w-full h-full duration-300 group-hover:duration-500 group-hover:transform">
+        <div className="absolute inset-0 flex justify-center items-center bg-black/80 opacity-0 group-hover:opacity-100 w-full h-full transition-all translate-y-full group-hover:translate-y-0 duration-300 transform">
           <h2 className="mr-2 text-white text-lg">View Project</h2>
           <i className="bx-right-arrow-alt text-white text-2xl bx" />
         </div>

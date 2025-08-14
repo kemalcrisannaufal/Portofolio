@@ -21,11 +21,6 @@ const CarouselProject = ({ dataProjects }: Proptypes) => {
 
   return (
     <div className="relative shadow rounded-xl w-full h-[250px] md:h-[300px] lg:h-[350px] overflow-hidden">
-      <div className="top-3 left-3 z-20 absolute flex items-center bg-teal-600 px-3 py-1 rounded-lg text-white">
-        <SiPinboard className="mr-2" />
-        <p className="text-xs md:text-sm">Top Featured</p>
-      </div>
-
       <Swiper
         onSwiper={(swiper) => {
           swiperRef.current = swiper;
@@ -38,12 +33,16 @@ const CarouselProject = ({ dataProjects }: Proptypes) => {
         autoplay={{ delay: 5000, disableOnInteraction: false }}
       >
         {dataProjects.map((project) => (
-          <SwiperSlide key={`slider-${project.id}`}>
+          <SwiperSlide key={`slider-${project.id}`} className="overflow-hidden">
             <Link
               href={`/projects/${project.slug}`}
               className="overflow-hidden"
             >
-              <div className="absolute inset-0 bg-gradient-to-b from-black/15 via-black/60 to-black" />
+              <div className="top-3 left-3 z-20 absolute flex items-center bg-teal-600 px-3 py-1 rounded-xl text-white">
+                <SiPinboard className="mr-2" />
+                <p className="text-xs md:text-sm">Top Featured</p>
+              </div>
+              <div className="absolute inset-0 bg-gradient-to-b from-black/15 via-black/30 dark:via-black/60 to-black/75 dark:to-black" />
               <Image
                 src={project.thumbnail}
                 alt={project.name || "Project Thumbnail"}

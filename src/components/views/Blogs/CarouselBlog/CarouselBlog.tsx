@@ -23,12 +23,6 @@ const CarouselBlog = ({ dataBlogs }: Props) => {
 
   return (
     <div className="hidden md:block relative shadow border-2 border-neutral-300 dark:border-neutral-800 rounded-xl w-full h-[250px] md:h-[350px] lg:h-[450px] overflow-hidden">
-      {/* Badge Featured */}
-      <div className="top-3 left-3 z-20 absolute flex items-center bg-cyan-700 px-3 py-1 rounded-xl">
-        <SiPinboard className="mr-2 text-white" />
-        <p className="text-white text-xs md:text-sm">Top Featured</p>
-      </div>
-
       {/* Swiper */}
       <Swiper
         onSwiper={(swiper) => (swiperRef.current = swiper)}
@@ -45,8 +39,13 @@ const CarouselBlog = ({ dataBlogs }: Props) => {
               href={`/blogs/${blog.slug}`}
               className="block overflow-hidden"
             >
+              {/* Badge Featured */}
+              <div className="top-3 left-3 z-20 absolute flex items-center bg-cyan-700 px-3 py-1 rounded-xl">
+                <SiPinboard className="mr-2 text-white" />
+                <p className="text-white text-xs md:text-sm">Top Featured</p>
+              </div>
               {/* Background gradient */}
-              <div className="absolute inset-0 bg-gradient-to-b from-black/15 via-black/60 to-black" />
+              <div className="absolute inset-0 bg-gradient-to-b from-black/15 via-black/30 dark:via-black/60 to-black/75 dark:to-black" />
 
               {/* Thumbnail */}
               <Image

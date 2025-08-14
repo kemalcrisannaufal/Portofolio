@@ -3,7 +3,9 @@ import { ReactNode } from "react";
 import { CiCircleCheck, CiCircleRemove } from "react-icons/ci";
 
 const iconList: { [key: string]: ReactNode } = {
-  Success: <CiCircleCheck className="text-green-600 text-3xl" />,
+  Success: (
+    <CiCircleCheck className="text-green-600 dark:text-[var(--color-neon)] text-3xl" />
+  ),
   Error: <CiCircleRemove className="text-red-600 text-3xl" />,
 };
 
@@ -12,13 +14,15 @@ const Toaster = (props: IToaster) => {
   return (
     <div
       role="alert"
-      className="top-8 right-8 z-50 fixed flex items-center gap-5 bg-white dark:bg-neutral-700 shadow p-3 border border-gray-300 rounded max-w-xs dark:text-neutral-300"
+      className="top-8 right-8 z-50 fixed flex items-center gap-5 bg-white dark:bg-[var(--color-secondary-dark)] shadow p-3 border border-neutral-200 dark:border-neutral-700 rounded-xl max-w-xs dark:text-white"
     >
       {iconList[type]}
       <div>
         <p
           className={`font-semibold  ${
-            type === "Success" ? "text-green-600" : "text-red-500"
+            type === "Success"
+              ? "text-green-600 dark:text-[var(--color-neon)]"
+              : "text-red-500"
           }`}
         >
           {type}

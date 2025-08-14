@@ -26,14 +26,16 @@ const MainLayout = (props: Proptypes) => {
     <>
       <PageHead title={title} description={description} />
 
-      <div className="relative flex flex-col dark:bg-neutral-900 w-full min-h-screen dark:text-white">
+      <section className="relative flex flex-col dark:bg-neutral-900 w-full min-h-screen dark:text-white">
         {!hideNavbar && <MainLayoutNavbar />}
-        <div className="flex-grow mt-5 md:mt-10 px-10 md:px-20 lg:px-24 xl:px-48 pb-10 xl:pb-16">
+        <section className="flex-grow mt-5 md:mt-10 px-10 md:px-20 lg:px-24 xl:px-48 pb-10 xl:pb-16">
           {children}
-        </div>
+        </section>
+        <section id="side-contact">
+          {!hideSideContact && <MainLayoutSideContact />}
+        </section>
         {!hideFooter && <MainLayoutFooter />}
-        {!hideSideContact && <MainLayoutSideContact />}
-      </div>
+      </section>
     </>
   );
 };

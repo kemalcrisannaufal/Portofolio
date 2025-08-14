@@ -39,9 +39,10 @@ const MainLayoutNavbar = () => {
       <nav className="top-2 md:top-5 z-50 sticky xl:p-0 px-3">
         <div
           className={cn(
-            "flex justify-between items-center gap-10 bg-white dark:bg-[var(--color-secondary-dark)] shadow mb-5 p-3 border border-neutral-200 dark:border-neutral-700 rounded-xl w-full md:w-full xl:w-1/2",
+            "flex justify-between items-center gap-10 bg-white dark:bg-[var(--color-secondary-dark)] mb-5 p-3 rounded-xl w-full md:w-full xl:w-1/2",
             "sticky md:left-5",
-            scrolled && "dark:bg-black/40! bg-white! backdrop-blur-xl"
+            scrolled &&
+              "dark:bg-black/40! bg-white! backdrop-blur-xl border border-neutral-200 dark:border-neutral-700 shadow"
           )}
         >
           {/* Navbar Brand */}

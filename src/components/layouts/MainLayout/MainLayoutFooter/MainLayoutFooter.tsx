@@ -15,7 +15,7 @@ const MainLayoutFooter = () => {
   };
 
   return (
-    <div className="flex flex-col justify-center items-center w-full">
+    <footer className="flex flex-col justify-center items-center w-full">
       <div className="flex flex-col items-center gap-4 p-5 border-gray-200 dark:border-neutral-700 border-t w-full text-gray-600 dark:text-neutral-200 text-xs sm:text-sm">
         <div className="flex gap-5">
           {NAVBAR_ITEMS.map((item, index) => (
@@ -34,7 +34,7 @@ const MainLayoutFooter = () => {
         </div>
         <p>Copyright &copy; {year} All Rights Reserved</p>
       </div>
-    </div>
+    </footer>
   );
 };
 

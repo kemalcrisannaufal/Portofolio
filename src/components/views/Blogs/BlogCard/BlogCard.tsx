@@ -44,8 +44,8 @@ const BlogCard = (props: Proptypes) => {
             <p className="text-white text-sm">Top Featured</p>
           </div>
         )}
-        <div className="hidden z-10 absolute inset-0 group-hover:flex justify-center items-center bg-black/50 w-full h-full duration-300 group-hover:duration-500 group-hover:transform">
-          <h2 className="mr-2 text-white text-lg">View Blog</h2>
+        <div className="z-10 absolute inset-0 flex justify-center items-center bg-black/80 opacity-0 group-hover:opacity-100 w-full h-full translate-y-full group-hover:translate-y-0 duration-300 transform">
+          <h2 className="mr-2 text-white text-xl">View Blog</h2>
           <i className="bx-right-arrow-alt text-white text-2xl bx" />
         </div>
       </Link>
